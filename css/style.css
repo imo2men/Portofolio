@@ -4980,6 +4980,45 @@ html[lang="ar"] .zoom-badge::after {
     border-radius: 0.85rem;
 }
 
+/* Fullscreen display for portfolio videos (portrait & landscape) */
+.portfolio-video:fullscreen,
+video:fullscreen,
+.video-wrapper:fullscreen .portfolio-video {
+    object-fit: contain !important;
+    object-position: center center !important;
+    background-color: #000 !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.portfolio-video:-webkit-full-screen,
+video:-webkit-full-screen,
+.video-wrapper:-webkit-full-screen .portfolio-video {
+    object-fit: contain !important;
+    object-position: center center !important;
+    background-color: #000 !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.portfolio-video:-moz-full-screen,
+video:-moz-full-screen,
+.video-wrapper:-moz-full-screen .portfolio-video {
+    object-fit: contain !important;
+    object-position: center center !important;
+    background-color: #000 !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.portfolio-video::backdrop,
+video::backdrop {
+    background-color: #000 !important;
+}
+
 .video-play-btn {
     position: absolute;
     top: 50%;

@@ -1,0 +1,114 @@
+/* Strict Layout & Text Direction Separation
+   Page layout remains 100% LTR (identical to English).
+   Arabic text direction & alignment apply strictly to text elements.
+   ========================================================================== */
+
+/* Keep entire page layout LTR — identical to English version */
+html[lang="ar"],
+html[lang="ar"] body {
+    direction: ltr !important;
+}
+
+/* Arabic typography & RTL direction applied ONLY to actual Arabic text elements */
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6,
+html[lang="ar"] p,
+html[lang="ar"] label,
+html[lang="ar"] input,
+html[lang="ar"] textarea,
+html[lang="ar"] .nav-link,
+html[lang="ar"] .section-subtitle,
+html[lang="ar"] .about-content,
+html[lang="ar"] .service-card p,
+html[lang="ar"] .timeline-content p,
+html[lang="ar"] .project-metrics,
+html[lang="ar"] .contact-info p,
+html[lang="ar"] .contact-info h3,
+html[lang="ar"] .btn span {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* Ensure Logo remains 100% identical to English version */
+html[lang="ar"] .logo,
+.logo {
+    direction: ltr !important;
+    unicode-bidi: isolate !important;
+    flex-direction: row !important;
+}
+
+/* Ensure English terms & brand spans render with Inter */
+html[lang="ar"] .en,
+html[lang="ar"] [lang="en"],
+html[lang="ar"] .hero-label-left,
+html[lang="ar"] .hero-label-right,
+html[lang="ar"] .metric-primary,
+html[lang="ar"] .client-item,
+html[lang="ar"] .project-title,
+html[lang="ar"] .contact-link .details span {
+    font-family: 'Inter', sans-serif;
+    direction: ltr;
+}
+
+/* Keep League Gothic for main Hero title */
+html[lang="ar"] .hero-title {
+    font-family: 'League Gothic', sans-serif !important;
+    direction: ltr;
+    unicode-bidi: embed;
+}
+
+/* Section title underline positioning for RTL text headers */
+html[lang="ar"] .section-title::after {
+    left: auto;
+    right: 0;
+}
+html[lang="ar"] .section-header.text-center .section-title::after {
+    left: auto;
+    right: 50%;
+    transform: translateX(50%);
+}
+html[lang="ar"] #about .section-title::after {
+    left: auto;
+    right: 0;
+}
+
+/* Preloader text - keep visual direction neutral */
+html[lang="ar"] .preloader-text {
+    direction: ltr;
+}
+
+/* Language Switcher button */
+.lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    border-radius: 2rem;
+    padding: 0.28rem 0.7rem;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    white-space: nowrap;
+    letter-spacing: 0;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    cursor: pointer;
+}
+.lang-switcher:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+
+/* Campaign Screenshot Note - Arabic typography */
+html[lang="ar"] .campaign-screenshot-note {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    text-align: center;
+}

@@ -1,0 +1,902 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+
+#sidr-page {
+  --sidr-green: #356b35;
+  --sidr-dark: #203d27;
+  --sidr-light: #eef3e8;
+  --sidr-cream: #faf8f0;
+  --sidr-text: #273329;
+  --sidr-muted: #677168;
+
+  direction: rtl;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  color: var(--sidr-text);
+  background: #ffffff;
+  font-family: 'Cairo', sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#sidr-page *,
+#sidr-page *::before,
+#sidr-page *::after {
+  box-sizing: border-box;
+}
+
+#sidr-page img {
+  display: block;
+  max-width: 100%;
+}
+
+#sidr-page h1,
+#sidr-page h2,
+#sidr-page h3,
+#sidr-page p {
+  margin-top: 0;
+}
+
+#sidr-page h1,
+#sidr-page h2,
+#sidr-page h3 {
+  line-height: 1.55;
+}
+
+#sidr-page .sidr-container {
+  width: 100%;
+  padding: 0 24px;
+}
+
+#sidr-page .sidr-section {
+  padding: 64px 0;
+}
+
+#sidr-page .sidr-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--sidr-green);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+#sidr-page .sidr-heading {
+  color: var(--sidr-dark);
+  font-size: clamp(25px, 4vw, 38px);
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+#sidr-page .sidr-description {
+  color: var(--sidr-muted);
+  font-size: 16px;
+  line-height: 2;
+  margin-bottom: 0;
+}
+
+#sidr-page .sidr-btn {
+  appearance: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-height: 54px;
+  padding: 12px 27px;
+  border: 2px solid var(--sidr-green);
+  border-radius: 12px;
+  background: var(--sidr-green);
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.6;
+  text-align: center;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+
+#sidr-page .sidr-btn:hover {
+  background: var(--sidr-dark);
+  border-color: var(--sidr-dark);
+  transform: translateY(-2px);
+}
+
+#sidr-page .sidr-btn--outline {
+  color: var(--sidr-green) !important;
+  background: transparent;
+}
+
+#sidr-page .sidr-btn--outline:hover {
+  color: #ffffff !important;
+}
+
+/* Hero */
+
+#sidr-page .sidr-hero {
+  padding: 35px 0 48px;
+  background:
+    radial-gradient(ellipse at top right, #e6eddd 0%, transparent 55%),
+    linear-gradient(135deg, #faf9f2, #f0f4e9);
+}
+
+#sidr-page .sidr-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 38px;
+}
+
+#sidr-page .sidr-hero-image {
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid #e8eadd;
+  border-radius: 24px;
+  padding: 12px;
+  box-shadow: 0 14px 40px rgba(38, 65, 39, .08);
+}
+
+#sidr-page .sidr-hero-image img {
+  width: 100%;
+  height: auto;
+  max-height: 510px;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+#sidr-page .sidr-hero-content {
+  padding: 15px 0;
+}
+
+#sidr-page .sidr-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--sidr-green);
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+#sidr-page .sidr-brand::before {
+  content: "";
+  width: 28px;
+  height: 3px;
+  border-radius: 5px;
+  background: var(--sidr-green);
+}
+
+#sidr-page .sidr-hero h1 {
+  max-width: 540px;
+  font-size: clamp(31px, 4.5vw, 49px);
+  line-height: 1.45;
+  font-weight: 800;
+  color: var(--sidr-dark);
+  margin-bottom: 17px;
+}
+
+#sidr-page .sidr-hero h1 span {
+  color: var(--sidr-green);
+}
+
+#sidr-page .sidr-hero-text {
+  max-width: 490px;
+  font-size: 17px;
+  line-height: 2;
+  color: #626e61;
+  margin-bottom: 20px;
+}
+
+#sidr-page .sidr-weight {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 15px;
+  background: #ffffff;
+  border: 1px solid #dfe7d7;
+  border-radius: 30px;
+  color: var(--sidr-dark);
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+#sidr-page .sidr-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+#sidr-page .sidr-hero-note {
+  margin-top: 17px;
+  margin-bottom: 0;
+  color: #778074;
+  font-size: 12px;
+}
+
+/* Pain point */
+
+#sidr-page .sidr-pain {
+  padding: 42px 24px;
+  text-align: center;
+  background: var(--sidr-dark);
+  color: #ffffff;
+}
+
+#sidr-page .sidr-pain .sidr-label {
+  color: #d8e6c9;
+}
+
+#sidr-page .sidr-pain h2 {
+  max-width: 760px;
+  margin: 0 auto 15px;
+  color: #ffffff;
+  font-size: clamp(24px, 3.7vw, 34px);
+  font-weight: 800;
+}
+
+#sidr-page .sidr-pain p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #e4eadf;
+  font-size: 16px;
+  line-height: 2;
+}
+
+/* Benefits */
+
+#sidr-page .sidr-benefits {
+  background: #ffffff;
+}
+
+#sidr-page .sidr-section-intro {
+  max-width: 730px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+#sidr-page .sidr-benefits-image {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 12px;
+  background: var(--sidr-cream);
+  border: 1px solid #e9ebdf;
+  border-radius: 20px;
+}
+
+#sidr-page .sidr-benefits-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* Product introduction */
+
+#sidr-page .sidr-intro {
+  background: var(--sidr-cream);
+}
+
+#sidr-page .sidr-intro-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+#sidr-page .sidr-intro-inner {
+  min-width: 0;
+  text-align: right;
+}
+
+#sidr-page .sidr-intro p {
+  margin: 0;
+  color: var(--sidr-muted);
+  font-size: 17px;
+  line-height: 2.1;
+}
+
+#sidr-page .sidr-intro-image {
+  min-width: 0;
+  overflow: hidden;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid #e9ebdf;
+  border-radius: 20px;
+}
+
+#sidr-page .sidr-intro-image img {
+  width: 100%;
+  height: auto;
+  max-height: 430px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* Uses */
+
+#sidr-page .sidr-uses {
+  background: #ffffff;
+}
+
+#sidr-page .sidr-uses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 34px;
+}
+
+#sidr-page .sidr-use-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e6eade;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 7px 23px rgba(34, 59, 34, .045);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+#sidr-page .sidr-use-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(34, 59, 34, .09);
+}
+
+#sidr-page .sidr-use-image {
+  width: 100%;
+  aspect-ratio: 4 / 4.3;
+  object-fit: contain;
+  object-position: center;
+  background: #f6f5ee;
+  padding: 5px;
+}
+
+#sidr-page .sidr-use-content {
+  padding: 18px 16px 20px;
+  text-align: center;
+}
+
+#sidr-page .sidr-use-card h3 {
+  color: var(--sidr-dark);
+  font-size: 19px;
+  font-weight: 800;
+  margin-bottom: 9px;
+}
+
+#sidr-page .sidr-use-card p {
+  color: var(--sidr-muted);
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 0;
+}
+
+/* CTA after use cases */
+#sidr-page .sidr-final-cta {
+  margin-top: 42px;
+  padding: 34px 28px;
+  text-align: center;
+  border: 1px solid #dfe8d8;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #f1f5e9, #e5eddc);
+}
+
+#sidr-page .sidr-final-cta h2 {
+  max-width: 680px;
+  margin: 0 auto 10px;
+  color: var(--sidr-dark);
+  font-size: clamp(25px, 3.5vw, 34px);
+  font-weight: 800;
+}
+
+#sidr-page .sidr-final-cta p {
+  max-width: 620px;
+  margin: 0 auto 22px;
+  color: #5b6859;
+  font-size: 16px;
+  line-height: 2;
+}
+
+#sidr-page .sidr-final-cta .sidr-btn {
+  min-width: 240px;
+  box-shadow: 0 7px 18px rgba(40, 91, 43, .17);
+}
+
+/* Mobile */
+
+@media (max-width: 760px) {
+  #sidr-page .sidr-container {
+    padding: 0 16px;
+  }
+
+  #sidr-page .sidr-section {
+    padding: 43px 0;
+  }
+
+  #sidr-page .sidr-hero {
+    padding: 18px 0 32px;
+  }
+
+  #sidr-page .sidr-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  #sidr-page .sidr-hero-image {
+    order: 1;
+    padding: 8px;
+    border-radius: 18px;
+  }
+
+  #sidr-page .sidr-hero-image img {
+    width: 100%;
+    max-height: none;
+    max-height: 470px;
+    object-fit: contain;
+  }
+
+  #sidr-page .sidr-hero-content {
+    order: 2;
+    padding: 0 2px;
+    text-align: center;
+  }
+
+  #sidr-page .sidr-brand {
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  #sidr-page .sidr-hero h1 {
+    max-width: none;
+    font-size: clamp(29px, 8vw, 38px);
+    margin-bottom: 12px;
+  }
+
+  #sidr-page .sidr-hero-text {
+    max-width: none;
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+
+  #sidr-page .sidr-weight {
+    margin-bottom: 18px;
+  }
+
+  #sidr-page .sidr-hero-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #sidr-page .sidr-btn {
+    width: 100%;
+  }
+
+  #sidr-page .sidr-hero-note {
+    margin-top: 12px;
+  }
+
+  #sidr-page .sidr-pain {
+    padding: 34px 18px;
+  }
+
+  #sidr-page .sidr-pain h2 {
+    font-size: 25px;
+  }
+
+  #sidr-page .sidr-pain p {
+    font-size: 14px;
+  }
+
+  #sidr-page .sidr-heading {
+    font-size: 27px;
+  }
+
+  #sidr-page .sidr-description,
+  #sidr-page .sidr-intro p {
+    font-size: 15px;
+  }
+
+  #sidr-page .sidr-intro-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  #sidr-page .sidr-intro-inner {
+    text-align: center;
+  }
+
+  #sidr-page .sidr-intro-image {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 6px;
+    border-radius: 15px;
+  }
+
+  #sidr-page .sidr-intro-image img {
+    max-height: none;
+  }
+
+  #sidr-page .sidr-benefits-image {
+    padding: 6px;
+    border-radius: 14px;
+  }
+
+  #sidr-page .sidr-uses-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 25px;
+  }
+
+  #sidr-page .sidr-use-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: stretch;
+    border-radius: 15px;
+  }
+
+  #sidr-page .sidr-use-image {
+    height: 100%;
+    min-height: 200px;
+    aspect-ratio: auto;
+    object-fit: contain;
+    padding: 3px;
+  }
+
+  #sidr-page .sidr-use-content {
+    padding: 17px 12px;
+    align-self: center;
+  }
+
+  #sidr-page .sidr-use-card h3 {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  #sidr-page .sidr-use-card p {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  #sidr-page .sidr-final-cta {
+    margin-top: 28px;
+    padding: 28px 18px;
+    border-radius: 17px;
+  }
+
+  #sidr-page .sidr-final-cta h2 {
+    font-size: 26px;
+  }
+
+  #sidr-page .sidr-final-cta p {
+    font-size: 14px;
+    margin-bottom: 19px;
+  }
+
+  #sidr-page .sidr-final-cta .sidr-btn {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  #sidr-page .sidr-container {
+    padding: 0 12px;
+  }
+
+  #sidr-page .sidr-use-card {
+    grid-template-columns: 1fr;
+  }
+
+  #sidr-page .sidr-use-image {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+  }
+
+  #sidr-page .sidr-use-content {
+    padding: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #sidr-page *,
+  #sidr-page *::before,
+  #sidr-page *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+
+<div id="sidr-page" dir="rtl">
+
+  <!-- Hero -->
+  <section class="sidr-hero">
+    <div class="sidr-container">
+      <div class="sidr-hero-grid">
+
+        <div class="sidr-hero-image">
+          <img
+            src="https://files.easy-orders.net/1791889054515565996.webp"
+            alt="نبات السدر النقي من اليُمن"
+            fetchpriority="high"
+          >
+        </div>
+
+        <div class="sidr-hero-content">
+          <div class="sidr-brand">اليُمن</div>
+
+          <h1>
+            نبات السدر النقي
+            <span>من اليُمن</span>
+          </h1>
+
+          <p class="sidr-hero-text">
+   لازالة الطاقة السلبية والعين
+            والعناية بفروة الرأس والبشرة
+          </p>
+
+          <div class="sidr-weight">عبوة 250 جرام</div>
+
+          <div class="sidr-hero-actions">
+            <button
+              class="sidr-btn"
+              type="button"
+              data-sidr-scroll="sidr-uses"
+            >
+              اكتشف استخدامات السدر
+            </button>
+
+            <button
+              class="sidr-btn sidr-btn--outline"
+              type="button"
+              data-sidr-order
+            >
+              اطلب دلوقتي
+            </button>
+          </div>
+
+          <p class="sidr-hero-note">
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Point -->
+  <section class="sidr-pain">
+    <div class="sidr-container">
+      <span class="sidr-label">نبات السدر من اليُمن</span>
+
+      <h2>
+        حاسس إنك مش مرتاح في بيتك
+        وعايز تتخلص من الطاقة السلبية والعين؟
+      </h2>
+
+      <p>
+ 
+      </p>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="sidr-section sidr-benefits">
+    <div class="sidr-container">
+
+      <div class="sidr-section-intro">
+        <span class="sidr-label">مميزات نبات السدر</span>
+
+        <h2 class="sidr-heading">
+          اكتشف فوائد واستخدامات السدر
+        </h2>
+
+        <p class="sidr-description">
+        </p>
+      </div>
+
+      <div class="sidr-benefits-image">
+        <img
+          src="https://files.easy-orders.net/1791889119226963615.webp"
+          alt="فوائد نبات السدر"
+          loading="lazy"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Product Introduction -->
+  <section class="sidr-section sidr-intro">
+    <div class="sidr-container">
+      <div class="sidr-intro-layout">
+        <div class="sidr-intro-inner">
+          <span class="sidr-label">اعرف منتجك</span>
+
+          <h2 class="sidr-heading">
+            إيه هو مسحوق السدر؟
+          </h2>
+
+          <p>
+            هو مسحوق نقي مستخلص من أوراق شجرة السدر المباركة، ويُستخدم كبديل طبيعي للشامبو للعناية بالشعر والمساعدة في تنظيف فروة الرأس من القشرة. كما يمكن استخدامه كسكراب لتقشير البشرة أو كغسول لتنظيف الوجه وإعادة النضارة إليه. وإلى جانب استخداماته التجميلية، يُستخدم تقليديًا في المنزل للتخلص من الطاقة السلبية والحسد والعين.
+          </p>
+        </div>
+
+        <div class="sidr-intro-image">
+          <img
+            src="https://files.easy-orders.net/1791895835673475930.webp"
+            alt="مسحوق نبات السدر وأوراق السدر"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Uses -->
+  <section class="sidr-section sidr-uses" id="sidr-uses">
+    <div class="sidr-container">
+
+      <div class="sidr-section-intro">
+        <span class="sidr-label">خطوات الاستخدام</span>
+
+        <h2 class="sidr-heading">
+          طرق استخدام نبات السدر
+        </h2>
+
+        <p class="sidr-description">مش محتاج غير مياة</p>
+      </div>
+
+      <div class="sidr-uses-grid">
+
+        <!-- Home -->
+        <article class="sidr-use-card">
+          <img
+            class="sidr-use-image"
+            src="https://files.easy-orders.net/1791889054015331913.webp"
+            alt="استخدام السدر في المنزل"
+            loading="lazy"
+          >
+
+          <div class="sidr-use-content">
+            <h3>إزالة السحر والعين والطاقة السلبية</h3>
+          </div>
+        </article>
+
+        <!-- Scalp -->
+        <article class="sidr-use-card">
+          <img
+            class="sidr-use-image"
+            src="https://files.easy-orders.net/1791889054479240915.webp"
+            alt="استخدام السدر على فروة الرأس"
+            loading="lazy"
+          >
+
+          <div class="sidr-use-content">
+            <h3>العناية بفروة الرأس</h3>
+          </div>
+        </article>
+
+        <!-- Skin -->
+        <article class="sidr-use-card">
+          <img
+            class="sidr-use-image"
+            src="https://files.easy-orders.net/1791889054504639604.webp"
+            alt="استخدام السدر في تنظيف البشرة"
+            loading="lazy"
+          >
+
+          <div class="sidr-use-content">
+            <h3>تنظيف البشرة</h3>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- CTA after use cases -->
+      <div class="sidr-final-cta">
+        <span class="sidr-label">نبات السدر النقي من اليُمن</span>
+
+        <h2>ابدأ استخدام السدر النقي من اليُمن</h2>
+
+        <p>لبيتك ولروتين عنايتك الشخصية</p>
+
+        <button
+          class="sidr-btn"
+          type="button"
+          data-sidr-order
+        >
+          اطلب نبات السدر النقي دلوقتي
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var root = document.getElementById('sidr-page');
+
+  if (!root) {
+    return;
+  }
+
+  function scrollToElement(element) {
+    if (!element) {
+      return false;
+    }
+
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+
+    return true;
+  }
+
+  function findOrderForm() {
+    var selectors = [
+      '#order-form',
+      '#checkout',
+      '.order-form',
+      '.checkout-form',
+      '[data-order-form]',
+      '.easy-orders-form'
+    ];
+
+    for (var i = 0; i < selectors.length; i++) {
+      var target = document.querySelector(selectors[i]);
+
+      if (target && !root.contains(target)) {
+        return target;
+      }
+    }
+
+    var forms = document.querySelectorAll('form');
+
+    for (var j = 0; j < forms.length; j++) {
+      if (!root.contains(forms[j])) {
+        return forms[j];
+      }
+    }
+
+    return null;
+  }
+
+  root.querySelectorAll('[data-sidr-scroll]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var sectionId = button.getAttribute('data-sidr-scroll');
+      var section = document.getElementById(sectionId);
+
+      scrollToElement(section);
+    });
+  });
+
+  root.querySelectorAll('[data-sidr-order]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var orderForm = findOrderForm();
+
+      if (orderForm) {
+        scrollToElement(orderForm);
+      } else {
+        /*
+         * لو نموذج الطلب مش ظاهر بعنصر معروف
+         * ننقل العميل لأسفل الصفحة للبحث عن النموذج
+         */
+        window.scrollTo({
+          top: document.documentElement.scrollHeight,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+})();
+</script>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    circle { fill: #0f172a; }
+    text { fill: #f8fafc; font-family: 'Poppins', 'Segoe UI', sans-serif; font-weight: 800; font-size: 46px; }
+    @media (prefers-color-scheme: dark) {
+      circle { fill: #ffffff; }
+      text { fill: #050505; }
+    }
+  </style>
+  <circle cx="50" cy="50" r="50" />
+  <text x="50" y="54" dominant-baseline="middle" text-anchor="middle">Mo'</text>
+</svg>

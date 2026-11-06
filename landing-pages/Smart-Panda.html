@@ -1,0 +1,2398 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Converted JSON</title>
+</head>
+<body>
+<section class="smart-panda-hero" dir="rtl">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&display=swap');
+
+    .smart-panda-hero,
+    .smart-panda-hero * {
+      font-family: "Tajawal", Arial, sans-serif !important;
+      box-sizing: border-box;
+    }
+
+    .smart-panda-hero {
+      position: relative;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      overflow: hidden;
+      padding: 20px 40px 45px;
+      background: linear-gradient(
+        135deg,
+        #f8fcff 0%,
+        #eef8ff 55%,
+        #fff9e8 100%
+      );
+    }
+
+    .smart-panda-hero::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      background: rgba(255, 208, 45, 0.12);
+      border-radius: 50%;
+      top: -160px;
+      right: -100px;
+    }
+
+    .smart-panda-hero::after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      background: rgba(36, 116, 198, 0.07);
+      border-radius: 50%;
+      bottom: -120px;
+      left: -80px;
+    }
+
+    .smart-panda-hero-math {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .smart-panda-hero-math span {
+      position: absolute;
+      direction: ltr;
+      unicode-bidi: isolate;
+      color: #2474c6;
+      opacity: 0.13;
+      font-size: 29px !important;
+      font-weight: 800 !important;
+      white-space: nowrap;
+      line-height: 1;
+      user-select: none;
+    }
+
+    .smart-panda-hero-math .m1 {
+      top: 6%;
+      left: 4%;
+      transform: rotate(-7deg);
+    }
+
+    .smart-panda-hero-math .m2 {
+      top: 16%;
+      left: 23%;
+      transform: rotate(5deg);
+    }
+
+    .smart-panda-hero-math .m3 {
+      top: 31%;
+      left: 4%;
+      transform: rotate(6deg);
+    }
+
+    .smart-panda-hero-math .m4 {
+      top: 47%;
+      left: 7%;
+      transform: rotate(-5deg);
+    }
+
+    .smart-panda-hero-math .m5 {
+      bottom: 10%;
+      left: 5%;
+      transform: rotate(5deg);
+    }
+
+    .smart-panda-hero-math .m6 {
+      bottom: 22%;
+      left: 23%;
+      transform: rotate(-4deg);
+    }
+
+    .smart-panda-hero-math .m7 {
+      top: 9%;
+      right: 18%;
+      transform: rotate(-4deg);
+    }
+
+    .smart-panda-hero-math .m8 {
+      top: 24%;
+      right: 4%;
+      transform: rotate(5deg);
+    }
+
+    .smart-panda-hero-math .m9 {
+      top: 40%;
+      right: 3%;
+      transform: rotate(-6deg);
+    }
+
+    .smart-panda-hero-math .m10 {
+      top: 57%;
+      right: 16%;
+      transform: rotate(4deg);
+    }
+
+    .smart-panda-hero-math .m11 {
+      bottom: 8%;
+      right: 6%;
+      transform: rotate(-5deg);
+    }
+
+    .smart-panda-hero-math .m12 {
+      bottom: 21%;
+      right: 27%;
+      transform: rotate(6deg);
+    }
+
+    .smart-panda-hero-math .m13 {
+      top: 9%;
+      left: 48%;
+      transform: rotate(3deg);
+    }
+
+    .smart-panda-hero-math .m14 {
+      bottom: 7%;
+      left: 42%;
+      transform: rotate(-4deg);
+    }
+
+    .smart-panda-hero-math .m15 {
+      top: 68%;
+      left: 3%;
+      transform: rotate(4deg);
+    }
+
+    .smart-panda-hero-math .m16 {
+      top: 70%;
+      right: 4%;
+      transform: rotate(-3deg);
+    }
+
+    .smart-panda-hero-math .m17 {
+      top: 15%;
+      right: 43%;
+      transform: rotate(-5deg);
+    }
+
+    .smart-panda-hero-math .m18 {
+      bottom: 17%;
+      right: 45%;
+      transform: rotate(5deg);
+    }
+
+    .smart-panda-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+      gap: 55px;
+    }
+
+    .smart-panda-child {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .smart-panda-child img {
+      display: block;
+      width: 100%;
+      max-width: 610px;
+      height: auto;
+      object-fit: contain;
+      object-position: center top;
+      filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.12));
+    }
+
+    .smart-panda-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-width: 0;
+      transform: translateX(70px);
+      padding-top: 5px;
+    }
+
+    .smart-panda-problem {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #ffffff;
+      border: 3px solid #ffd12f;
+      border-radius: 15px;
+      padding: 7px 16px;
+      margin-bottom: 12px;
+      color: #174b89;
+      font-size: clamp(18px, 1.7vw, 26px) !important;
+      font-weight: 800 !important;
+      line-height: 1.3;
+      box-shadow: 0 7px 16px rgba(36, 116, 198, 0.07);
+    }
+
+    .smart-panda-clock {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+    }
+
+    .smart-panda-clock svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .smart-panda-title {
+      margin: 0 0 7px;
+      color: #174b89;
+      font-size: clamp(36px, 3.8vw, 60px) !important;
+      line-height: 1.15;
+      font-weight: 900 !important;
+      white-space: nowrap;
+    }
+
+    .smart-panda-title span {
+      color: #ef4a47;
+    }
+
+    .smart-panda-subtitle {
+      margin: 0 0 12px;
+      color: #333333;
+      font-size: clamp(18px, 1.9vw, 26px) !important;
+      line-height: 1.5;
+      font-weight: 700 !important;
+    }
+
+    .smart-panda-contents {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .smart-panda-contents img {
+      display: block;
+      width: 68%;
+      max-width: 400px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.07));
+    }
+
+    @media (min-width: 1400px) {
+      .smart-panda-hero {
+        padding-left: 70px;
+        padding-right: 70px;
+      }
+
+      .smart-panda-hero-inner {
+        gap: 85px;
+      }
+
+      .smart-panda-child img {
+        max-width: 650px;
+      }
+
+      .smart-panda-contents img {
+        max-width: 430px;
+      }
+    }
+
+    @media (max-width: 950px) {
+      .smart-panda-hero {
+        padding: 18px 25px 35px;
+      }
+
+      .smart-panda-hero-inner {
+        gap: 25px;
+      }
+
+      .smart-panda-child img {
+        max-width: 480px;
+      }
+
+      .smart-panda-right {
+        transform: translateX(30px);
+      }
+
+      .smart-panda-title {
+        font-size: 42px !important;
+      }
+
+      .smart-panda-subtitle {
+        font-size: 20px !important;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .smart-panda-hero {
+        padding: 20px 14px 35px;
+      }
+
+      .smart-panda-hero-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .smart-panda-right {
+        order: 1;
+        width: 100%;
+        transform: none;
+        padding-top: 0;
+      }
+
+      .smart-panda-child {
+        order: 2;
+        width: 100%;
+      }
+
+      .smart-panda-child img {
+        width: 92%;
+        max-width: 470px;
+      }
+
+      .smart-panda-title {
+        font-size: 32px !important;
+        white-space: normal;
+      }
+
+      .smart-panda-subtitle {
+        font-size: 18px !important;
+      }
+
+      .smart-panda-contents img {
+        width: 78%;
+        max-width: 340px;
+      }
+
+      .smart-panda-hero-math span {
+        font-size: 22px !important;
+        opacity: 0.11;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .smart-panda-title {
+        font-size: 29px !important;
+      }
+
+      .smart-panda-subtitle {
+        font-size: 17px !important;
+      }
+
+      .smart-panda-child img {
+        width: 100%;
+      }
+
+      .smart-panda-contents img {
+        width: 84%;
+      }
+    }
+  </style>
+
+  <div class="smart-panda-hero-math" aria-hidden="true">
+    <span class="m1">7 × 8 = 56</span>
+    <span class="m2">9 × 6 = ?</span>
+    <span class="m3">12 × 7 = 84</span>
+    <span class="m4">8 × 11 = ?</span>
+    <span class="m5">6 × 12 = 72</span>
+    <span class="m6">11 × 9 = ?</span>
+    <span class="m7">5 × 8 = 40</span>
+    <span class="m8">7 × 12 = ?</span>
+    <span class="m9">9 × 7 = 63</span>
+    <span class="m10">8 × 6 = ?</span>
+    <span class="m11">12 × 9 = 108</span>
+    <span class="m12">11 × 8 = ?</span>
+    <span class="m13">4 × 7 = 28</span>
+    <span class="m14">6 × 9 = ?</span>
+    <span class="m15">7 × 5 = 35</span>
+    <span class="m16">12 × 6 = ?</span>
+    <span class="m17">9 × 8 = 72</span>
+    <span class="m18">11 × 7 = ?</span>
+  </div>
+
+  <div class="smart-panda-hero-inner">
+
+    <div class="smart-panda-child">
+      <img
+        src="https://files.easy-orders.net/1789478651337077089.webp"
+        alt="طفل يستخدم لعبة Smart Panda التعليمية"
+        loading="eager"
+      >
+    </div>
+
+    <div class="smart-panda-right">
+
+      <div class="smart-panda-problem">
+
+        <span class="smart-panda-clock">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="43" fill="#ef4a47"/>
+            <circle cx="50" cy="50" r="34" fill="#ffffff"/>
+            <circle cx="50" cy="50" r="3.5" fill="#174b89"/>
+
+            <line
+              x1="50"
+              y1="50"
+              x2="50"
+              y2="28"
+              stroke="#174b89"
+              stroke-width="5"
+              stroke-linecap="round"
+            />
+
+            <line
+              x1="50"
+              y1="50"
+              x2="65"
+              y2="57"
+              stroke="#174b89"
+              stroke-width="5"
+              stroke-linecap="round"
+            />
+
+            <circle cx="50" cy="8" r="4" fill="#ffd12f"/>
+
+            <path
+              d="M32 13 L25 6"
+              stroke="#ffd12f"
+              stroke-width="5"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M68 13 L75 6"
+              stroke="#ffd12f"
+              stroke-width="5"
+              stroke-linecap="round"
+            />
+          </svg>
+        </span>
+
+        <span>
+          بدل وقت اللعب الضايع
+        </span>
+
+      </div>
+
+      <h1 class="smart-panda-title">
+        علمه جدول الضرب <span>وهو مبسوط</span>
+      </h1>
+
+      <p class="smart-panda-subtitle">
+        من غير زهق التحفيظ ومن غير نتيجة
+      </p>
+
+      <div class="smart-panda-contents">
+        <img
+          src="https://files.easy-orders.net/1789470403123019888.webp"
+          alt="محتويات لعبة Smart Panda"
+          loading="eager"
+        >
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Original JSON block (non-HTML, preserved as metadata):
+{
+  "id": "914e2005-ca81-4f83-9dd0-333253f0d7e2",
+  "product_id": "8d8b88d3-daf9-45d9-9d0e-ddcdb2e994e5",
+  "position": 1,
+  "advanced_text": "",
+  "type": "buy_button",
+  "custom_css": "button {\n  background-color: #2878c9;\n  background-image: none;\n  color: #ffffff;\n  cursor: pointer;\n  font-size: 100%;\n  line-height: 1.5;\n  margin: 0;\n  padding: 0;\n  text-transform: uppercase;\n  border: 2px solid #ffd12f;\n  animation: buttonAnimation999 5s ease infinite;\n  border-radius: var(—Prirmitaves-Radius-pill, 999px);\n  background: #2878c9;\n}\n\nbutton:disabled {\n  cursor: default;\n}\n\nbutton:-moz-focusring {\n  outline: auto;\n}\n\nbutton svg {\n  display: block;\n}\n\nbutton[hidden] {\n  display: none;\n}\n\nbutton {\n  border-radius: 99rem;\n  border-width: 2px;\n  padding: 0.8rem 3rem;\n}\n\nbutton:hover {\n  color: #174b89;\n  border: 2px solid #ffd12f;\n  background: #ffd12f;\n}\n\n@keyframes buttonAnimation999 {\n  0% {\n    color: #ffffff;\n    border: 2px solid #ffd12f;\n    background: #2878c9;\n  }\n\n  50% {\n    color: #174b89;\n    border: 2px solid #ffd12f;\n    background: #ffd12f;\n  }\n\n  100% {\n    color: #ffffff;\n    border: 2px solid #ffd12f;\n    background: #2878c9;\n  }\n}",
+  "title_color": "#000000",
+  "description_color": "#000000",
+  "buy_button": {
+    "id": "e6f0b568-55f6-4685-95d0-ca74a2ced940",
+    "text": "أطلب دلوقتي",
+    "bg_color": "#000000",
+    "product_feature_id": "914e2005-ca81-4f83-9dd0-333253f0d7e2"
+  },
+  "faqs": [],
+  "social_reviews": []
+}
+-->
+
+
+<section class="panda-problem-section" dir="rtl">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500;600;700;800;900&display=swap');
+
+    .panda-problem-section {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 70px 40px 75px;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(255, 220, 55, 0.13), transparent 23%),
+        radial-gradient(circle at 90% 75%, rgba(59, 130, 246, 0.10), transparent 25%),
+        #ffffff;
+      font-family: 'Tajawal', sans-serif;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .panda-problem-section * {
+      box-sizing: border-box;
+    }
+
+    .panda-problem-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .panda-math {
+      position: absolute;
+      font-size: 52px;
+      font-weight: 800;
+      color: #2563eb;
+      opacity: 0.055;
+      white-space: nowrap;
+      direction: ltr;
+      unicode-bidi: isolate;
+    }
+
+    .panda-math.one {
+      top: 8%;
+      left: 5%;
+      transform: rotate(-10deg);
+    }
+
+    .panda-math.two {
+      top: 48%;
+      right: 3%;
+      transform: rotate(8deg);
+      color: #ef4444;
+    }
+
+    .panda-math.three {
+      bottom: 5%;
+      left: 28%;
+      transform: rotate(-5deg);
+      color: #16a34a;
+    }
+
+    .panda-problem-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1450px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .panda-problem-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.08);
+    }
+
+    .panda-problem-title {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.25;
+      font-weight: 900;
+      color: #172033;
+    }
+
+    .panda-problem-title .red {
+      color: #ef4444;
+    }
+
+    .panda-problem-subtitle {
+      max-width: 900px;
+      margin: 18px auto 0;
+      font-size: 19px;
+      line-height: 1.9;
+      font-weight: 600;
+      color: #606b7d;
+    }
+
+    .panda-problem-cards {
+      width: 100%;
+      margin-top: 42px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .panda-problem-card {
+      background: #ffffff;
+      border: 2px solid #edf1f7;
+      border-radius: 24px;
+      padding: 30px 26px 28px;
+      box-shadow: 0 14px 35px rgba(31, 41, 55, 0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .panda-problem-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(31, 41, 55, 0.11);
+    }
+
+    .panda-problem-icon {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 16px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      background: #fff7cc;
+    }
+
+    .panda-problem-card:nth-child(2) .panda-problem-icon {
+      background: #ffe8e8;
+    }
+
+    .panda-problem-card:nth-child(3) .panda-problem-icon {
+      background: #e7f7eb;
+    }
+
+    .panda-problem-card-title {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 900;
+      color: #172033;
+    }
+
+    .panda-problem-card-text {
+      margin: 10px 0 0;
+      font-size: 16px;
+      line-height: 1.8;
+      font-weight: 600;
+      color: #697386;
+    }
+
+    .panda-problem-bottom {
+      margin: 38px auto 0;
+      width: fit-content;
+      max-width: 100%;
+      padding: 13px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #eff6ff, #fff8d9);
+      color: #172033;
+      font-size: 18px;
+      line-height: 1.6;
+      font-weight: 800;
+      box-shadow: 0 8px 22px rgba(37, 99, 235, 0.07);
+    }
+
+    .panda-problem-bottom .highlight {
+      color: #2563eb;
+    }
+
+    @media (max-width: 1100px) {
+      .panda-problem-section {
+        padding: 60px 25px 65px;
+      }
+
+      .panda-problem-content {
+        max-width: 1200px;
+      }
+
+      .panda-problem-cards {
+        gap: 18px;
+      }
+
+      .panda-problem-card {
+        padding: 26px 20px;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .panda-problem-section {
+        padding: 58px 20px 62px;
+      }
+
+      .panda-problem-cards {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .panda-problem-card {
+        padding: 24px 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .panda-problem-section {
+        padding: 52px 14px 55px;
+      }
+
+      .panda-problem-badge {
+        font-size: 14px;
+        padding: 8px 15px;
+      }
+
+      .panda-problem-title {
+        font-size: 30px;
+      }
+
+      .panda-problem-subtitle {
+        font-size: 16px;
+        line-height: 1.8;
+        margin-top: 14px;
+      }
+
+      .panda-problem-cards {
+        margin-top: 30px;
+        gap: 15px;
+      }
+
+      .panda-problem-card {
+        border-radius: 20px;
+        padding: 22px 17px 21px;
+        min-height: auto;
+      }
+
+      .panda-problem-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+        border-radius: 18px;
+        margin-bottom: 13px;
+      }
+
+      .panda-problem-card-title {
+        font-size: 20px;
+      }
+
+      .panda-problem-card-text {
+        font-size: 15px;
+        line-height: 1.75;
+      }
+
+      .panda-problem-bottom {
+        margin-top: 28px;
+        padding: 11px 18px;
+        font-size: 16px;
+        border-radius: 18px;
+      }
+
+      .panda-math {
+        font-size: 38px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .panda-problem-title {
+        font-size: 27px;
+      }
+
+      .panda-problem-subtitle {
+        font-size: 15px;
+      }
+
+      .panda-problem-bottom {
+        font-size: 15px;
+      }
+    }
+  </style>
+
+  <div class="panda-problem-bg">
+    <div class="panda-math one">7 × 8 = 56</div>
+    <div class="panda-math two">6 × 9 = ?</div>
+    <div class="panda-math three">4 × 7 = 28</div>
+  </div>
+
+  <div class="panda-problem-content">
+
+    <div class="panda-problem-badge">
+      المشكلة اللي بتقابل أغلب الأطفال
+    </div>
+
+    <h2 class="panda-problem-title">
+      جدول الضرب مش لازم يكون
+      <span class="red">حفظ وتلقين</span>
+    </h2>
+
+    <p class="panda-problem-subtitle">
+      بدل ما الطفل يقعد يحفظ الأرقام ويكررها كتير
+      خليه يتعلم جدول الضرب بطريقة فيها لعب وتفاعل
+    </p>
+
+    <div class="panda-problem-cards">
+
+      <div class="panda-problem-card">
+        <div class="panda-problem-icon">🐼</div>
+        <h3 class="panda-problem-card-title">حفظ صعب</h3>
+        <p class="panda-problem-card-text">
+          تكرار جدول الضرب بالطريقة التقليدية ممكن يخلي الطفل يزهق بسرعة
+        </p>
+      </div>
+
+      <div class="panda-problem-card">
+        <div class="panda-problem-icon">😴</div>
+        <h3 class="panda-problem-card-title">زهق من المذاكرة</h3>
+        <p class="panda-problem-card-text">
+          لما التعلم يبقى مجرد حفظ الطفل ممكن يفقد اهتمامه بسرعة
+        </p>
+      </div>
+
+      <div class="panda-problem-card">
+        <div class="panda-problem-icon">🧠</div>
+        <h3 class="panda-problem-card-title">الحفظ مش بيثبت</h3>
+        <p class="panda-problem-card-text">
+          المعلومة اللي اتخزنت من غير ممارسة وتفاعل ممكن تتنسي بسهولة
+        </p>
+      </div>
+
+    </div>
+
+    <div class="panda-problem-bottom">
+      🎯 المشكلة مش إن الطفل مش بيعرف يحفظ
+      <span class="highlight">المشكلة إن طريقة الحفظ نفسها مملة</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="panda-solution-contents-section" dir="rtl">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500;600;700;800;900&display=swap');
+
+    .panda-solution-contents-section {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 75px 40px 80px;
+      background:
+        radial-gradient(circle at 8% 18%, rgba(37, 99, 235, 0.10), transparent 24%),
+        radial-gradient(circle at 92% 78%, rgba(255, 220, 55, 0.15), transparent 25%),
+        radial-gradient(circle at 50% 100%, rgba(22, 163, 74, 0.05), transparent 25%),
+        #f8fcff;
+      font-family: 'Tajawal', sans-serif;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .panda-solution-contents-section * {
+      box-sizing: border-box;
+    }
+
+    .panda-solution-contents-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .panda-solution-contents-math {
+      position: absolute;
+      font-size: 52px;
+      font-weight: 900;
+      white-space: nowrap;
+      direction: ltr;
+      unicode-bidi: isolate;
+      opacity: 0.055;
+      color: #2563eb;
+    }
+
+    .panda-solution-contents-math.one {
+      top: 7%;
+      left: 4%;
+      transform: rotate(-8deg);
+    }
+
+    .panda-solution-contents-math.two {
+      top: 45%;
+      right: 3%;
+      transform: rotate(7deg);
+      color: #16a34a;
+    }
+
+    .panda-solution-contents-math.three {
+      bottom: 5%;
+      left: 25%;
+      transform: rotate(-5deg);
+      color: #ef4444;
+    }
+
+    .panda-solution-contents-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1450px;
+      margin: 0 auto;
+    }
+
+    .panda-solution-contents-head {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .panda-solution-contents-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: #eaf2ff;
+      color: #2563eb;
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.08);
+    }
+
+    .panda-solution-contents-title {
+      margin: 0;
+      font-size: clamp(31px, 4vw, 48px);
+      line-height: 1.3;
+      font-weight: 900;
+      color: #172033;
+    }
+
+    .panda-solution-contents-title .blue {
+      color: #2563eb;
+    }
+
+    .panda-solution-contents-subtitle {
+      max-width: 900px;
+      margin: 17px auto 0;
+      font-size: 19px;
+      line-height: 1.9;
+      font-weight: 600;
+      color: #667085;
+    }
+
+    .panda-solution-contents-main {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      align-items: center;
+      gap: 55px;
+      width: 100%;
+    }
+
+    .panda-solution-steps {
+      display: grid;
+      gap: 17px;
+    }
+
+    .panda-solution-step {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      align-items: center;
+      gap: 17px;
+      padding: 20px 21px;
+      background: rgba(255, 255, 255, 0.97);
+      border: 2px solid #edf1f7;
+      border-radius: 22px;
+      box-shadow: 0 10px 28px rgba(31, 41, 55, 0.06);
+    }
+
+    .panda-solution-step-number {
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eaf2ff;
+      color: #2563eb;
+      font-size: 23px;
+      font-weight: 900;
+    }
+
+    .panda-solution-step:nth-child(2) .panda-solution-step-number {
+      background: #fff6c9;
+      color: #c58a00;
+    }
+
+    .panda-solution-step:nth-child(3) .panda-solution-step-number {
+      background: #e8f7ec;
+      color: #168447;
+    }
+
+    .panda-solution-step-title {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 900;
+      color: #172033;
+    }
+
+    .panda-solution-step-text {
+      margin: 6px 0 0;
+      font-size: 15.5px;
+      line-height: 1.8;
+      font-weight: 600;
+      color: #687386;
+    }
+
+    .panda-solution-step-highlight {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 9px 13px;
+      border-radius: 12px;
+      background: #f4f9ff;
+      color: #2563eb;
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 800;
+    }
+
+    .panda-product-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .panda-product-image-box {
+      width: min(100%, 650px);
+      padding: 18px;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #ffffff, #f3f8ff);
+      border: 2px solid #e8eef8;
+      box-shadow: 0 20px 48px rgba(31, 41, 55, 0.09);
+    }
+
+    .panda-product-image-box img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
+      object-fit: contain;
+    }
+
+    .panda-tablet-badge {
+      margin: 18px auto 0;
+      width: fit-content;
+      max-width: 100%;
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #eff6ff, #fff8d9);
+      color: #172033;
+      font-size: 17px;
+      font-weight: 900;
+      text-align: center;
+      box-shadow: 0 8px 22px rgba(37, 99, 235, 0.07);
+    }
+
+    .panda-tablet-badge strong {
+      color: #2563eb;
+    }
+
+    .panda-components {
+      margin-top: 48px;
+    }
+
+    .panda-components-title {
+      margin: 0;
+      text-align: center;
+      color: #172033;
+      font-size: 28px;
+      line-height: 1.3;
+      font-weight: 900;
+    }
+
+    .panda-components-subtitle {
+      margin: 10px auto 0;
+      max-width: 700px;
+      text-align: center;
+      color: #697386;
+      font-size: 16px;
+      line-height: 1.8;
+      font-weight: 600;
+    }
+
+    .panda-components-grid {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .panda-component {
+      background: #ffffff;
+      border: 2px solid #edf1f7;
+      border-radius: 21px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 10px 28px rgba(31, 41, 55, 0.06);
+    }
+
+    .panda-component-icon {
+      width: 62px;
+      height: 62px;
+      margin: 0 auto 13px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 31px;
+      background: #fff7cc;
+    }
+
+    .panda-component:nth-child(2) .panda-component-icon {
+      background: #eaf2ff;
+    }
+
+    .panda-component:nth-child(3) .panda-component-icon {
+      background: #e7f7eb;
+    }
+
+    .panda-component-title {
+      margin: 0;
+      font-size: 19px;
+      font-weight: 900;
+      color: #172033;
+    }
+
+    .panda-component-text {
+      margin: 7px 0 0;
+      font-size: 15px;
+      line-height: 1.75;
+      font-weight: 600;
+      color: #697386;
+    }
+
+    .panda-solution-contents-final {
+      margin: 32px auto 0;
+      width: fit-content;
+      max-width: 100%;
+      padding: 13px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #eff6ff, #fff8d9);
+      color: #172033;
+      font-size: 18px;
+      font-weight: 900;
+      text-align: center;
+      box-shadow: 0 8px 22px rgba(37, 99, 235, 0.07);
+    }
+
+    .panda-solution-contents-final strong {
+      color: #2563eb;
+    }
+
+    @media (max-width: 1000px) {
+      .panda-solution-contents-section {
+        padding: 65px 25px 70px;
+      }
+
+      .panda-solution-contents-main {
+        gap: 35px;
+      }
+
+      .panda-components-grid {
+        gap: 14px;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .panda-solution-contents-section {
+        padding: 58px 20px 65px;
+      }
+
+      .panda-solution-contents-head {
+        margin-bottom: 32px;
+      }
+
+      .panda-solution-contents-main {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .panda-product-visual {
+        order: 2;
+      }
+
+      .panda-solution-steps {
+        order: 1;
+        max-width: 700px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .panda-product-image-box {
+        width: min(100%, 700px);
+      }
+
+      .panda-components-grid {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .panda-solution-contents-section {
+        padding: 52px 14px 58px;
+      }
+
+      .panda-solution-contents-badge {
+        font-size: 14px;
+        padding: 8px 15px;
+      }
+
+      .panda-solution-contents-title {
+        font-size: 30px;
+      }
+
+      .panda-solution-contents-subtitle {
+        font-size: 16px;
+        line-height: 1.8;
+        margin-top: 14px;
+      }
+
+      .panda-solution-step {
+        grid-template-columns: 52px 1fr;
+        gap: 12px;
+        padding: 17px 15px;
+        border-radius: 19px;
+      }
+
+      .panda-solution-step-number {
+        width: 50px;
+        height: 50px;
+        border-radius: 15px;
+        font-size: 20px;
+      }
+
+      .panda-solution-step-title {
+        font-size: 18px;
+      }
+
+      .panda-solution-step-text {
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .panda-solution-step-highlight {
+        font-size: 13px;
+        padding: 8px 11px;
+      }
+
+      .panda-product-image-box {
+        padding: 11px;
+        border-radius: 23px;
+      }
+
+      .panda-product-image-box img {
+        border-radius: 17px;
+      }
+
+      .panda-tablet-badge {
+        margin-top: 14px;
+        font-size: 15px;
+        padding: 10px 15px;
+        border-radius: 17px;
+      }
+
+      .panda-components {
+        margin-top: 36px;
+      }
+
+      .panda-components-title {
+        font-size: 24px;
+      }
+
+      .panda-components-subtitle {
+        font-size: 14px;
+      }
+
+      .panda-component {
+        border-radius: 19px;
+        padding: 19px 15px;
+      }
+
+      .panda-component-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 16px;
+        font-size: 27px;
+      }
+
+      .panda-component-title {
+        font-size: 18px;
+      }
+
+      .panda-component-text {
+        font-size: 14px;
+      }
+
+      .panda-solution-contents-final {
+        margin-top: 26px;
+        padding: 11px 17px;
+        font-size: 15px;
+        border-radius: 18px;
+      }
+
+      .panda-solution-contents-math {
+        font-size: 38px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .panda-solution-contents-title {
+        font-size: 27px;
+      }
+
+      .panda-solution-contents-subtitle {
+        font-size: 15px;
+      }
+    }
+  </style>
+
+  <div class="panda-solution-contents-bg">
+    <div class="panda-solution-contents-math one">7 × 8 = 56</div>
+    <div class="panda-solution-contents-math two">9 × 11 = ?</div>
+    <div class="panda-solution-contents-math three">6 × 7 = 42</div>
+  </div>
+
+  <div class="panda-solution-contents-content">
+
+    <div class="panda-solution-contents-head">
+
+      <div class="panda-solution-contents-badge">
+        اتعلمها خطوة بخطوة
+      </div>
+
+      <h2 class="panda-solution-contents-title">
+        طريقة بسيطة تخلي الطفل
+        <span class="blue">يتعلم جدول الضرب بنفسه</span>
+      </h2>
+
+      <p class="panda-solution-contents-subtitle">
+        يختار عملية الضرب ويشوف الناتج قدامه
+        وبعدها يكتب الإجابة بنفسه في المجلد ويقدر يعيد التدريب مرة ورا مرة
+      </p>
+
+    </div>
+
+    <div class="panda-solution-contents-main">
+
+      <div class="panda-solution-steps">
+
+        <div class="panda-solution-step">
+
+          <div class="panda-solution-step-number">
+            1
+          </div>
+
+          <div>
+            <h3 class="panda-solution-step-title">
+              اختار الرقمين
+            </h3>
+
+            <p class="panda-solution-step-text">
+              حرّك السهمين ناحية الرقمين اللي عايز تضربهم في بعض
+              عشان تحدد عملية الضرب بنفسك
+            </p>
+          </div>
+
+        </div>
+
+        <div class="panda-solution-step">
+
+          <div class="panda-solution-step-number">
+            2
+          </div>
+
+          <div>
+            <h3 class="panda-solution-step-title">
+              شوف الناتج في النص
+            </h3>
+
+            <p class="panda-solution-step-text">
+              بعد تحديد الرقمين بيظهر الناتج في المنتصف
+              والطفل يقدر يعرف الإجابة بشكل مباشر
+            </p>
+
+            <div class="panda-solution-step-highlight">
+              لضرب الرقم في نفسه خلي السهم التاني على المربع الفاضي
+            </div>
+          </div>
+
+        </div>
+
+        <div class="panda-solution-step">
+
+          <div class="panda-solution-step-number">
+            3
+          </div>
+
+          <div>
+            <h3 class="panda-solution-step-title">
+              اكتب وامسح وكرر
+            </h3>
+
+            <p class="panda-solution-step-text">
+              اكتب الناتج في المجلد بالقلم
+              والقلم ممكن تمسح بيه وتعيد المحاولة أكتر من مرة
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="panda-product-visual">
+
+        <div>
+
+          <div class="panda-product-image-box">
+            <img
+              src="https://files.easy-orders.net/1789470403123019888.webp"
+              alt="محتويات لعبة Smart Panda لتعليم جدول الضرب"
+            >
+          </div>
+
+          <div class="panda-tablet-badge">
+            يتعلم جدول الضرب لحد
+            <strong>×11</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panda-components">
+
+      <h3 class="panda-components-title">
+        وإيه اللي موجود في الباكدج؟
+      </h3>
+
+      <p class="panda-components-subtitle">
+        كل الأدوات اللي يحتاجها الطفل عشان يبدأ التدريب فورًا
+      </p>
+
+      <div class="panda-components-grid">
+
+        <div class="panda-component">
+
+          <div class="panda-component-icon">
+            🐼
+          </div>
+
+          <h4 class="panda-component-title">
+            لعبة Smart Panda
+          </h4>
+
+          <p class="panda-component-text">
+            لتحديد الرقمين ومعرفة الناتج
+          </p>
+
+        </div>
+
+        <div class="panda-component">
+
+          <div class="panda-component-icon">
+            📁
+          </div>
+
+          <h4 class="panda-component-title">
+            المجلد
+          </h4>
+
+          <p class="panda-component-text">
+            يكتب فيه الطفل الناتج ويتدرب بنفسه
+          </p>
+
+        </div>
+
+        <div class="panda-component">
+
+          <div class="panda-component-icon">
+            🖊️
+          </div>
+
+          <h4 class="panda-component-title">
+            القلم القابل للمسح
+          </h4>
+
+          <p class="panda-component-text">
+            يكتب ويمسح ويعيد التدريب من جديد
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panda-solution-contents-final">
+      <strong>اختار</strong>
+      ·
+      <strong>احسب</strong>
+      ·
+      <strong>اكتب</strong>
+      ·
+      <strong>امسح</strong>
+      ·
+      <strong>جرّب تاني</strong>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- Original JSON block (non-HTML, preserved as metadata):
+{
+  "id": "001e497a-1184-4764-b8e4-8aaf3faf93c3",
+  "product_id": "8d8b88d3-daf9-45d9-9d0e-ddcdb2e994e5",
+  "position": 4,
+  "advanced_text": "",
+  "type": "buy_button",
+  "custom_css": "button {\n  background-color: #2878c9;\n  background-image: none;\n  color: #ffffff;\n  cursor: pointer;\n  font-size: 100%;\n  line-height: 1.5;\n  margin: 0;\n  padding: 0;\n  text-transform: uppercase;\n  border: 2px solid #ffd12f;\n  animation: buttonAnimation999 5s ease infinite;\n  border-radius: var(—Prirmitaves-Radius-pill, 999px);\n  background: #2878c9;\n}\n\nbutton:disabled {\n  cursor: default;\n}\n\nbutton:-moz-focusring {\n  outline: auto;\n}\n\nbutton svg {\n  display: block;\n}\n\nbutton[hidden] {\n  display: none;\n}\n\nbutton {\n  border-radius: 99rem;\n  border-width: 2px;\n  padding: 0.8rem 3rem;\n}\n\nbutton:hover {\n  color: #174b89;\n  border: 2px solid #ffd12f;\n  background: #ffd12f;\n}\n\n@keyframes buttonAnimation999 {\n  0% {\n    color: #ffffff;\n    border: 2px solid #ffd12f;\n    background: #2878c9;\n  }\n\n  50% {\n    color: #174b89;\n    border: 2px solid #ffd12f;\n    background: #ffd12f;\n  }\n\n  100% {\n    color: #ffffff;\n    border: 2px solid #ffd12f;\n    background: #2878c9;\n  }\n}",
+  "title_color": "#000000",
+  "description_color": "#000000",
+  "buy_button": {
+    "id": "29047531-2479-41a9-a4e1-aa76b23a0122",
+    "text": "أطلب دلوقتي",
+    "bg_color": "#000000",
+    "product_feature_id": "001e497a-1184-4764-b8e4-8aaf3faf93c3"
+  },
+  "faqs": [],
+  "social_reviews": []
+}
+-->
+
+
+<section class="panda-comparison-section" dir="rtl">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500;600;700;800;900&display=swap');
+
+    .panda-comparison-section {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 75px 40px 80px;
+      background:
+        radial-gradient(circle at 8% 18%, rgba(37, 99, 235, 0.10), transparent 23%),
+        radial-gradient(circle at 92% 80%, rgba(255, 220, 55, 0.15), transparent 25%),
+        #f8fcff;
+      font-family: 'Tajawal', sans-serif;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .panda-comparison-section * {
+      box-sizing: border-box;
+    }
+
+    .panda-comparison-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .panda-comparison-math {
+      position: absolute;
+      font-size: 52px;
+      font-weight: 900;
+      white-space: nowrap;
+      direction: ltr;
+      unicode-bidi: isolate;
+      opacity: 0.05;
+      color: #2563eb;
+    }
+
+    .panda-comparison-math.one {
+      top: 7%;
+      left: 4%;
+      transform: rotate(-8deg);
+    }
+
+    .panda-comparison-math.two {
+      bottom: 7%;
+      right: 4%;
+      transform: rotate(7deg);
+      color: #16a34a;
+    }
+
+    .panda-comparison-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+
+    .panda-comparison-head {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .panda-comparison-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.08);
+    }
+
+    .panda-comparison-title {
+      margin: 0;
+      font-size: clamp(31px, 4vw, 48px);
+      line-height: 1.3;
+      font-weight: 900;
+      color: #172033;
+    }
+
+    .panda-comparison-title .blue {
+      color: #2563eb;
+    }
+
+    .panda-comparison-subtitle {
+      max-width: 850px;
+      margin: 17px auto 0;
+      font-size: 19px;
+      line-height: 1.9;
+      font-weight: 600;
+      color: #667085;
+    }
+
+    .panda-comparison-table-wrap {
+      width: 100%;
+      background: #ffffff;
+      border: 2px solid #edf1f7;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(31, 41, 55, 0.08);
+    }
+
+    .panda-comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .panda-comparison-table th,
+    .panda-comparison-table td {
+      width: 50%;
+      padding: 22px 28px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .panda-comparison-table thead th {
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .panda-comparison-old-head {
+      background: #fff1f1;
+      color: #c62828;
+      border-left: 1px solid #f2dddd;
+    }
+
+    .panda-comparison-new-head {
+      background: #eaf2ff;
+      color: #2563eb;
+    }
+
+    .panda-comparison-table tbody tr {
+      border-top: 1px solid #edf1f7;
+    }
+
+    .panda-comparison-table tbody td {
+      font-size: 17px;
+      line-height: 1.7;
+      font-weight: 700;
+      color: #455066;
+    }
+
+    .panda-comparison-table tbody td:first-child {
+      background: #fffdfd;
+      border-left: 1px solid #edf1f7;
+    }
+
+    .panda-comparison-table tbody td:last-child {
+      background: #fcfdff;
+    }
+
+    .panda-comparison-old-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      color: #6e737d;
+    }
+
+    .panda-comparison-new-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      color: #2563eb;
+    }
+
+    .panda-comparison-old-icon {
+      color: #dc3838;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .panda-comparison-new-icon {
+      color: #16a34a;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .panda-comparison-final {
+      margin: 36px auto 0;
+      width: fit-content;
+      max-width: 100%;
+      padding: 15px 25px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #eff6ff, #fff8d9);
+      color: #172033;
+      font-size: 19px;
+      line-height: 1.6;
+      font-weight: 900;
+      text-align: center;
+      box-shadow: 0 8px 22px rgba(37, 99, 235, 0.07);
+    }
+
+    .panda-comparison-final strong {
+      color: #2563eb;
+    }
+
+    @media (max-width: 800px) {
+      .panda-comparison-section {
+        padding: 58px 20px 65px;
+      }
+
+      .panda-comparison-head {
+        margin-bottom: 32px;
+      }
+
+      .panda-comparison-table-wrap {
+        border-radius: 22px;
+      }
+
+      .panda-comparison-table th,
+      .panda-comparison-table td {
+        padding: 18px 14px;
+      }
+
+      .panda-comparison-table thead th {
+        font-size: 19px;
+      }
+
+      .panda-comparison-table tbody td {
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      .panda-comparison-old-icon,
+      .panda-comparison-new-icon {
+        font-size: 17px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .panda-comparison-section {
+        padding: 52px 14px 58px;
+      }
+
+      .panda-comparison-badge {
+        font-size: 14px;
+        padding: 8px 15px;
+      }
+
+      .panda-comparison-title {
+        font-size: 30px;
+      }
+
+      .panda-comparison-subtitle {
+        font-size: 16px;
+        line-height: 1.8;
+        margin-top: 14px;
+      }
+
+      .panda-comparison-table-wrap {
+        border-radius: 19px;
+      }
+
+      .panda-comparison-table th,
+      .panda-comparison-table td {
+        padding: 14px 9px;
+      }
+
+      .panda-comparison-table thead th {
+        font-size: 16px;
+      }
+
+      .panda-comparison-table tbody td {
+        font-size: 13.5px;
+      }
+
+      .panda-comparison-old-cell,
+      .panda-comparison-new-cell {
+        gap: 5px;
+      }
+
+      .panda-comparison-final {
+        margin-top: 26px;
+        padding: 11px 17px;
+        font-size: 16px;
+        border-radius: 18px;
+      }
+
+      .panda-comparison-math {
+        font-size: 38px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .panda-comparison-title {
+        font-size: 27px;
+      }
+
+      .panda-comparison-subtitle {
+        font-size: 15px;
+      }
+
+      .panda-comparison-table thead th {
+        font-size: 15px;
+      }
+
+      .panda-comparison-table tbody td {
+        font-size: 12.5px;
+      }
+
+      .panda-comparison-final {
+        font-size: 15px;
+      }
+    }
+  </style>
+
+  <div class="panda-comparison-bg">
+    <div class="panda-comparison-math one">7 × 8 = 56</div>
+    <div class="panda-comparison-math two">9 × 11 = ?</div>
+  </div>
+
+  <div class="panda-comparison-content">
+
+    <div class="panda-comparison-head">
+
+      <div class="panda-comparison-badge">
+        الفرق بيبان في طريقة التعلم
+      </div>
+
+      <h2 class="panda-comparison-title">
+        جدول الضرب بالطريقة التقليدية
+        <span class="blue">ولا بطريقة Smart Panda؟</span>
+      </h2>
+
+      <p class="panda-comparison-subtitle">
+        نفس الهدف لكن تجربة التعلم مختلفة
+        الطفل بدل ما يعتمد على الحفظ بس يبدأ يحسب ويجرب ويكتب بنفسه
+      </p>
+
+    </div>
+
+    <div class="panda-comparison-table-wrap">
+
+      <table class="panda-comparison-table">
+
+        <thead>
+          <tr>
+            <th class="panda-comparison-old-head">
+              الطريقة التقليدية
+            </th>
+
+            <th class="panda-comparison-new-head">
+              Smart Panda
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>
+              <div class="panda-comparison-old-cell">
+                <span class="panda-comparison-old-icon">✕</span>
+                حفظ وتلقين
+              </div>
+            </td>
+
+            <td>
+              <div class="panda-comparison-new-cell">
+                <span class="panda-comparison-new-icon">✓</span>
+                تعلم بالممارسة
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="panda-comparison-old-cell">
+                <span class="panda-comparison-old-icon">✕</span>
+                تكرار الأرقام
+              </div>
+            </td>
+
+            <td>
+              <div class="panda-comparison-new-cell">
+                <span class="panda-comparison-new-icon">✓</span>
+                الطفل يختار العملية بنفسه
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="panda-comparison-old-cell">
+                <span class="panda-comparison-old-icon">✕</span>
+                الطفل يحفظ الإجابة
+              </div>
+            </td>
+
+            <td>
+              <div class="panda-comparison-new-cell">
+                <span class="panda-comparison-new-icon">✓</span>
+                الطفل يكتشف الناتج بنفسه
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="panda-comparison-old-cell">
+                <span class="panda-comparison-old-icon">✕</span>
+                مذاكرة مملة
+              </div>
+            </td>
+
+            <td>
+              <div class="panda-comparison-new-cell">
+                <span class="panda-comparison-new-icon">✓</span>
+                تعلم في شكل لعبة
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="panda-comparison-old-cell">
+                <span class="panda-comparison-old-icon">✕</span>
+                يذاكر ثم يعيد الحفظ
+              </div>
+            </td>
+
+            <td>
+              <div class="panda-comparison-new-cell">
+                <span class="panda-comparison-new-icon">✓</span>
+                يكتب ويمسح ويعيد المحاولة
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="panda-comparison-old-cell">
+                <span class="panda-comparison-old-icon">✕</span>
+                الاعتماد على التلقين
+              </div>
+            </td>
+
+            <td>
+              <div class="panda-comparison-new-cell">
+                <span class="panda-comparison-new-icon">✓</span>
+                تدريب عملي لحد ×11
+              </div>
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <div class="panda-comparison-final">
+      بدل ما يحفظ جدول الضرب وخلاص
+      <strong>خليه يفهمه ويتدرب عليه بنفسه</strong>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="panda-final-cta-section" dir="rtl">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500;600;700;800;900&display=swap');
+
+    .panda-final-cta-section {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 80px 40px 85px;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.14), transparent 24%),
+        radial-gradient(circle at 90% 78%, rgba(255, 220, 55, 0.18), transparent 26%),
+        radial-gradient(circle at 50% 100%, rgba(22, 163, 74, 0.06), transparent 24%),
+        #f8fcff;
+      font-family: 'Tajawal', sans-serif;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .panda-final-cta-section * {
+      box-sizing: border-box;
+    }
+
+    .panda-final-cta-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .panda-final-math {
+      position: absolute;
+      font-size: 58px;
+      font-weight: 900;
+      white-space: nowrap;
+      direction: ltr;
+      unicode-bidi: isolate;
+      opacity: 0.05;
+      color: #2563eb;
+    }
+
+    .panda-final-math.one {
+      top: 8%;
+      left: 4%;
+      transform: rotate(-8deg);
+    }
+
+    .panda-final-math.two {
+      bottom: 8%;
+      right: 4%;
+      transform: rotate(7deg);
+      color: #16a34a;
+    }
+
+    .panda-final-cta-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .panda-final-cta-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: #eaf2ff;
+      color: #2563eb;
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      box-shadow: 0 7px 20px rgba(37, 99, 235, 0.08);
+    }
+
+    .panda-final-cta-title {
+      margin: 0;
+      font-size: clamp(32px, 4.4vw, 52px);
+      line-height: 1.3;
+      font-weight: 900;
+      color: #172033;
+    }
+
+    .panda-final-cta-title .blue {
+      color: #2563eb;
+    }
+
+    .panda-final-cta-subtitle {
+      max-width: 820px;
+      margin: 18px auto 0;
+      font-size: 20px;
+      line-height: 1.9;
+      font-weight: 600;
+      color: #667085;
+    }
+
+    .panda-final-cta-points {
+      margin: 38px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      max-width: 900px;
+    }
+
+    .panda-final-cta-point {
+      background: rgba(255, 255, 255, 0.94);
+      border: 2px solid #edf1f7;
+      border-radius: 22px;
+      padding: 22px 18px;
+      box-shadow: 0 10px 28px rgba(31, 41, 55, 0.06);
+    }
+
+    .panda-final-cta-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 13px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      background: #fff6ca;
+    }
+
+    .panda-final-cta-point:nth-child(2) .panda-final-cta-icon {
+      background: #eaf2ff;
+    }
+
+    .panda-final-cta-point:nth-child(3) .panda-final-cta-icon {
+      background: #e8f7ec;
+    }
+
+    .panda-final-cta-point-title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 900;
+      color: #172033;
+    }
+
+    .panda-final-cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 250px;
+      margin-top: 38px;
+      padding: 17px 34px;
+      border-radius: 14px;
+      border: none;
+      background: #2563eb;
+      color: #ffffff;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 21px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.22);
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .panda-final-cta-button:hover {
+      transform: translateY(-4px);
+      background: #1d4ed8;
+      box-shadow: 0 16px 34px rgba(37, 99, 235, 0.28);
+    }
+
+    .panda-final-cta-button:active {
+      transform: translateY(-1px);
+    }
+
+    .panda-final-cta-note {
+      margin: 18px auto 0;
+      font-size: 16px;
+      font-weight: 700;
+      color: #737b8c;
+    }
+
+    @media (max-width: 850px) {
+      .panda-final-cta-section {
+        padding: 65px 25px 70px;
+      }
+
+      .panda-final-cta-points {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+
+      .panda-final-cta-point {
+        padding: 20px 18px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .panda-final-cta-section {
+        padding: 52px 14px 58px;
+      }
+
+      .panda-final-cta-badge {
+        font-size: 14px;
+        padding: 8px 15px;
+      }
+
+      .panda-final-cta-title {
+        font-size: 30px;
+      }
+
+      .panda-final-cta-subtitle {
+        font-size: 16px;
+        line-height: 1.8;
+        margin-top: 14px;
+      }
+
+      .panda-final-cta-points {
+        margin-top: 28px;
+        gap: 14px;
+      }
+
+      .panda-final-cta-point {
+        border-radius: 19px;
+        padding: 18px 15px;
+      }
+
+      .panda-final-cta-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 16px;
+        font-size: 27px;
+      }
+
+      .panda-final-cta-point-title {
+        font-size: 17px;
+      }
+
+      .panda-final-cta-button {
+        width: 100%;
+        min-width: 0;
+        margin-top: 28px;
+        padding: 15px 24px;
+        font-size: 19px;
+      }
+
+      .panda-final-cta-note {
+        font-size: 15px;
+      }
+
+      .panda-final-math {
+        font-size: 38px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .panda-final-cta-title {
+        font-size: 27px;
+      }
+
+      .panda-final-cta-subtitle {
+        font-size: 15px;
+      }
+
+      .panda-final-cta-button {
+        font-size: 18px;
+      }
+    }
+  </style>
+
+  <div class="panda-final-cta-bg">
+    <div class="panda-final-math one">8 × 7 = 56</div>
+    <div class="panda-final-math two">9 × 11 = ?</div>
+  </div>
+
+  <div class="panda-final-cta-content">
+
+    <div class="panda-final-cta-badge">
+      وقت التعلم ممكن يبقى ممتع
+    </div>
+
+    <h2 class="panda-final-cta-title">
+      خلي طفلك يتعلم جدول الضرب
+      <span class="blue">بالممارسة واللعب</span>
+    </h2>
+
+    <p class="panda-final-cta-subtitle">
+      مع Smart Panda الطفل مش بس يشوف الإجابة
+      لكنه يختار العملية ويعرف الناتج ويكتب بنفسه ويعيد التجربة مرة ورا مرة
+    </p>
+
+    <div class="panda-final-cta-points">
+
+      <div class="panda-final-cta-point">
+        <div class="panda-final-cta-icon">🐼</div>
+        <h3 class="panda-final-cta-point-title">
+          يتدرب على جدول الضرب لحد ×11
+        </h3>
+      </div>
+
+      <div class="panda-final-cta-point">
+        <div class="panda-final-cta-icon">✍️</div>
+        <h3 class="panda-final-cta-point-title">
+          يكتب ويمسح ويعيد المحاولة
+        </h3>
+      </div>
+
+      <div class="panda-final-cta-point">
+        <div class="panda-final-cta-icon">🧠</div>
+        <h3 class="panda-final-cta-point-title">
+          يتعلم من خلال التجربة بنفسه
+        </h3>
+      </div>
+
+    </div>
+
+    <button
+      type="button"
+      class="panda-final-cta-button"
+      onclick="(function(){var form=document.querySelector('.product_form_checkout');if(form){form.scrollIntoView({behavior:'smooth',block:'center'});}})()"
+    >
+      اطلب Smart Panda دلوقتي
+    </button>
+
+    <div class="panda-final-cta-note">
+      خليه يتعلم جدول الضرب بطريقة أسهل وأمتع
+    </div>
+
+  </div>
+
+</section>
+</body>
+</html>

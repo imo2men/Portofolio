@@ -1,0 +1,1348 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Converted JSON</title>
+</head>
+<body>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800;900&display=swap');
+
+.lk-page,
+.lk-page *{
+  box-sizing:border-box;
+}
+
+.lk-page{
+  direction:rtl !important;
+  font-family:'Cairo',sans-serif !important;
+  width:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  color:#171717;
+  background:#fff;
+  overflow:visible !important;
+  text-align:center !important;
+}
+
+.lk-container{
+  width:min(1100px,calc(100vw - 40px)) !important;
+  max-width:1100px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  padding:0 !important;
+}
+
+
+/* HERO */
+
+.lk-hero{
+  width:100vw !important;
+  max-width:none !important;
+  margin-left:calc((100% - 100vw) / 2) !important;
+  margin-right:calc((100% - 100vw) / 2) !important;
+  background:linear-gradient(180deg,#fafafa 0%,#ffffff 100%);
+  padding:35px 0 55px !important;
+  text-align:center !important;
+}
+
+.lk-tag{
+  display:inline-block;
+  background:#111;
+  color:#fff;
+  padding:7px 18px;
+  border-radius:30px;
+  font-size:14px;
+  font-weight:800;
+  margin-bottom:18px;
+}
+
+.lk-title{
+  width:100%;
+  max-width:850px;
+  margin:0 auto 16px !important;
+  font-size:clamp(30px,5vw,52px);
+  line-height:1.35;
+  font-weight:900;
+  text-align:center !important;
+}
+
+.lk-title span{
+  color:#e30613;
+}
+
+.lk-sub{
+  width:100%;
+  max-width:760px;
+  margin:0 auto 25px !important;
+  font-size:clamp(17px,2.5vw,21px);
+  font-weight:600;
+  line-height:1.9;
+  color:#555;
+  text-align:center !important;
+}
+
+.lk-main-img{
+  width:100%;
+  max-width:650px;
+  height:auto;
+  display:block !important;
+  margin:25px auto !important;
+  border-radius:18px;
+}
+
+.lk-old-price{
+  margin:5px auto 0 !important;
+  color:#777;
+  font-size:22px;
+  line-height:1.2;
+  font-weight:800;
+  text-decoration:line-through;
+  text-decoration-thickness:2px;
+}
+
+.lk-price{
+  margin:4px auto 8px !important;
+  font-size:38px;
+  font-weight:900;
+  color:#e30613;
+  text-align:center !important;
+}
+
+.lk-free{
+  display:inline-block;
+  background:#16833f;
+  color:#fff;
+  padding:8px 20px;
+  border-radius:30px;
+  font-size:15px;
+  font-weight:800;
+}
+
+.lk-hero-cta{
+  display:block !important;
+  width:min(430px,100%);
+  margin:18px auto 0 !important;
+  padding:16px 22px;
+  background:#e30613;
+  color:#fff !important;
+  border:none;
+  border-radius:10px;
+  font-family:'Cairo',sans-serif !important;
+  font-size:20px;
+  font-weight:900;
+  text-align:center !important;
+  cursor:pointer;
+  box-shadow:0 8px 22px rgba(227,6,19,.22);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+
+.lk-hero-cta:hover{
+  transform:translateY(-2px);
+}
+
+
+/* GENERAL */
+
+.lk-section{
+  width:100vw !important;
+  max-width:none !important;
+  margin-left:calc((100% - 100vw) / 2) !important;
+  margin-right:calc((100% - 100vw) / 2) !important;
+  padding:55px 0 !important;
+  text-align:center !important;
+}
+
+.lk-heading{
+  width:100%;
+  max-width:900px;
+  margin:0 auto 14px !important;
+  font-size:clamp(26px,4vw,38px);
+  line-height:1.4;
+  font-weight:900;
+  text-align:center !important;
+}
+
+.lk-heading span{
+  color:#e30613;
+}
+
+.lk-desc{
+  width:100%;
+  max-width:760px;
+  margin:0 auto 30px !important;
+  color:#666;
+  font-size:17px;
+  line-height:1.9;
+  text-align:center !important;
+}
+
+
+/* PROBLEM */
+
+.lk-problem{
+  background:#111;
+  color:#fff;
+}
+
+.lk-problem .lk-desc{
+  color:#ddd;
+}
+
+.lk-problem-grid{
+  width:100%;
+  max-width:850px;
+  margin:30px auto !important;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+
+.lk-problem-card{
+  width:100%;
+  background:#1d1d1d;
+  border:1px solid #333;
+  border-radius:12px;
+  padding:20px;
+  font-size:16px;
+  font-weight:800;
+  text-align:center !important;
+}
+
+.lk-problem-end{
+  width:100%;
+  max-width:750px;
+  margin:25px auto 0 !important;
+  font-size:20px;
+  line-height:1.9;
+  font-weight:900;
+  text-align:center !important;
+}
+
+
+/* SOLUTION */
+
+.lk-solution{
+  background:#fff;
+}
+
+.lk-image{
+  width:100%;
+  max-width:850px;
+  height:auto;
+  display:block !important;
+  margin:30px auto 0 !important;
+  border-radius:16px;
+}
+
+.lk-solution-text{
+  width:100%;
+  max-width:780px;
+  margin:25px auto 0 !important;
+  font-size:18px;
+  line-height:2;
+  color:#444;
+  font-weight:600;
+  text-align:center !important;
+}
+
+
+/* FEATURES */
+
+.lk-features{
+  background:#f6f6f6;
+}
+
+.lk-features-grid{
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:15px;
+  margin:30px auto 0 !important;
+}
+
+.lk-feature{
+  width:100%;
+  background:#fff;
+  border:1px solid #e8e8e8;
+  border-radius:14px;
+  padding:24px 18px;
+  text-align:center !important;
+  min-height:115px;
+}
+
+.lk-feature h3{
+  margin:0 0 8px !important;
+  font-size:20px;
+  font-weight:900;
+  text-align:center !important;
+}
+
+.lk-feature p{
+  margin:0 !important;
+  font-size:14px;
+  line-height:1.8;
+  color:#666;
+  text-align:center !important;
+}
+
+
+/* USES */
+
+.lk-uses{
+  background:#fff;
+}
+
+
+/* DIMENSIONS */
+
+.lk-dimensions{
+  background:#111;
+  color:#fff;
+}
+
+.lk-dimensions .lk-desc{
+  color:#ddd;
+}
+
+
+/* PASSWORD */
+
+.lk-password{
+  background:#f5f5f5;
+}
+
+
+/* OFFERS */
+
+.lk-offers{
+  background:#f6f6f6;
+}
+
+.lk-offers-grid{
+  width:100%;
+  max-width:950px;
+  margin:35px auto 0 !important;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+}
+
+.lk-offer-card{
+  background:#fff;
+  border:1px solid #e5e5e5;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 8px 25px rgba(0,0,0,.05);
+  text-align:center !important;
+}
+
+.lk-offer-card.featured{
+  border:2px solid #e30613;
+}
+
+.lk-offer-badge{
+  display:inline-block;
+  background:#e30613;
+  color:#fff;
+  padding:6px 16px;
+  border-radius:30px;
+  font-size:14px;
+  font-weight:900;
+  margin-bottom:15px;
+}
+
+
+/* OFFER IMAGES */
+
+.lk-offer-images{
+  width:100%;
+  height:340px;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  gap:10px;
+  margin:0 auto 18px;
+}
+
+.lk-offer-images.single img{
+  width:100%;
+  max-width:330px;
+  max-height:340px;
+}
+
+.lk-offer-images.double img{
+  width:calc(50% - 5px);
+  max-width:220px;
+  max-height:280px;
+}
+
+.lk-offer-images img{
+  height:auto;
+  display:block;
+  border-radius:12px;
+  object-fit:contain;
+}
+
+
+/* OFFER CONTENT */
+
+.lk-offer-card h3{
+  margin:0 0 8px !important;
+  font-size:24px;
+  font-weight:900;
+}
+
+.lk-offer-old-price{
+  margin:2px 0 0 !important;
+  color:#777;
+  font-size:21px;
+  line-height:1.2;
+  font-weight:800;
+  text-decoration:line-through;
+  text-decoration-thickness:2px;
+}
+
+.lk-offer-card .lk-offer-price{
+  margin:4px 0 8px !important;
+  font-size:38px;
+  line-height:1.2;
+  color:#e30613;
+  font-weight:900;
+}
+
+.lk-offer-card .lk-offer-sub{
+  margin:0 0 6px !important;
+  font-size:15px;
+  line-height:1.8;
+  color:#666;
+}
+
+.lk-offer-card .lk-offer-shipping{
+  display:inline-block;
+  margin:5px 0 18px;
+  padding:7px 16px;
+  border-radius:30px;
+  background:#16833f;
+  color:#fff;
+  font-size:14px;
+  font-weight:800;
+}
+
+
+/* BUTTONS */
+
+.lk-offer-btn{
+  display:block;
+  width:100%;
+  margin:0 auto;
+  padding:14px 20px;
+  border-radius:10px;
+  border:none;
+  background:#e30613;
+  color:#fff !important;
+  font-family:'Cairo',sans-serif !important;
+  font-size:18px;
+  font-weight:900;
+  text-align:center;
+  cursor:pointer;
+  box-shadow:0 7px 18px rgba(227,6,19,.18);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+
+.lk-offer-btn:hover{
+  transform:translateY(-2px);
+}
+
+.lk-checkout-highlight{
+  animation:lkCheckoutPulse 1.2s ease;
+}
+
+@keyframes lkCheckoutPulse{
+
+  0%{
+    box-shadow:0 0 0 0 rgba(227,6,19,.5);
+  }
+
+  100%{
+    box-shadow:0 0 0 18px rgba(227,6,19,0);
+  }
+
+}
+
+.product_form_checkout{
+  scroll-margin-top:30px !important;
+}
+
+
+/* DESKTOP */
+
+@media(min-width:769px){
+
+  .lk-container{
+    width:min(1100px,calc(100vw - 40px)) !important;
+    max-width:1100px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+}
+
+
+/* TABLET */
+
+@media(max-width:768px){
+
+  .lk-hero,
+  .lk-section{
+    width:100vw !important;
+    margin-left:calc((100% - 100vw) / 2) !important;
+    margin-right:calc((100% - 100vw) / 2) !important;
+  }
+
+  .lk-container{
+    width:calc(100% - 30px) !important;
+    max-width:none !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  .lk-section{
+    padding:42px 0 !important;
+  }
+
+  .lk-title{
+    font-size:31px;
+  }
+
+  .lk-sub{
+    font-size:16px;
+  }
+
+  .lk-price{
+    font-size:32px;
+  }
+
+  .lk-old-price{
+    font-size:19px;
+  }
+
+  .lk-hero-cta{
+    font-size:18px;
+  }
+
+  .lk-problem-grid{
+    grid-template-columns:1fr;
+  }
+
+  .lk-offers-grid{
+    grid-template-columns:1fr;
+    max-width:520px;
+  }
+
+  .lk-offer-images{
+    height:320px;
+  }
+
+  .lk-offer-images.single img{
+    max-height:320px;
+  }
+
+  .lk-offer-images.double img{
+    max-height:250px;
+  }
+
+  .lk-features-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .lk-feature{
+    padding:20px 12px;
+  }
+
+  .lk-feature h3{
+    font-size:17px;
+  }
+
+  .lk-feature p{
+    font-size:13px;
+  }
+
+  .lk-heading{
+    font-size:27px;
+  }
+
+  .lk-solution-text{
+    font-size:16px;
+  }
+
+  .lk-offer-old-price{
+    font-size:18px;
+  }
+
+  .lk-offer-card .lk-offer-price{
+    font-size:34px;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+  .lk-container{
+    width:calc(100% - 24px) !important;
+  }
+
+  .lk-features-grid{
+    grid-template-columns:1fr;
+  }
+
+  .lk-offer-images{
+    height:300px;
+  }
+
+  .lk-offer-images.single img{
+    max-height:300px;
+  }
+
+  .lk-offer-images.double img{
+    max-height:225px;
+  }
+
+  .lk-title{
+    font-size:29px;
+  }
+
+  .lk-heading{
+    font-size:25px;
+  }
+
+}
+
+</style>
+
+
+<div class="lk-page">
+
+
+  <!-- HERO -->
+
+  <section class="lk-hero">
+
+    <div class="lk-container">
+
+      <div class="lk-tag">
+        🔐 خزنة حفظ المفاتيح بكلمة سر
+      </div>
+
+      <h1 class="lk-title">
+        لسه بتخبي المفتاح
+        <span>تحت السجادة أو فوق الباب</span>
+      </h1>
+
+      <p class="lk-sub">
+        خلي مفتاحك الاحتياطي في خزنة مخصصة ليه
+        وتقدر تفتحها في ثواني بكلمة السر اللي أنت محددها
+      </p>
+
+      <img
+        class="lk-main-img"
+        src="https://files.easy-orders.net/1791367174054316101.webp"
+        alt="خزنة حفظ المفاتيح اللون الأسود"
+      >
+
+      <div class="lk-old-price">
+        700 جنيه
+      </div>
+
+      <div class="lk-price">
+        450 جنيه فقط
+      </div>
+
+      <div class="lk-free">
+        🚚 الشحن مجانا لأي مكان في مصر
+      </div>
+
+      <button
+        type="button"
+        class="lk-hero-cta"
+        data-checkout-price="450"
+      >
+        اطلب الآن
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROBLEM -->
+
+  <section class="lk-section lk-problem">
+
+    <div class="lk-container">
+
+      <h2 class="lk-heading">
+        المفتاح الاحتياطي
+        <span>دايما بيعمل مشكلة</span>
+      </h2>
+
+      <p class="lk-desc">
+        ممكن تنسى المفتاح وتلاقي نفسك واقف قدام الباب
+        ومستني حد ييجي ينقذك
+      </p>
+
+      <div class="lk-problem-grid">
+
+        <div class="lk-problem-card">
+          🔑 بتسيبه تحت السجادة أو فوق الباب
+        </div>
+
+        <div class="lk-problem-card">
+          🔍 بتخبيه في مكان سهل التخمين
+        </div>
+
+        <div class="lk-problem-card">
+          ⏳ بتضطر تستنى حد يجيبلك المفتاح
+        </div>
+
+        <div class="lk-problem-card">
+          😓 ممكن تحتاج المفتاح وماتلاقيهوش وقتها
+        </div>
+
+      </div>
+
+      <div class="lk-problem-end">
+        قبل ما تلاقي نفسك واقف ومستني حد ييجي ينقذك
+        خلي المفتاح الاحتياطي في مكان ثابت وآمن
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SOLUTION -->
+
+  <section class="lk-section lk-solution">
+
+    <div class="lk-container">
+
+      <h2 class="lk-heading">
+        الحل
+        <span>خزنة حفظ المفاتيح</span>
+      </h2>
+
+      <p class="lk-desc">
+        خزنة عملية لحفظ المفتاح الاحتياطي
+        وتوصل له في ثواني بمجرد إدخال كلمة السر
+      </p>
+
+      <img
+        class="lk-image"
+        src="https://files.easy-orders.net/1791363651484934415.webp"
+        alt="تفاصيل خزنة حفظ المفاتيح"
+      >
+
+      <p class="lk-solution-text">
+        تتثبت على الحائط
+        وتخلي مفتاحك في مكان ثابت بدل أماكن التخبية العشوائية
+        مع قفل 4 أرقام تقدر تغير كلمة السر الخاصة بيه بسهولة
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURES -->
+
+  <section class="lk-section lk-features">
+
+    <div class="lk-container">
+
+      <h2 class="lk-heading">
+        كل اللي تحتاجه
+        <span>في خزنة واحدة</span>
+      </h2>
+
+      <div class="lk-features-grid">
+
+        <div class="lk-feature">
+          <h3>4 أرقام</h3>
+          <p>اختار كلمة السر اللي تناسبك</p>
+        </div>
+
+        <div class="lk-feature">
+          <h3>تغيير كلمة السر</h3>
+          <p>تقدر تغيرها بسهولة وقت ما تحتاج</p>
+        </div>
+
+        <div class="lk-feature">
+          <h3>تثبيت على الحائط</h3>
+          <p>مكان ثابت وواضح للمفتاح الاحتياطي</p>
+        </div>
+
+        <div class="lk-feature">
+          <h3>للاستخدام الداخلي والخارجي</h3>
+          <p>مناسبة للاستخدام داخل البيت وخارجه</p>
+        </div>
+
+        <div class="lk-feature">
+          <h3>مقاومة للمطر والأتربة</h3>
+          <p>مناسبة للاستخدام في الأجواء الخارجية</p>
+        </div>
+
+        <div class="lk-feature">
+          <h3>مساحة مناسبة</h3>
+          <p>لحفظ المفاتيح وبعض البطاقات</p>
+        </div>
+
+        <div class="lk-feature">
+          <h3>سهولة التركيب</h3>
+          <p>تركيب وتشغيل بسيط بدون تعقيد</p>
+        </div>
+
+        <div class="lk-feature">
+          <h3>مشاركة المفتاح بأمان</h3>
+          <p>تقدر تدي كلمة السر لشخص تثق فيه</p>
+        </div>
+
+        <div class="lk-feature">
+          <h3>مفيدة وقت الطوارئ</h3>
+          <p>أهلك يقدروا يوصلوا للمفتاح وقت الحاجة</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- USES -->
+
+  <section class="lk-section lk-uses">
+
+    <div class="lk-container">
+
+      <h2 class="lk-heading">
+        استخدمها
+        <span>في أكتر من مكان</span>
+      </h2>
+
+      <p class="lk-desc">
+        للبيت
+        المكتب
+        الشاليه
+        أو أي مكان محتاج فيه مفتاح احتياطي
+      </p>
+
+      <img
+        class="lk-image"
+        src="https://files.easy-orders.net/1791363651366260823.webp"
+        alt="استخدامات خزنة حفظ المفاتيح"
+      >
+
+    </div>
+
+  </section>
+
+
+  <!-- DIMENSIONS -->
+
+  <section class="lk-section lk-dimensions">
+
+    <div class="lk-container">
+
+      <h2 class="lk-heading">
+        📏 المقاسات
+      </h2>
+
+      <p class="lk-desc">
+        شوف الأبعاد بالتفصيل في الصورة
+      </p>
+
+      <img
+        class="lk-image"
+        src="https://files.easy-orders.net/1791363650865992588.webp"
+        alt="مقاسات خزنة حفظ المفاتيح"
+      >
+
+    </div>
+
+  </section>
+
+
+  <!-- PASSWORD -->
+
+  <section class="lk-section lk-password">
+
+    <div class="lk-container">
+
+      <h2 class="lk-heading">
+        تقدر تغير كلمة السر
+        <span>بنفسك بسهولة</span>
+      </h2>
+
+      <p class="lk-desc">
+        🔐 كلمة السر الافتراضية 0000
+        وتقدر تغيرها للكلمة اللي تناسبك
+      </p>
+
+      <img
+        class="lk-image"
+        src="https://files.easy-orders.net/1791363651104966176.webp"
+        alt="طريقة ضبط كلمة السر"
+      >
+
+    </div>
+
+  </section>
+
+
+  <!-- OFFERS -->
+
+  <section class="lk-section lk-offers">
+
+    <div class="lk-container">
+
+      <h2 class="lk-heading">
+        اختار العرض
+        <span>اللي يناسبك</span>
+      </h2>
+
+      <p class="lk-desc">
+        👍 اختار قطعة واحدة أو وفر أكتر مع عرض القطعتين
+      </p>
+
+      <div class="lk-offers-grid">
+
+
+        <!-- ONE PIECE -->
+
+        <div class="lk-offer-card">
+
+          <div class="lk-offer-badge">
+            🔑 قطعة واحدة
+          </div>
+
+          <div class="lk-offer-images single">
+
+            <img
+              src="https://files.easy-orders.net/1791367174054316101.webp"
+              alt="خزنة مفاتيح سوداء"
+            >
+
+          </div>
+
+          <h3>
+            قطعة واحدة
+          </h3>
+
+          <div class="lk-offer-old-price">
+            700 جنيه
+          </div>
+
+          <div class="lk-offer-price">
+            450 جنيه
+          </div>
+
+          <p class="lk-offer-sub">
+            مناسبة لو محتاج خزنة واحدة للمفتاح الاحتياطي
+          </p>
+
+          <div class="lk-offer-shipping">
+            🚚 الشحن مجانا
+          </div>
+
+          <button
+            type="button"
+            class="lk-offer-btn"
+            data-checkout-price="450"
+          >
+            اطلب قطعة واحدة
+          </button>
+
+        </div>
+
+
+        <!-- TWO PIECES -->
+
+        <div class="lk-offer-card featured">
+
+          <div class="lk-offer-badge">
+            ⭐ عرض أوفر
+          </div>
+
+          <div class="lk-offer-images double">
+
+            <img
+              src="https://files.easy-orders.net/1791367174054316101.webp"
+              alt="الخزنة السوداء الأولى"
+            >
+
+            <img
+              src="https://files.easy-orders.net/1791367174054316101.webp"
+              alt="الخزنة السوداء الثانية"
+            >
+
+          </div>
+
+          <h3>
+            قطعتين
+          </h3>
+
+          <div class="lk-offer-old-price">
+            900 جنيه
+          </div>
+
+          <div class="lk-offer-price">
+            800 جنيه
+          </div>
+
+          <p class="lk-offer-sub">
+            وفر أكتر وخلي واحدة للبيت وواحدة للمكتب أو الشاليه
+          </p>
+
+          <div class="lk-offer-shipping">
+            🚚 الشحن مجانا
+          </div>
+
+          <button
+            type="button"
+            class="lk-offer-btn"
+            data-checkout-price="800"
+            data-select-two-pieces="true"
+          >
+            اطلب دلوقتي عرض القطعتين
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+</div>
+
+
+<script>
+
+(function(){
+
+  function normalizePrice(text){
+
+    if(!text){
+      return '';
+    }
+
+    return String(text)
+      .replace(/[٬,]/g,'')
+      .replace(/[^\d]/g,'');
+  }
+
+
+  function findCheckoutByPrice(targetPrice){
+
+    var target =
+      normalizePrice(targetPrice);
+
+    var checkouts =
+      document.querySelectorAll(
+        '.product_form_checkout'
+      );
+
+    for(
+      var i = 0;
+      i < checkouts.length;
+      i++
+    ){
+
+      var checkout = checkouts[i];
+
+      var totalElement =
+        checkout.querySelector(
+          '.total_price'
+        );
+
+      if(!totalElement){
+        continue;
+      }
+
+      var total =
+        normalizePrice(
+          totalElement.textContent
+        );
+
+      if(total === target){
+        return checkout;
+      }
+    }
+
+    return null;
+  }
+
+
+  function findTwoPieceRadio(){
+
+    var radios =
+      document.querySelectorAll(
+        '.radio_container'
+      );
+
+    for(
+      var i = 0;
+      i < radios.length;
+      i++
+    ){
+
+      var radio =
+        radios[i];
+
+      /*
+        ناخد النص الموجود حوالين الراديو
+        ونشوف هل ده اختيار القطعتين
+      */
+
+      var parent =
+        radio.parentElement;
+
+      var grandParent =
+        parent
+        ? parent.parentElement
+        : null;
+
+      var text = '';
+
+      if(parent){
+        text += ' ' + parent.textContent;
+      }
+
+      if(grandParent){
+        text += ' ' + grandParent.textContent;
+      }
+
+      text =
+        text
+          .replace(/\s+/g,' ')
+          .trim();
+
+
+      /*
+        بندور على مؤشرات اختيار القطعتين
+      */
+
+      var isTwoPiece =
+        text.includes('800') ||
+        text.includes('قطعتين') ||
+        text.includes('قطعتين') ||
+        text.includes('2 قطعة') ||
+        text.includes('عدد 2') ||
+        text.includes('× 2') ||
+        text.includes('x 2');
+
+      if(isTwoPiece){
+        return radio;
+      }
+
+    }
+
+    return null;
+  }
+
+
+  function selectTwoPieces(){
+
+    var radio =
+      findTwoPieceRadio();
+
+    if(!radio){
+      return false;
+    }
+
+    /*
+      click فعلي على الـ radio
+    */
+
+    radio.click();
+
+    /*
+      احتياط لو الحدث مربوط على الأب
+    */
+
+    var parent =
+      radio.parentElement;
+
+    if(parent){
+      parent.click();
+    }
+
+    return true;
+  }
+
+
+  function findCheckout(){
+
+    var checkout =
+      findCheckoutByPrice(800);
+
+    if(checkout){
+      return checkout;
+    }
+
+    return findCheckoutByPrice(450);
+  }
+
+
+  function openCheckout(targetPrice,selectTwo){
+
+    /*
+      لو عرض القطعتين
+      نختار الراديو أولا
+    */
+
+    if(selectTwo){
+
+      selectTwoPieces();
+
+      /*
+        ندي Easy Orders لحظة
+        يحدث السعر والإجمالي
+      */
+
+      setTimeout(
+        function(){
+
+          var checkout =
+            findCheckoutByPrice(
+              targetPrice
+            );
+
+          if(!checkout){
+
+            checkout =
+              findCheckout();
+          }
+
+          scrollToCheckout(
+            checkout
+          );
+
+        },
+        350
+      );
+
+      return;
+    }
+
+
+    var checkout =
+      findCheckoutByPrice(
+        targetPrice
+      );
+
+    scrollToCheckout(
+      checkout
+    );
+  }
+
+
+  function scrollToCheckout(checkout){
+
+    if(!checkout){
+
+      return;
+    }
+
+    checkout.classList.add(
+      'lk-checkout-highlight'
+    );
+
+    checkout.scrollIntoView({
+      behavior:'smooth',
+      block:'start'
+    });
+
+
+    setTimeout(
+      function(){
+
+        var nameInput =
+          checkout.querySelector(
+            'input[name="full_name"]'
+          );
+
+        if(nameInput){
+
+          nameInput.focus({
+            preventScroll:true
+          });
+
+        }
+
+      },
+      700
+    );
+
+
+    setTimeout(
+      function(){
+
+        checkout.classList.remove(
+          'lk-checkout-highlight'
+        );
+
+      },
+      1800
+    );
+
+  }
+
+
+  document.addEventListener(
+    'click',
+    function(event){
+
+      var button =
+        event.target.closest(
+          '[data-checkout-price]'
+        );
+
+      if(!button){
+        return;
+      }
+
+      event.preventDefault();
+
+      var price =
+        button.getAttribute(
+          'data-checkout-price'
+        );
+
+      var selectTwo =
+        button.getAttribute(
+          'data-select-two-pieces'
+        ) === 'true';
+
+
+      openCheckout(
+        price,
+        selectTwo
+      );
+
+    }
+  );
+
+})();
+
+</script>
+</body>
+</html>

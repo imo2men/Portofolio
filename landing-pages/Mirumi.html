@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mirumi</title>
+</head>
+<body>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@800&display=swap');
+
+  .mirumi-header {
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    background: #ffffff;
+    font-family: 'Cairo', Arial, sans-serif;
+    direction: rtl;
+    overflow: hidden;
+  }
+
+  .mirumi-news-bar {
+    width: 100%;
+    height: 48px;
+    background: #D96C82;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mirumi-news-item {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%) translateX(110vw);
+
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.3;
+    white-space: nowrap;
+    text-align: center;
+
+    animation: mirumiNews 12s ease-in-out infinite;
+  }
+
+  .mirumi-news-item:nth-child(2) {
+    animation-delay: 2.4s;
+  }
+
+  .mirumi-news-item:nth-child(3) {
+    animation-delay: 4.8s;
+  }
+
+  .mirumi-news-item:nth-child(4) {
+    animation-delay: 7.2s;
+  }
+
+  .mirumi-news-item:nth-child(5) {
+    animation-delay: 9.6s;
+  }
+
+  @keyframes mirumiNews {
+
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) translateX(110vw);
+    }
+
+    6% {
+      opacity: 1;
+      transform: translate(-50%, -50%) translateX(0);
+    }
+
+    18% {
+      opacity: 1;
+      transform: translate(-50%, -50%) translateX(0);
+    }
+
+    24% {
+      opacity: 0;
+      transform: translate(-50%, -50%) translateX(-110vw);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) translateX(-110vw);
+    }
+  }
+
+  @media (max-width: 767px) {
+
+    .mirumi-news-bar {
+      height: 44px;
+    }
+
+    .mirumi-news-item {
+      font-size: 16px;
+      max-width: calc(100% - 20px);
+    }
+  }
+</style>
+
+<header class="mirumi-header">
+
+  <div class="mirumi-news-bar">
+
+    <div class="mirumi-news-item">
+      عرض لفترة محدودة جدا
+    </div>
+
+    <div class="mirumi-news-item">
+      الشحن ب 60 ج لأي مكان في مصر
+    </div>
+
+    <div class="mirumi-news-item">
+      خصم 680 ج
+    </div>
+
+    <div class="mirumi-news-item">
+      الدفع عند الاستلام
+    </div>
+
+    <div class="mirumi-news-item">
+      التوصيل من 3 لـ 5 أيام
+    </div>
+
+  </div>
+
+</header>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@800&display=swap');
+
+  :root {
+    --mirumi-pink: #D96C82;
+    --mirumi-soft-pink: #F8D7DE;
+    --mirumi-bg: #FFF9F5;
+    --mirumi-text: #222222;
+    --mirumi-muted: #555555;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .mirumi-hero {
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+
+    height: calc(100svh - 135px);
+    min-height: 560px;
+
+    background: var(--mirumi-bg);
+    overflow: hidden;
+    direction: rtl;
+    font-family: 'Cairo', Arial, sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mirumi-hero * {
+    font-family: 'Cairo', Arial, sans-serif;
+  }
+
+  .mirumi-hero-inner {
+    width: 100%;
+    max-width: 1500px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 25px 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+  }
+
+  .mirumi-hero-image {
+    width: 52%;
+    height: 100%;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+  }
+
+  .mirumi-hero-image img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 90%;
+    object-fit: contain;
+  }
+
+  .mirumi-hero-content {
+    width: 48%;
+    max-width: 650px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    flex-shrink: 0;
+  }
+
+  .mirumi-title-wrap {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 30px;
+    padding: 55px 70px;
+  }
+
+  .mirumi-title-main {
+    margin: 0;
+
+    color: var(--mirumi-pink);
+
+    font-size: clamp(58px, 6vw, 88px);
+    line-height: 1.05;
+    font-weight: 800;
+
+    text-shadow:
+      0 5px 14px rgba(217, 108, 130, 0.14);
+  }
+
+  .mirumi-title-small {
+    position: absolute;
+    top: 0;
+    right: 10px;
+
+    color: var(--mirumi-text);
+
+    font-size: clamp(24px, 2.3vw, 34px);
+    line-height: 1.1;
+    font-weight: 800;
+
+    white-space: nowrap;
+  }
+
+  .mirumi-title-last {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+
+    color: var(--mirumi-text);
+
+    font-size: clamp(24px, 2.3vw, 34px);
+    line-height: 1.1;
+    font-weight: 800;
+
+    white-space: nowrap;
+  }
+
+  .mirumi-hero-offer {
+    display: inline-block;
+
+    margin: 0 0 18px;
+    padding: 10px 26px;
+
+    background: var(--mirumi-soft-pink);
+    color: var(--mirumi-pink);
+
+    border-radius: 999px;
+
+    font-size: clamp(22px, 2vw, 30px);
+    line-height: 1.4;
+    font-weight: 800;
+
+    white-space: nowrap;
+  }
+
+  .mirumi-hero-discount {
+    margin: 0;
+
+    color: var(--mirumi-muted);
+
+    font-size: clamp(24px, 2.3vw, 34px);
+    line-height: 1.5;
+    font-weight: 800;
+
+    white-space: nowrap;
+  }
+
+  .mirumi-hero-discount strong {
+    color: var(--mirumi-pink);
+    font-weight: 800;
+  }
+
+  /* الكمبيوتر */
+
+  @media (min-width: 992px) {
+
+    .mirumi-hero {
+      height: calc(100svh - 135px);
+      min-height: 560px;
+    }
+
+    .mirumi-hero-inner {
+      width: 100%;
+      max-width: 1500px;
+      padding: 25px 70px;
+      gap: 80px;
+    }
+
+    .mirumi-hero-image {
+      width: 52%;
+    }
+
+    .mirumi-hero-content {
+      width: 48%;
+    }
+
+    .mirumi-hero-image img {
+      max-height: 90%;
+      max-width: 100%;
+    }
+
+    .mirumi-title-wrap {
+      padding: 58px 82px;
+    }
+
+    .mirumi-title-small {
+      top: 2px;
+      right: 14px;
+      font-size: 30px;
+    }
+
+    .mirumi-title-last {
+      bottom: 2px;
+      left: 14px;
+      font-size: 30px;
+    }
+  }
+
+  /* الموبايل */
+
+  @media (max-width: 991px) {
+
+    .mirumi-hero {
+      width: 100vw !important;
+      max-width: none !important;
+      margin-left: calc(50% - 50vw) !important;
+      margin-right: calc(50% - 50vw) !important;
+
+      height: calc(100svh - 125px);
+      min-height: 600px;
+
+      border-radius: 24px;
+    }
+
+    .mirumi-hero-inner {
+      width: 100%;
+      max-width: none;
+
+      flex-direction: column;
+      justify-content: center;
+
+      gap: 12px;
+
+      padding: 20px 16px;
+    }
+
+    .mirumi-hero-image {
+      width: 100%;
+      height: 56%;
+      order: 1;
+    }
+
+    .mirumi-hero-image img {
+      width: auto;
+      max-width: 90%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .mirumi-hero-content {
+      width: 100%;
+      max-width: none;
+      height: 44%;
+      order: 2;
+    }
+
+    .mirumi-title-wrap {
+      margin-bottom: 20px;
+      padding: 40px 55px;
+    }
+
+    .mirumi-title-main {
+      font-size: 58px;
+    }
+
+    .mirumi-title-small {
+      top: 0;
+      right: 8px;
+      font-size: 20px;
+    }
+
+    .mirumi-title-last {
+      bottom: 0;
+      left: 8px;
+      font-size: 20px;
+    }
+
+    .mirumi-hero-offer {
+      font-size: 20px;
+      padding: 8px 18px;
+      margin-bottom: 10px;
+    }
+
+    .mirumi-hero-discount {
+      font-size: 21px;
+      white-space: normal;
+      max-width: 100%;
+      line-height: 1.45;
+    }
+
+    .mirumi-hero-discount .mobile-line {
+      display: block;
+    }
+  }
+
+  /* الموبايلات الصغيرة */
+
+  @media (max-width: 400px) {
+
+    .mirumi-hero {
+      height: calc(100svh - 115px);
+      min-height: 560px;
+    }
+
+    .mirumi-hero-inner {
+      padding: 15px 12px;
+      gap: 8px;
+    }
+
+    .mirumi-hero-image {
+      height: 53%;
+    }
+
+    .mirumi-hero-content {
+      height: 47%;
+    }
+
+    .mirumi-hero-image img {
+      max-width: 88%;
+      max-height: 100%;
+    }
+
+    .mirumi-title-wrap {
+      padding: 34px 46px;
+    }
+
+    .mirumi-title-main {
+      font-size: 52px;
+    }
+
+    .mirumi-title-small {
+      top: 0;
+      right: 6px;
+      font-size: 18px;
+    }
+
+    .mirumi-title-last {
+      bottom: 0;
+      left: 6px;
+      font-size: 18px;
+    }
+
+    .mirumi-hero-offer {
+      font-size: 17px;
+      padding: 7px 15px;
+    }
+
+    .mirumi-hero-discount {
+      font-size: 18px;
+      white-space: normal;
+      max-width: 100%;
+      line-height: 1.45;
+    }
+  }
+</style>
+
+<div class="mirumi-hero">
+
+  <div class="mirumi-hero-inner">
+
+    <div class="mirumi-hero-image">
+
+      <img
+        src="https://res.cloudinary.com/dzbiranx/image/upload/v1788190764/Mirumi.webp"
+        alt="روبوت ميرومي"
+        width="500"
+        height="500"
+        fetchpriority="high"
+        decoding="async"
+      >
+
+    </div>
+
+    <div class="mirumi-hero-content">
+
+      <div class="mirumi-title-wrap">
+
+        <div class="mirumi-title-small">
+          روبوت
+        </div>
+
+        <div class="mirumi-title-main">
+          ميرومي
+        </div>
+
+        <div class="mirumi-title-last">
+          التريند
+        </div>
+
+      </div>
+
+      <div class="mirumi-hero-offer">
+        دلوقتي في مصر
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Original JSON section retained verbatim as metadata; no HTML markup was supplied for this section:
+{
+  "id": "cbbd2946-0bcc-46fd-ae76-159e1f4a2f1a",
+  "bg_color": "#fff9f5 !important",
+  "product_id": "30cd02ea-fcab-44d6-be68-3382bc38c4c6",
+  "position": 2,
+  "advanced_text": "",
+  "type": "buy_button",
+  "custom_css": "button {\n  position: relative;\n  overflow: hidden;\n  margin: 0;\n  padding: 0.8rem 3rem;\n  width: unset !important;\n\n  border: 1px solid #C95F78;\n  border-radius: var(--Prirmitaves-Radius-lg, 8px);\n\n  background: #D96C82;\n  color: #fff;\n\n  cursor: pointer;\n\n  font-family: \"Cairo\", Arial, sans-serif !important;\n  font-size: 18px !important;\n  font-weight: 800 !important;\n  line-height: 1.5;\n\n  box-shadow:\n    0 1px 3px rgba(0,0,0,0.1),\n    0 1px 3px rgba(0,0,0,0.08);\n}\n\n/* الطبقة البيضاء تتحرك فقط */\n\nbutton::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n\n  width: 100%;\n  height: 100%;\n\n  background: #fff;\n\n  transform: translateX(-100%);\n  z-index: 1;\n\n  animation: whiteSlide 3s ease-in-out infinite;\n}\n\n/* النص البديل */\n\nbutton::after {\n  content: \"الحق العرض\";\n\n  position: absolute;\n  inset: 0;\n\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  color: #D96C82;\n\n  font-family: \"Cairo\", Arial, sans-serif !important;\n  font-size: 18px !important;\n  font-weight: 800 !important;\n\n  white-space: nowrap;\n\n  opacity: 0;\n  z-index: 2;\n\n  animation: textChange 3s ease-in-out infinite;\n}\n\n/* حركة الطبقة البيضاء فقط */\n\n@keyframes whiteSlide {\n\n  0% {\n    transform: translateX(-100%);\n  }\n\n  45% {\n    transform: translateX(-100%);\n  }\n\n  50% {\n    transform: translateX(0);\n  }\n\n  75% {\n    transform: translateX(0);\n  }\n\n  80% {\n    transform: translateX(100%);\n  }\n\n  100% {\n    transform: translateX(100%);\n  }\n\n}\n\n/* تغيير النص فقط */\n\n@keyframes textChange {\n\n  0%,\n  49% {\n    opacity: 0;\n  }\n\n  50%,\n  75% {\n    opacity: 1;\n  }\n\n  80%,\n  100% {\n    opacity: 0;\n  }\n\n}\n\n/* تثبيت الزر */\n\nbutton:hover {\n  background: #D96C82;\n  color: #fff;\n}\n\nbutton:hover::before,\nbutton:hover::after {\n  animation-play-state: paused;\n}",
+  "title_color": "#000000",
+  "description_color": "#000000",
+  "buy_button": {
+    "id": "778780ca-d475-4237-a765-b0507abbaf9b",
+    "text": "اطلب دلوقتي",
+    "bg_color": "#000000",
+    "product_feature_id": "cbbd2946-0bcc-46fd-ae76-159e1f4a2f1a"
+  },
+  "faqs": [],
+  "social_reviews": []
+}
+-->
+
+
+<!-- Original JSON section retained verbatim as metadata; no HTML markup was supplied for this section:
+{
+  "id": "9e81ff9e-a00b-48bd-815b-5b9dc2660635",
+  "product_id": "30cd02ea-fcab-44d6-be68-3382bc38c4c6",
+  "position": 3,
+  "advanced_text": "",
+  "type": "product_details_and_checkout_form",
+  "faqs": [],
+  "social_reviews": []
+}
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@800&display=swap');
+
+  .mirumi-header {
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    background: #ffffff;
+    font-family: 'Cairo', Arial, sans-serif;
+    direction: rtl;
+    overflow: hidden;
+  }
+
+  .mirumi-news-bar {
+    width: 100%;
+    height: 48px;
+    background: #D96C82;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mirumi-news-item {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%) translateX(110vw);
+
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.3;
+    white-space: nowrap;
+    text-align: center;
+
+    animation: mirumiNews 12s ease-in-out infinite;
+  }
+
+  .mirumi-news-item:nth-child(2) {
+    animation-delay: 2.4s;
+  }
+
+  .mirumi-news-item:nth-child(3) {
+    animation-delay: 4.8s;
+  }
+
+  .mirumi-news-item:nth-child(4) {
+    animation-delay: 7.2s;
+  }
+
+  .mirumi-news-item:nth-child(5) {
+    animation-delay: 9.6s;
+  }
+
+  @keyframes mirumiNews {
+
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) translateX(110vw);
+    }
+
+    6% {
+      opacity: 1;
+      transform: translate(-50%, -50%) translateX(0);
+    }
+
+    18% {
+      opacity: 1;
+      transform: translate(-50%, -50%) translateX(0);
+    }
+
+    24% {
+      opacity: 0;
+      transform: translate(-50%, -50%) translateX(-110vw);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) translateX(-110vw);
+    }
+  }
+
+  @media (max-width: 767px) {
+
+    .mirumi-news-bar {
+      height: 44px;
+    }
+
+    .mirumi-news-item {
+      font-size: 16px;
+      max-width: calc(100% - 20px);
+    }
+  }
+</style>
+
+<header class="mirumi-header">
+
+  <div class="mirumi-news-bar">
+
+    <div class="mirumi-news-item">
+      عرض لفترة محدودة جدا
+    </div>
+
+    <div class="mirumi-news-item">
+      الشحن ب 60 ج لأي مكان في مصر
+    </div>
+
+    <div class="mirumi-news-item">
+      خصم 680 ج
+    </div>
+
+    <div class="mirumi-news-item">
+      الدفع عند الاستلام
+    </div>
+
+    <div class="mirumi-news-item">
+      التوصيل من 3 لـ 5 أيام
+    </div>
+
+  </div>
+
+</header>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@800&display=swap');
+
+  .mirumi-cancel-section {
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+
+    background: #D96C82;
+    padding: 55px 20px;
+    box-sizing: border-box;
+
+    direction: rtl;
+    text-align: center;
+    font-family: 'Cairo', Arial, sans-serif;
+
+    overflow: hidden;
+  }
+
+  .mirumi-cancel-section * {
+    font-family: 'Cairo', Arial, sans-serif;
+    box-sizing: border-box;
+  }
+
+  .mirumi-cancel-title {
+    margin: 0 0 22px;
+    color: #FFF9F5;
+    font-size: clamp(34px, 4vw, 58px);
+    line-height: 1.25;
+    font-weight: 800;
+  }
+
+  .mirumi-cancel-title .labubu {
+    display: inline-block;
+    position: relative;
+  }
+
+  .mirumi-cancel-title .labubu::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 58%;
+    height: 3px;
+    background: #222222;
+    transform: rotate(-4deg);
+    transform-origin: center;
+  }
+
+  .mirumi-cancel-title .mirumi {
+    color: #222222;
+    display: inline-block;
+    margin-top: 12px;
+  }
+
+  .mirumi-cancel-subtitle {
+    margin: 0 0 35px;
+    color: #FFF9F5;
+    font-size: clamp(22px, 2.5vw, 34px);
+    line-height: 1.6;
+    font-weight: 800;
+  }
+
+  .mirumi-colors {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+
+    align-items: center;
+  }
+
+  .mirumi-color-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mirumi-color-item img {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 767px) {
+
+    .mirumi-cancel-section {
+      padding: 35px 16px;
+    }
+
+    .mirumi-cancel-title {
+      font-size: 29px;
+      margin-bottom: 16px;
+    }
+
+    .mirumi-cancel-title .labubu::after {
+      height: 2px;
+      top: 58%;
+    }
+
+    .mirumi-cancel-title .mirumi {
+      margin-top: 10px;
+    }
+
+    .mirumi-cancel-subtitle {
+      font-size: 20px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .mirumi-colors {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .mirumi-color-item img {
+      max-width: 280px;
+    }
+  }
+</style>
+
+<section class="mirumi-cancel-section">
+
+  <h2 class="mirumi-cancel-title">
+    <span class="cancel">
+      <span class="labubu">لابوبو</span> راحت عليه خلاص
+    </span>
+    <br>
+    <span class="mirumi">
+      جرب دلوقتي ميرومي🦉
+    </span>
+  </h2>
+
+  <p class="mirumi-cancel-subtitle">
+    من كوكب اليابان دلوقتي في مصر
+  </p>
+
+  <div class="mirumi-colors">
+
+    <div class="mirumi-color-item">
+      <img
+        src="https://res.cloudinary.com/dzbiranx/image/upload/v1788191389/Mirumi_Gray.webp"
+        alt="ميرومي جراي"
+        loading="lazy"
+        decoding="async"
+      >
+    </div>
+
+    <div class="mirumi-color-item">
+      <img
+        src="https://res.cloudinary.com/dzbiranx/image/upload/v1788191389/Mirumi_Pink.webp"
+        alt="ميرومي بمبي"
+        loading="lazy"
+        decoding="async"
+      >
+    </div>
+
+    <div class="mirumi-color-item">
+      <img
+        src="https://res.cloudinary.com/dzbiranx/image/upload/v1788191390/Mirumi_white.webp"
+        alt="ميرومي أوف وايت"
+        loading="lazy"
+        decoding="async"
+      >
+    </div>
+
+  </div>
+
+</section>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@800&display=swap');
+
+  .mirumi-features {
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+
+    background: #FFF9F5;
+    padding: 55px 30px;
+
+    box-sizing: border-box;
+    direction: rtl;
+
+    font-family: 'Cairo', Arial, sans-serif;
+    overflow: hidden;
+  }
+
+  .mirumi-features * {
+    box-sizing: border-box;
+    font-family: 'Cairo', Arial, sans-serif;
+  }
+
+  .mirumi-features-title {
+    margin: 0;
+    color: #222222;
+    text-align: center;
+
+    font-size: clamp(32px, 3.5vw, 48px);
+    line-height: 1.4;
+    font-weight: 800;
+  }
+
+  .mirumi-features-title .mirumi-word {
+    color: #D96C82;
+  }
+
+  .mirumi-features-subtitle {
+    margin: 4px 0 35px;
+
+    color: #222222;
+    text-align: center;
+
+    font-size: clamp(22px, 2.5vw, 32px);
+    line-height: 1.4;
+    font-weight: 800;
+  }
+
+  .mirumi-features-grid {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+  }
+
+  .mirumi-feature {
+    width: 100%;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .mirumi-feature-media {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    background: #F8D7DE;
+  }
+
+  .mirumi-feature-media video {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    background: #F8D7DE;
+  }
+
+  .mirumi-feature h3 {
+    margin: 20px 0 0;
+
+    color: #222222;
+    text-align: center;
+
+    font-size: clamp(24px, 2.3vw, 32px);
+    line-height: 1.5;
+    font-weight: 800;
+  }
+
+  @media (max-width: 767px) {
+
+    .mirumi-features {
+      padding: 35px 15px;
+    }
+
+    .mirumi-features-title {
+      font-size: 30px;
+      line-height: 1.35;
+    }
+
+    .mirumi-features-subtitle {
+      font-size: 22px;
+      margin: 3px 0 25px;
+    }
+
+    .mirumi-features-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .mirumi-feature-media {
+      border-radius: 15px;
+    }
+
+    .mirumi-feature h3 {
+      font-size: 23px;
+      margin-top: 15px;
+    }
+  }
+</style>
+
+<section class="mirumi-features">
+
+  <h2 class="mirumi-features-title">
+    اعرف اكتر عن <span class="mirumi-word">ميرومي</span>
+  </h2>
+
+  <div class="mirumi-features-subtitle">
+    فيها شوية تفاصيل هتعجبك
+  </div>
+
+  <div class="mirumi-features-grid">
+
+    <div class="mirumi-feature">
+
+      <div class="mirumi-feature-media">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        >
+          <source
+            src="https://res.cloudinary.com/dzbiranx/video/upload/v1788192633/s-665x665_10280d43-6509-489c-9242-61765588a51b.webm"
+            type="video/webm"
+          >
+        </video>
+      </div>
+
+      <h3>
+        بيغني و بيردد الصوت زي البغبغان
+      </h3>
+
+    </div>
+
+    <div class="mirumi-feature">
+
+      <div class="mirumi-feature-media">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        >
+          <source
+            src="https://res.cloudinary.com/dzbiranx/video/upload/v1788192636/s-665x665_fe11b7d9-272b-4497-bfbf-d0f0abaa1b7d.webm"
+            type="video/webm"
+          >
+        </video>
+      </div>
+
+      <h3>
+        بيتكسف لما حد يحسس على راسه
+      </h3>
+
+    </div>
+
+    <div class="mirumi-feature">
+
+      <div class="mirumi-feature-media">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        >
+          <source
+            src="https://res.cloudinary.com/dzbiranx/video/upload/v1788192489/Mirumi_1.webm"
+            type="video/webm"
+          >
+        </video>
+      </div>
+
+      <h3>
+        بيتعلق في الشنطة ويخلي شكلها شيك وكيوت
+      </h3>
+
+    </div>
+
+    <div class="mirumi-feature">
+
+      <div class="mirumi-feature-media">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        >
+          <source
+            src="https://res.cloudinary.com/dzbiranx/video/upload/v1788192012/mirumi-glances.webm"
+            type="video/webm"
+          >
+        </video>
+      </div>
+
+      <h3>
+        متوفر منه 3 ألوان تليق مع أي أوتفيت
+      </h3>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Original JSON section retained verbatim as metadata; no HTML markup was supplied for this section:
+{
+  "id": "bb81a436-3116-4b12-b905-6c8513ed3410",
+  "bg_color": "#fff9f5 !important",
+  "product_id": "30cd02ea-fcab-44d6-be68-3382bc38c4c6",
+  "position": 7,
+  "advanced_text": "",
+  "type": "buy_button",
+  "custom_css": "button {\n  position: relative;\n  overflow: hidden;\n  margin: 0;\n  padding: 0.8rem 3rem;\n  width: unset !important;\n\n  border: 1px solid #C95F78;\n  border-radius: var(--Prirmitaves-Radius-lg, 8px);\n\n  background: #D96C82;\n  color: #fff;\n\n  cursor: pointer;\n\n  font-family: \"Cairo\", Arial, sans-serif !important;\n  font-size: 18px !important;\n  font-weight: 800 !important;\n  line-height: 1.5;\n\n  box-shadow:\n    0 1px 3px rgba(0,0,0,0.1),\n    0 1px 3px rgba(0,0,0,0.08);\n}\n\n/* الطبقة البيضاء تتحرك فقط */\n\nbutton::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n\n  width: 100%;\n  height: 100%;\n\n  background: #fff;\n\n  transform: translateX(-100%);\n  z-index: 1;\n\n  animation: whiteSlide 3s ease-in-out infinite;\n}\n\n/* النص البديل */\n\nbutton::after {\n  content: \"الشحن مجانا لأي مكان في مصر\";\n\n  position: absolute;\n  inset: 0;\n\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  color: #D96C82;\n\n  font-family: \"Cairo\", Arial, sans-serif !important;\n  font-size: 18px !important;\n  font-weight: 800 !important;\n\n  white-space: nowrap;\n\n  opacity: 0;\n  z-index: 2;\n\n  animation: textChange 3s ease-in-out infinite;\n}\n\n/* حركة الطبقة البيضاء فقط */\n\n@keyframes whiteSlide {\n\n  0% {\n    transform: translateX(-100%);\n  }\n\n  45% {\n    transform: translateX(-100%);\n  }\n\n  50% {\n    transform: translateX(0);\n  }\n\n  75% {\n    transform: translateX(0);\n  }\n\n  80% {\n    transform: translateX(100%);\n  }\n\n  100% {\n    transform: translateX(100%);\n  }\n\n}\n\n/* تغيير النص فقط */\n\n@keyframes textChange {\n\n  0%,\n  49% {\n    opacity: 0;\n  }\n\n  50%,\n  75% {\n    opacity: 1;\n  }\n\n  80%,\n  100% {\n    opacity: 0;\n  }\n\n}\n\n/* تثبيت الزر */\n\nbutton:hover {\n  background: #D96C82;\n  color: #fff;\n}\n\nbutton:hover::before,\nbutton:hover::after {\n  animation-play-state: paused;\n}",
+  "title_color": "#000000",
+  "description_color": "#000000",
+  "buy_button": {
+    "id": "d23228a9-efb7-4e53-8f8d-5aac4d205f87",
+    "text": "اطلب دلوقتي",
+    "bg_color": "#000000",
+    "product_feature_id": "bb81a436-3116-4b12-b905-6c8513ed3410"
+  },
+  "faqs": [],
+  "social_reviews": []
+}
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@800&display=swap');
+
+  :root {
+    --mirumi-pink: #D96C82;
+    --mirumi-bg: #FFF9F5;
+    --mirumi-text: #222222;
+    --mirumi-white: #FFFFFF;
+    --mirumi-stars: #FFD84D;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .mirumi-reviews {
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+
+    background: var(--mirumi-pink);
+    padding: 60px 24px;
+
+    direction: rtl;
+    font-family: 'Cairo', Arial, sans-serif;
+    overflow: hidden;
+  }
+
+  .mirumi-reviews * {
+    font-family: 'Cairo', Arial, sans-serif;
+  }
+
+  .mirumi-reviews-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .mirumi-reviews-title {
+    margin: 0 0 42px;
+
+    text-align: center;
+    color: var(--mirumi-white);
+
+    font-size: clamp(36px, 4vw, 60px);
+    line-height: 1.2;
+    font-weight: 800;
+  }
+
+  .mirumi-reviews-title .mirumi-word {
+    display: inline-block;
+
+    background: var(--mirumi-white);
+    color: var(--mirumi-pink);
+
+    padding: 4px 16px 7px;
+    border-radius: 12px;
+
+    line-height: 1.1;
+  }
+
+  .mirumi-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    width: 100%;
+  }
+
+  .mirumi-review-card {
+    background: var(--mirumi-white);
+
+    border-radius: 22px;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    box-shadow:
+      0 10px 25px rgba(0, 0, 0, 0.08);
+  }
+
+  .mirumi-review-text {
+    margin: 0 0 20px;
+
+    color: var(--mirumi-text);
+
+    font-size: 20px;
+    line-height: 1.9;
+    font-weight: 800;
+  }
+
+  .mirumi-review-stars {
+    margin: 0 0 14px;
+
+    color: var(--mirumi-stars);
+
+    font-family: Arial, sans-serif !important;
+    font-size: 25px;
+    line-height: 1;
+    letter-spacing: 3px;
+  }
+
+  .mirumi-review-name {
+    margin: 0;
+
+    color: var(--mirumi-pink);
+
+    font-size: 19px;
+    line-height: 1.5;
+    font-weight: 800;
+  }
+
+  @media (max-width: 767px) {
+
+    .mirumi-reviews {
+      padding: 40px 15px;
+    }
+
+    .mirumi-reviews-title {
+      font-size: 32px;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .mirumi-reviews-title .mirumi-word {
+      padding: 3px 12px 5px;
+      border-radius: 9px;
+    }
+
+    .mirumi-reviews-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .mirumi-review-card {
+      border-radius: 18px;
+      padding: 24px 20px 25px;
+    }
+
+    .mirumi-review-text {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .mirumi-review-stars {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .mirumi-review-name {
+      font-size: 17px;
+    }
+  }
+</style>
+
+<section class="mirumi-reviews">
+
+  <div class="mirumi-reviews-inner">
+
+    <h2 class="mirumi-reviews-title">
+      اللي طلب
+      <span class="mirumi-word">ميرومي</span>
+      قال إيه عنه؟
+    </h2>
+
+    <div class="mirumi-reviews-grid">
+
+      <article class="mirumi-review-card">
+
+        <p class="mirumi-review-text">
+          تحفة وتفاصيله كيوت أوي، ممتع ومسلي في الحركة
+          وبيردد الصوت بشكل يضحك، وخامته ممتازة ❤
+        </p>
+
+        <div class="mirumi-review-stars">
+          ★★★★★
+        </div>
+
+        <p class="mirumi-review-name">
+          نانسي - الاسكندرية
+        </p>
+
+      </article>
+
+      <article class="mirumi-review-card">
+
+        <p class="mirumi-review-text">
+          حلو أوي وخاماته ممتازة جداً، حركاته وتفاعله كيوت أوي
+          عن تجربة فعلية للمنتج في الطبيعة، وبجد يستاهل 😍
+        </p>
+
+        <div class="mirumi-review-stars">
+          ★★★★★
+        </div>
+
+        <p class="mirumi-review-name">
+          اية - الاسكندرية
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@800&display=swap');
+
+  .mirumi-header {
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    background: #ffffff;
+    font-family: 'Cairo', Arial, sans-serif;
+    direction: rtl;
+    overflow: hidden;
+  }
+
+  .mirumi-news-bar {
+    width: 100%;
+    height: 48px;
+    background: #D96C82;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mirumi-news-item {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%) translateX(110vw);
+
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.3;
+    white-space: nowrap;
+    text-align: center;
+
+    animation: mirumiNews 12s ease-in-out infinite;
+  }
+
+  .mirumi-news-item:nth-child(2) {
+    animation-delay: 2.4s;
+  }
+
+  .mirumi-news-item:nth-child(3) {
+    animation-delay: 4.8s;
+  }
+
+  .mirumi-news-item:nth-child(4) {
+    animation-delay: 7.2s;
+  }
+
+  .mirumi-news-item:nth-child(5) {
+    animation-delay: 9.6s;
+  }
+
+  @keyframes mirumiNews {
+
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) translateX(110vw);
+    }
+
+    6% {
+      opacity: 1;
+      transform: translate(-50%, -50%) translateX(0);
+    }
+
+    18% {
+      opacity: 1;
+      transform: translate(-50%, -50%) translateX(0);
+    }
+
+    24% {
+      opacity: 0;
+      transform: translate(-50%, -50%) translateX(-110vw);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) translateX(-110vw);
+    }
+  }
+
+  @media (max-width: 767px) {
+
+    .mirumi-news-bar {
+      height: 44px;
+    }
+
+    .mirumi-news-item {
+      font-size: 16px;
+      max-width: calc(100% - 20px);
+    }
+  }
+</style>
+
+<header class="mirumi-header">
+
+  <div class="mirumi-news-bar">
+
+    <div class="mirumi-news-item">
+      عرض لفترة محدودة جدا
+    </div>
+
+    <div class="mirumi-news-item">
+      الشحن ب 60 ج لأي مكان في مصر
+    </div>
+
+    <div class="mirumi-news-item">
+      خصم 680 ج
+    </div>
+
+    <div class="mirumi-news-item">
+      الدفع عند الاستلام
+    </div>
+
+    <div class="mirumi-news-item">
+      التوصيل من 3 لـ 5 أيام
+    </div>
+
+  </div>
+
+</header>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@800&display=swap');
+
+  :root {
+    --mirumi-pink: #D96C82;
+    --mirumi-bg: #FFF9F5;
+    --mirumi-text: #222222;
+  }
+
+  .mirumi-faq {
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+
+    background: var(--mirumi-bg);
+    padding: 60px 20px;
+
+    direction: rtl;
+    font-family: 'Cairo', Arial, sans-serif;
+    overflow: hidden;
+  }
+
+  .mirumi-faq * {
+    box-sizing: border-box;
+    font-family: 'Cairo', Arial, sans-serif;
+  }
+
+  .mirumi-faq-inner {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .mirumi-faq-title {
+    margin: 0 0 38px;
+
+    color: var(--mirumi-text);
+    text-align: center;
+
+    font-size: clamp(32px, 4vw, 54px);
+    line-height: 1.3;
+    font-weight: 800;
+  }
+
+  .mirumi-faq-title .mirumi-word {
+    color: var(--mirumi-pink);
+  }
+
+  .mirumi-faq-item {
+    width: 100%;
+    margin-bottom: 14px;
+
+    background: var(--mirumi-pink);
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+      0 5px 14px rgba(217, 108, 130, 0.12);
+  }
+
+  .mirumi-faq-question {
+    width: 100%;
+    padding: 20px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    background: var(--mirumi-pink);
+    color: #ffffff;
+
+    border: 0;
+    cursor: pointer;
+
+    text-align: right;
+
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 800;
+  }
+
+  .mirumi-faq-question:hover {
+    background: #d6677e;
+  }
+
+  .mirumi-faq-arrow {
+    width: 18px;
+    height: 18px;
+
+    flex-shrink: 0;
+    position: relative;
+    display: block;
+
+    transition: transform 0.25s ease;
+  }
+
+  .mirumi-faq-arrow::before,
+  .mirumi-faq-arrow::after {
+    content: "";
+
+    position: absolute;
+    top: 7px;
+
+    width: 11px;
+    height: 3px;
+
+    background: #ffffff;
+    border-radius: 999px;
+  }
+
+  .mirumi-faq-arrow::before {
+    right: 7px;
+    transform: rotate(40deg);
+    transform-origin: right center;
+  }
+
+  .mirumi-faq-arrow::after {
+    left: 7px;
+    transform: rotate(-40deg);
+    transform-origin: left center;
+  }
+
+  .mirumi-faq-item.active .mirumi-faq-arrow {
+    transform: rotate(180deg);
+  }
+
+  .mirumi-faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    background: #ffffff;
+    color: var(--mirumi-text);
+
+    transition: grid-template-rows 0.3s ease;
+  }
+
+  .mirumi-faq-answer-inner {
+    min-height: 0;
+    overflow: hidden;
+
+    padding: 0 22px;
+
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: 800;
+
+    transition:
+      padding-top 0.3s ease,
+      padding-bottom 0.3s ease;
+  }
+
+  .mirumi-faq-item.active .mirumi-faq-answer {
+    grid-template-rows: 1fr;
+  }
+
+  .mirumi-faq-item.active .mirumi-faq-answer-inner {
+    padding-top: 16px;
+    padding-bottom: 18px;
+  }
+
+  .mirumi-colors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .mirumi-color-option {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .mirumi-color-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+    border: 2px solid #222222;
+  }
+
+  .mirumi-color-offwhite {
+    background: #F5F1E8;
+  }
+
+  .mirumi-color-gray {
+    background: #9B9B9B;
+  }
+
+  .mirumi-color-pink {
+    background: #E89AAA;
+  }
+
+  @media (max-width: 767px) {
+
+    .mirumi-faq {
+      padding: 40px 15px;
+    }
+
+    .mirumi-faq-title {
+      font-size: 31px;
+      margin-bottom: 25px;
+    }
+
+    .mirumi-faq-item {
+      margin-bottom: 10px;
+      border-radius: 14px;
+    }
+
+    .mirumi-faq-question {
+      padding: 16px;
+      font-size: 17px;
+      gap: 10px;
+    }
+
+    .mirumi-faq-arrow {
+      width: 18px;
+      height: 18px;
+    }
+
+    .mirumi-faq-answer-inner {
+      padding: 0 16px;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .mirumi-colors {
+      gap: 12px;
+    }
+  }
+</style>
+
+<section class="mirumi-faq">
+
+  <div class="mirumi-faq-inner">
+
+    <h2 class="mirumi-faq-title">
+      طيب لو عندك سؤال عن <span class="mirumi-word">ميرومي</span>
+    </h2>
+
+    <!-- 1 -->
+    <div class="mirumi-faq-item">
+
+      <button class="mirumi-faq-question" type="button" aria-expanded="false">
+        <span>بيشتغل إزاي وبييجي معاه إيه؟</span>
+        <span class="mirumi-faq-arrow"></span>
+      </button>
+
+      <div class="mirumi-faq-answer">
+        <div class="mirumi-faq-answer-inner">
+          بيشتغل بالشحن
+          <br>
+          ومعاه كابل USB لـ Type C
+          <br>
+          وزرار التشغيل ومكان الشحن هتلاقيهم تحت السوستة اللي تحت ميرومي
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 2 -->
+    <div class="mirumi-faq-item">
+
+      <button class="mirumi-faq-question" type="button" aria-expanded="false">
+        <span>طب أخليه يغني إزاي؟</span>
+        <span class="mirumi-faq-arrow"></span>
+      </button>
+
+      <div class="mirumi-faq-answer">
+        <div class="mirumi-faq-answer-inner">
+          في زرار في بطنه
+          <br>
+          دوس عليه وهيبدأ يغني
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 3 -->
+    <div class="mirumi-faq-item">
+
+      <button class="mirumi-faq-question" type="button" aria-expanded="false">
+        <span>بيتعلق في الشنطة إزاي؟</span>
+        <span class="mirumi-faq-arrow"></span>
+      </button>
+
+      <div class="mirumi-faq-answer">
+        <div class="mirumi-faq-answer-inner">
+          ميرومي بيتثبت في الشنطة بسهولة عن طريق سكوتش لاصق
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 4 -->
+    <div class="mirumi-faq-item">
+
+      <button class="mirumi-faq-question" type="button" aria-expanded="false">
+        <span>إيه الألوان المتوفرة؟</span>
+        <span class="mirumi-faq-arrow"></span>
+      </button>
+
+      <div class="mirumi-faq-answer">
+        <div class="mirumi-faq-answer-inner">
+
+          <div style="margin-bottom:10px;">
+            متوفر بـ 3 ألوان
+          </div>
+
+          <div class="mirumi-colors">
+
+            <span class="mirumi-color-option">
+              <i class="mirumi-color-dot mirumi-color-offwhite"></i>
+              اوف وايت
+            </span>
+
+            <span class="mirumi-color-option">
+              <i class="mirumi-color-dot mirumi-color-gray"></i>
+              جراي
+            </span>
+
+            <span class="mirumi-color-option">
+              <i class="mirumi-color-dot mirumi-color-pink"></i>
+              بينك
+            </span>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 5 -->
+    <div class="mirumi-faq-item">
+
+      <button class="mirumi-faq-question" type="button" aria-expanded="false">
+        <span> آمن على الأطفال؟ </span>
+        <span class="mirumi-faq-arrow"></span>
+      </button>
+
+      <div class="mirumi-faq-answer">
+        <div class="mirumi-faq-answer-inner">
+          آمن للأطفال الأكبر شوية كلعبة تفاعلية، ومع ميزة ترديد الصوت ممكن يشجع الطفل على التفاعل وتقليد الأصوات والكلام، مع إشراف بسيط. وبالنسبة للأطفال الصغيرين جدًا، يفضل المتابعة أثناء الاستخدام لأنه بيحتوي على بطارية وأجزاء صغيرة.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+(function () {
+  var faq = document.querySelector('.mirumi-faq');
+
+  if (!faq) return;
+
+  var questions = faq.querySelectorAll('.mirumi-faq-question');
+
+  questions.forEach(function (button) {
+
+    button.addEventListener('click', function () {
+
+      var item = button.closest('.mirumi-faq-item');
+      var isOpen = item.classList.contains('active');
+
+      faq.querySelectorAll('.mirumi-faq-item').forEach(function (otherItem) {
+        otherItem.classList.remove('active');
+
+        var otherButton = otherItem.querySelector('.mirumi-faq-question');
+
+        if (otherButton) {
+          otherButton.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      if (!isOpen) {
+        item.classList.add('active');
+        button.setAttribute('aria-expanded', 'true');
+      }
+
+    });
+
+  });
+})();
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@800&display=swap');
+
+  :root {
+    --mirumi-pink: #D96C82;
+    --mirumi-bg: #FFF9F5;
+  }
+
+  .mirumi-cta-strip {
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+
+    background: var(--mirumi-bg);
+    overflow: hidden;
+
+    direction: rtl;
+    font-family: 'Cairo', Arial, sans-serif;
+  }
+
+  .mirumi-cta-strip * {
+    box-sizing: border-box;
+    font-family: 'Cairo', Arial, sans-serif;
+  }
+
+  .mirumi-cta-fixed {
+    width: 100%;
+    min-height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: var(--mirumi-bg);
+    color: var(--mirumi-pink);
+  }
+
+  .mirumi-cta-fixed-title {
+    margin: 0;
+
+    font-size: clamp(38px, 4vw, 56px);
+    line-height: 1.15;
+    font-weight: 800;
+  }
+
+  .mirumi-cta-fixed-subtitle {
+    margin: 6px 0 0;
+
+    font-size: clamp(20px, 2vw, 28px);
+    line-height: 1.4;
+    font-weight: 800;
+  }
+
+  .mirumi-cta-fixed.is-pink {
+    background: var(--mirumi-pink);
+    color: var(--mirumi-bg);
+  }
+
+  .mirumi-cta-marquee {
+    width: 100%;
+    height: 58px;
+
+    background: var(--mirumi-pink);
+    color: var(--mirumi-bg);
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    white-space: nowrap;
+  }
+
+  .mirumi-cta-track {
+    display: flex;
+    align-items: center;
+
+    width: max-content;
+
+    animation: mirumiMarquee 8s linear infinite;
+  }
+
+  .mirumi-cta-item {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 0 28px;
+
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1;
+
+    flex-shrink: 0;
+  }
+
+  @keyframes mirumiMarquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(50%);
+    }
+  }
+
+  @media (max-width: 767px) {
+
+    .mirumi-cta-fixed {
+      min-height: 125px;
+      padding: 18px 15px;
+    }
+
+    .mirumi-cta-fixed-title {
+      font-size: 31px;
+    }
+
+    .mirumi-cta-fixed-subtitle {
+      font-size: 18px;
+      margin-top: 5px;
+    }
+
+    .mirumi-cta-marquee {
+      height: 50px;
+    }
+
+    .mirumi-cta-track {
+      animation-duration: 6s;
+    }
+
+    .mirumi-cta-item {
+      padding: 0 20px;
+      font-size: 18px;
+    }
+  }
+</style>
+
+<section class="mirumi-cta-strip">
+
+  <div class="mirumi-cta-fixed" id="mirumiCtaFixed">
+
+    <div class="mirumi-cta-fixed-title">
+      مستنيين إيه؟!
+    </div>
+
+    <div class="mirumi-cta-fixed-subtitle">
+      سجل بياناتك وإحنا هنتواصل معاك
+    </div>
+
+  </div>
+
+  <div class="mirumi-cta-marquee">
+
+    <div class="mirumi-cta-track">
+
+      <div class="mirumi-cta-item">
+        الشحن 60 
+      </div>
+
+      <div class="mirumi-cta-item">
+        التوصيل خلال 5 أيام
+      </div>
+
+      <div class="mirumi-cta-item">
+        الدفع عند الاستلام
+      </div>
+
+      <div class="mirumi-cta-item">
+        الشحن ب 60 ج لأي مكان في مصر
+      </div>
+
+      <div class="mirumi-cta-item">
+        التوصيل خلال 5 أيام
+      </div>
+
+      <div class="mirumi-cta-item">
+        الدفع عند الاستلام
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+(function () {
+  var fixed = document.getElementById('mirumiCtaFixed');
+
+  if (!fixed) return;
+
+  setInterval(function () {
+    fixed.classList.toggle('is-pink');
+  }, 500);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Mo'men Mohamed</title>
+    <meta name="description" content="Thank you for your message. I will get back to you shortly.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=League+Gothic&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <!-- Theme Initialization -->
+    <script>
+        (function () {
+            let savedTheme = 'dark';
+            try {
+                savedTheme = localStorage.getItem('theme') || 'dark';
+            } catch (e) { }
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .success-wrapper {
+            min-height: 100vh;
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            background-color: var(--bg-primary);
+        }
+        .success-card {
+            max-width: 520px;
+            width: 100%;
+            text-align: center;
+            padding: 3.5rem 2.5rem;
+            border-radius: 16px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+        }
+        .success-icon-wrap {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 1.5rem auto;
+            border-radius: 50%;
+            background: rgba(193, 59, 42, 0.12);
+            border: 1px solid rgba(193, 59, 42, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #C13B2A;
+            font-size: 2.5rem;
+        }
+        .success-title {
+            font-family: 'League Gothic', sans-serif;
+            font-size: 3.2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            line-height: 1;
+            margin: 0 0 0.75rem 0;
+        }
+        .success-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0 0 0.75rem 0;
+        }
+        .success-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.98rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0 0 2rem 0;
+        }
+        .success-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body class="success-wrapper">
+    <div class="success-card glass animate-on-scroll">
+        <div class="success-icon-wrap">
+            <i class='bx bx-check'></i>
+        </div>
+        <h1 class="success-title">Message Sent!</h1>
+        <p class="success-subtitle">Thank You for Reaching Out</p>
+        <p class="success-desc">I have received your message and will get back to you as soon as possible.</p>
+        <a href="index.html" class="btn btn-primary success-btn">
+            <i class='bx bx-arrow-back'></i> <span>Back to Portfolio</span>
+        </a>
+    </div>
+</body>
+</html>

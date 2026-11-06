@@ -1,0 +1,1808 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>macrame</title>
+</head>
+<body>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+
+#lp-macrame-page{
+  --lp-bg:#f3e8da;
+  --lp-card:#fffaf4;
+  --lp-text:#3b2a1f;
+  --lp-muted:#756456;
+  --lp-primary:#8b5e3c;
+  --lp-primary-dark:#5f3c25;
+  --lp-border:#ddcbb8;
+  --lp-soft:#ead9c7;
+  --lp-accent:#b7854b;
+  --lp-shadow:0 18px 55px rgba(76,52,34,.11);
+
+  width:100%;
+  max-width:100%;
+  margin:0 auto;
+  padding:0;
+  direction:rtl;
+  font-family:'Cairo',sans-serif;
+  color:var(--lp-text);
+  background:
+    radial-gradient(circle at 0% 0%,rgba(181,136,83,.11),transparent 28%),
+    radial-gradient(circle at 100% 100%,rgba(120,78,45,.09),transparent 30%),
+    var(--lp-bg);
+  box-sizing:border-box;
+  overflow:hidden;
+}
+
+#lp-macrame-page *,
+#lp-macrame-page *::before,
+#lp-macrame-page *::after{
+  box-sizing:border-box;
+}
+
+#lp-macrame-page img{
+  max-width:100%;
+  display:block;
+}
+
+#lp-macrame-page button,
+#lp-macrame-page input,
+#lp-macrame-page textarea,
+#lp-macrame-page select{
+  font-family:'Cairo',sans-serif;
+}
+
+#lp-macrame-page .lp-container{
+  width:min(1180px,calc(100% - 32px));
+  margin:0 auto;
+}
+
+#lp-macrame-page .lp-section{
+  padding:80px 0;
+}
+
+#lp-macrame-page .lp-section-soft{
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,250,244,.82),
+      rgba(233,216,197,.88)
+    );
+}
+
+#lp-macrame-page .lp-section-head{
+  text-align:center;
+  max-width:780px;
+  margin:0 auto 42px;
+}
+
+#lp-macrame-page .lp-section-head .lp-kicker{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin-bottom:12px;
+  padding:7px 14px;
+  border-radius:999px;
+  background:#e5cfb7;
+  color:var(--lp-primary-dark);
+  font-size:14px;
+  font-weight:900;
+}
+
+#lp-macrame-page .lp-section-head h2{
+  margin:0;
+  color:var(--lp-text);
+  font-size:clamp(28px,4vw,42px);
+  line-height:1.35;
+  font-weight:900;
+}
+
+#lp-macrame-page .lp-section-head p{
+  margin:14px auto 0;
+  color:var(--lp-muted);
+  font-size:17px;
+  line-height:1.9;
+  font-weight:600;
+}
+
+#lp-macrame-page .lp-hero{
+  padding:34px 0 70px;
+}
+
+#lp-macrame-page .lp-hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:48px;
+  align-items:center;
+}
+
+#lp-macrame-page .lp-hero-media{
+  order:1;
+}
+
+#lp-macrame-page .lp-hero-content{
+  order:2;
+}
+
+#lp-macrame-page .lp-image-card{
+  background:#fffaf3;
+  border:1px solid var(--lp-border);
+  border-radius:28px;
+  padding:12px;
+  box-shadow:var(--lp-shadow);
+  cursor:zoom-in;
+  overflow:hidden;
+}
+
+#lp-macrame-page .lp-image-card img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  border-radius:20px;
+}
+
+#lp-macrame-page .lp-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  margin-bottom:15px;
+  color:var(--lp-primary-dark);
+  font-size:15px;
+  font-weight:900;
+}
+
+#lp-macrame-page .lp-hero h1{
+  margin:0;
+  color:#38261b;
+  font-size:clamp(34px,5vw,58px);
+  line-height:1.25;
+  font-weight:900;
+  letter-spacing:-.8px;
+}
+
+#lp-macrame-page .lp-hero h1 span{
+  color:var(--lp-accent);
+}
+
+#lp-macrame-page .lp-hero-description{
+  margin:20px 0 0;
+  color:var(--lp-muted);
+  font-size:18px;
+  line-height:2;
+  font-weight:600;
+}
+
+#lp-macrame-page .lp-hero-points{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin-top:28px;
+}
+
+#lp-macrame-page .lp-hero-point{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:54px;
+  padding:13px 14px;
+  border:1px solid var(--lp-border);
+  border-radius:16px;
+  background:rgba(255,250,244,.92);
+  font-size:14px;
+  line-height:1.6;
+  font-weight:800;
+  box-shadow:0 7px 20px rgba(82,55,35,.04);
+}
+
+#lp-macrame-page .lp-hero-point-icon{
+  flex:0 0 32px;
+  width:32px;
+  height:32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#ead8c2;
+  color:var(--lp-primary-dark);
+  font-size:16px;
+}
+
+#lp-macrame-page .lp-intro{
+  padding-top:78px;
+}
+
+#lp-macrame-page .lp-intro-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:42px;
+  align-items:center;
+}
+
+#lp-macrame-page .lp-intro-content h3{
+  margin:0 0 16px;
+  color:#432d1e;
+  font-size:clamp(25px,3.4vw,37px);
+  line-height:1.4;
+  font-weight:900;
+}
+
+#lp-macrame-page .lp-intro-content p{
+  margin:0;
+  color:var(--lp-muted);
+  font-size:17px;
+  line-height:2;
+  font-weight:600;
+}
+
+#lp-macrame-page .lp-size-list{
+  display:grid;
+  gap:11px;
+  margin-top:24px;
+}
+
+#lp-macrame-page .lp-size-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:15px 17px;
+  background:#fffaf4;
+  border:1px solid var(--lp-border);
+  border-radius:15px;
+  box-shadow:0 7px 20px rgba(82,55,35,.035);
+}
+
+#lp-macrame-page .lp-size-item strong{
+  font-size:15px;
+  font-weight:900;
+}
+
+#lp-macrame-page .lp-size-item span{
+  color:var(--lp-primary-dark);
+  font-size:14px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+#lp-macrame-page .lp-piece{
+  padding:90px 0;
+}
+
+#lp-macrame-page .lp-piece:nth-child(even){
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,250,244,.86),
+      rgba(232,214,193,.9)
+    );
+}
+
+#lp-macrame-page .lp-piece-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:52px;
+  align-items:center;
+}
+
+#lp-macrame-page .lp-piece.reverse .lp-piece-media{
+  order:2;
+}
+
+#lp-macrame-page .lp-piece.reverse .lp-piece-content{
+  order:1;
+}
+
+#lp-macrame-page .lp-piece-label{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:13px;
+  padding:7px 13px;
+  border-radius:999px;
+  background:#e5cfb7;
+  color:var(--lp-primary-dark);
+  font-size:13px;
+  font-weight:900;
+}
+
+#lp-macrame-page .lp-piece-content h3{
+  margin:0;
+  color:#432d1e;
+  font-size:clamp(27px,4vw,41px);
+  line-height:1.35;
+  font-weight:900;
+}
+
+#lp-macrame-page .lp-piece-content p{
+  margin:16px 0 0;
+  color:var(--lp-muted);
+  font-size:17px;
+  line-height:2;
+  font-weight:600;
+}
+
+#lp-macrame-page .lp-piece-note{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  margin-top:20px;
+  color:var(--lp-primary-dark);
+  font-size:14px;
+  font-weight:900;
+}
+
+#lp-macrame-page .lp-piece-media .lp-image-card{
+  max-width:620px;
+  margin:0 auto;
+}
+
+#lp-macrame-page .lp-details{
+  padding:90px 0;
+  background:
+    radial-gradient(circle at 15% 20%,rgba(184,137,83,.08),transparent 25%),
+    transparent;
+}
+
+#lp-macrame-page .lp-details-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:38px;
+  align-items:start;
+}
+
+#lp-macrame-page .lp-details-card{
+  background:#fffaf4;
+  border:1px solid var(--lp-border);
+  border-radius:24px;
+  padding:24px;
+  box-shadow:var(--lp-shadow);
+}
+
+#lp-macrame-page .lp-details-card h3{
+  margin:0 0 18px;
+  color:#432d1e;
+  font-size:25px;
+  font-weight:900;
+}
+
+#lp-macrame-page .lp-table-wrap{
+  overflow-x:auto;
+}
+
+#lp-macrame-page .lp-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:500px;
+}
+
+#lp-macrame-page .lp-table th,
+#lp-macrame-page .lp-table td{
+  padding:15px 14px;
+  text-align:right;
+  border-bottom:1px solid var(--lp-border);
+  font-size:14px;
+}
+
+#lp-macrame-page .lp-table th{
+  color:#766454;
+  font-weight:800;
+  background:#f4e8da;
+}
+
+#lp-macrame-page .lp-table td{
+  font-weight:800;
+}
+
+#lp-macrame-page .lp-table tr:last-child td{
+  border-bottom:0;
+}
+
+#lp-macrame-page .lp-price-card{
+  position:sticky;
+  top:20px;
+  background:
+    linear-gradient(
+      180deg,
+      #fffaf4,
+      #f6eadd
+    );
+}
+
+#lp-macrame-page .lp-price-label{
+  color:var(--lp-muted);
+  font-size:14px;
+  font-weight:800;
+}
+
+#lp-macrame-page .lp-old-price{
+  margin-top:8px;
+  color:#9a8776;
+  font-size:18px;
+  font-weight:800;
+  text-decoration:line-through;
+}
+
+#lp-macrame-page .lp-new-price{
+  margin-top:1px;
+  color:var(--lp-primary-dark);
+  font-size:46px;
+  line-height:1.2;
+  font-weight:900;
+}
+
+#lp-macrame-page .lp-currency{
+  font-size:20px;
+  font-weight:900;
+}
+
+#lp-macrame-page .lp-shipping{
+  display:block;
+  margin-top:19px;
+  padding:14px 15px;
+  background:#e8d4be;
+  border-radius:14px;
+  color:var(--lp-primary-dark);
+  text-align:center;
+  font-size:14px;
+  line-height:1.7;
+  font-weight:900;
+}
+
+#lp-macrame-page .lp-final{
+  padding:92px 0 105px;
+  background:
+    radial-gradient(circle at top right,rgba(154,110,68,.18),transparent 35%),
+    radial-gradient(circle at bottom left,rgba(113,70,39,.13),transparent 32%),
+    linear-gradient(
+      135deg,
+      #e8d3bd,
+      #f2e5d5
+    );
+}
+
+#lp-macrame-page .lp-final-card{
+  max-width:920px;
+  margin:0 auto;
+  padding:44px 28px;
+  text-align:center;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,251,246,.97),
+      rgba(248,236,222,.98)
+    );
+  border:1px solid #dcc4aa;
+  border-radius:30px;
+  box-shadow:0 25px 60px rgba(78,52,33,.13);
+}
+
+#lp-macrame-page .lp-final-card h2{
+  margin:0;
+  color:#432d1e;
+  font-size:clamp(29px,4vw,44px);
+  line-height:1.35;
+  font-weight:900;
+}
+
+#lp-macrame-page .lp-final-card p{
+  max-width:700px;
+  margin:14px auto 0;
+  color:var(--lp-muted);
+  font-size:17px;
+  line-height:1.9;
+  font-weight:600;
+}
+
+#lp-macrame-page .lp-final-price{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:13px;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+
+#lp-macrame-page .lp-final-old{
+  color:#9a8776;
+  font-size:18px;
+  font-weight:800;
+  text-decoration:line-through;
+}
+
+#lp-macrame-page .lp-final-new{
+  color:var(--lp-primary-dark);
+  font-size:38px;
+  font-weight:900;
+}
+
+#lp-macrame-page .lp-order-trigger{
+  width:100%;
+  max-width:500px;
+  margin:24px auto 0;
+  min-height:62px;
+  padding:13px 22px;
+  border:0;
+  border-radius:17px;
+  background:linear-gradient(135deg,#5f3b24,#8c5f3c);
+  color:#fffaf4;
+  font-size:18px;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 16px 30px rgba(95,59,36,.22);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+
+#lp-macrame-page .lp-order-trigger:hover{
+  transform:translateY(-2px);
+  box-shadow:0 20px 34px rgba(95,59,36,.28);
+}
+
+#lp-macrame-page .lp-order-trigger:active{
+  transform:translateY(0);
+}
+
+#lp-macrame-page .lp-final-shipping{
+  margin-top:14px;
+  color:var(--lp-muted);
+  font-size:14px;
+  font-weight:800;
+}
+
+#lp-macrame-lightbox{
+  position:fixed;
+  inset:0;
+  z-index:999999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(43,28,19,.86);
+  backdrop-filter:blur(5px);
+}
+
+#lp-macrame-lightbox.is-open{
+  display:flex;
+}
+
+#lp-macrame-lightbox .lp-lightbox-inner{
+  position:relative;
+  width:min(1100px,100%);
+  max-height:92vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+#lp-macrame-lightbox img{
+  max-width:100%;
+  max-height:92vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  border-radius:16px;
+  box-shadow:0 25px 70px rgba(0,0,0,.35);
+}
+
+#lp-macrame-lightbox .lp-lightbox-close{
+  position:absolute;
+  top:-10px;
+  left:-10px;
+  width:44px;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:0;
+  border-radius:50%;
+  background:#fffaf4;
+  color:#3b2a1f;
+  font-size:25px;
+  line-height:1;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+#lp-macrame-page .lp-checkout-highlight{
+  animation:lpCheckoutPulse 1.5s ease;
+}
+
+.product_form_checkout.lp-checkout-highlight{
+  animation:lpCheckoutPulse 1.5s ease;
+  box-shadow:
+    0 0 0 3px rgba(139,94,60,.22),
+    0 18px 45px rgba(82,55,35,.19)!important;
+  border-radius:20px!important;
+}
+
+@keyframes lpCheckoutPulse{
+  0%{
+    transform:scale(1);
+  }
+
+  35%{
+    transform:scale(1.008);
+  }
+
+  70%{
+    transform:scale(1);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+}
+
+@media (max-width:980px){
+
+  #lp-macrame-page .lp-hero-grid,
+  #lp-macrame-page .lp-intro-grid,
+  #lp-macrame-page .lp-piece-grid,
+  #lp-macrame-page .lp-details-grid{
+    grid-template-columns:1fr;
+  }
+
+  #lp-macrame-page .lp-hero-media{
+    order:1;
+  }
+
+  #lp-macrame-page .lp-hero-content{
+    order:2;
+  }
+
+  #lp-macrame-page .lp-piece.reverse .lp-piece-media{
+    order:1;
+  }
+
+  #lp-macrame-page .lp-piece.reverse .lp-piece-content{
+    order:2;
+  }
+
+  #lp-macrame-page .lp-price-card{
+    position:static;
+  }
+
+  #lp-macrame-page .lp-intro-content{
+    text-align:center;
+  }
+
+  #lp-macrame-page .lp-size-list{
+    max-width:650px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+
+@media (max-width:700px){
+
+  #lp-macrame-page .lp-container{
+    width:min(100% - 22px,1180px);
+  }
+
+  #lp-macrame-page .lp-section,
+  #lp-macrame-page .lp-piece,
+  #lp-macrame-page .lp-details{
+    padding:50px 0;
+  }
+
+  #lp-macrame-page .lp-hero{
+    padding:15px 0 48px;
+  }
+
+  #lp-macrame-page .lp-hero-grid{
+    gap:28px;
+  }
+
+  #lp-macrame-page .lp-hero-media{
+    order:1;
+  }
+
+  #lp-macrame-page .lp-hero-content{
+    order:2;
+  }
+
+  #lp-macrame-page .lp-image-card{
+    padding:8px;
+    border-radius:21px;
+  }
+
+  #lp-macrame-page .lp-image-card img{
+    border-radius:15px;
+  }
+
+  #lp-macrame-page .lp-eyebrow{
+    font-size:13px;
+    margin-bottom:10px;
+  }
+
+  #lp-macrame-page .lp-hero h1{
+    font-size:34px;
+    letter-spacing:-.3px;
+  }
+
+  #lp-macrame-page .lp-hero-description{
+    margin-top:14px;
+    font-size:15px;
+    line-height:1.95;
+  }
+
+  #lp-macrame-page .lp-hero-points{
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+    margin-top:20px;
+  }
+
+  #lp-macrame-page .lp-hero-point{
+    min-height:auto;
+    padding:11px 10px;
+    font-size:12px;
+    gap:7px;
+  }
+
+  #lp-macrame-page .lp-hero-point-icon{
+    width:28px;
+    height:28px;
+    flex-basis:28px;
+    font-size:14px;
+  }
+
+  #lp-macrame-page .lp-section-head{
+    margin-bottom:22px;
+  }
+
+  #lp-macrame-page .lp-section-head .lp-kicker{
+    margin-bottom:8px;
+    padding:6px 12px;
+    font-size:12px;
+  }
+
+  #lp-macrame-page .lp-section-head h2{
+    font-size:27px;
+    line-height:1.3;
+  }
+
+  #lp-macrame-page .lp-section-head p{
+    margin-top:8px;
+    font-size:13px;
+    line-height:1.7;
+  }
+
+  #lp-macrame-page .lp-intro-content h3,
+  #lp-macrame-page .lp-piece-content h3{
+    font-size:28px;
+  }
+
+  #lp-macrame-page .lp-intro-content p,
+  #lp-macrame-page .lp-piece-content p{
+    font-size:15px;
+    line-height:1.9;
+  }
+
+  #lp-macrame-page .lp-size-item{
+    padding:13px 12px;
+  }
+
+  #lp-macrame-page .lp-size-item strong,
+  #lp-macrame-page .lp-size-item span{
+    font-size:13px;
+  }
+
+  #lp-macrame-page .lp-piece{
+    padding:58px 0;
+  }
+
+  #lp-macrame-page .lp-piece-grid{
+    gap:28px;
+  }
+
+  #lp-macrame-page .lp-piece-label{
+    font-size:12px;
+  }
+
+  #lp-macrame-page .lp-piece-note{
+    font-size:13px;
+  }
+
+  #lp-macrame-page .lp-details{
+    padding:44px 0 48px;
+  }
+
+  #lp-macrame-page .lp-details-grid{
+    gap:18px;
+  }
+
+  #lp-macrame-page .lp-details-card{
+    padding:16px 12px;
+    border-radius:20px;
+    box-shadow:0 10px 28px rgba(76,52,34,.07);
+  }
+
+  #lp-macrame-page .lp-details-card h3{
+    margin:0 0 13px;
+    padding:0 4px;
+    font-size:20px;
+  }
+
+  #lp-macrame-page .lp-table{
+    width:100%;
+    min-width:0;
+  }
+
+  #lp-macrame-page .lp-table th,
+  #lp-macrame-page .lp-table td{
+    padding:11px 9px;
+    font-size:12px;
+    line-height:1.5;
+  }
+
+  #lp-macrame-page .lp-table th:first-child,
+  #lp-macrame-page .lp-table td:first-child{
+    width:50%;
+  }
+
+  #lp-macrame-page .lp-table th:last-child,
+  #lp-macrame-page .lp-table td:last-child{
+    width:50%;
+  }
+
+  #lp-macrame-page .lp-price-card{
+    padding:18px 16px;
+  }
+
+  #lp-macrame-page .lp-price-label{
+    font-size:13px;
+  }
+
+  #lp-macrame-page .lp-old-price{
+    margin-top:3px;
+    font-size:16px;
+  }
+
+  #lp-macrame-page .lp-new-price{
+    margin-top:0;
+    font-size:38px;
+    line-height:1.15;
+  }
+
+  #lp-macrame-page .lp-currency{
+    font-size:17px;
+  }
+
+  #lp-macrame-page .lp-shipping{
+    margin-top:13px;
+    padding:11px 10px;
+    font-size:12px;
+    line-height:1.6;
+  }
+
+  #lp-macrame-page .lp-final{
+    padding:62px 0 72px;
+  }
+
+  #lp-macrame-page .lp-final-card{
+    padding:34px 17px;
+    border-radius:24px;
+  }
+
+  #lp-macrame-page .lp-final-card h2{
+    font-size:29px;
+  }
+
+  #lp-macrame-page .lp-final-card p{
+    font-size:14px;
+    line-height:1.85;
+  }
+
+  #lp-macrame-page .lp-final-new{
+    font-size:34px;
+  }
+
+  #lp-macrame-page .lp-final-old{
+    font-size:16px;
+  }
+
+  #lp-macrame-page .lp-order-trigger{
+    min-height:58px;
+    font-size:16px;
+  }
+
+  #lp-macrame-page .lp-final-shipping{
+    font-size:13px;
+  }
+
+  #lp-macrame-lightbox{
+    padding:12px;
+  }
+
+  #lp-macrame-lightbox .lp-lightbox-close{
+    top:-5px;
+    left:-5px;
+    width:40px;
+    height:40px;
+    font-size:22px;
+  }
+}
+
+@media (max-width:420px){
+
+  #lp-macrame-page .lp-hero-points{
+    grid-template-columns:1fr;
+  }
+
+  #lp-macrame-page .lp-size-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:5px;
+  }
+
+  #lp-macrame-page .lp-size-item span{
+    white-space:normal;
+  }
+
+  #lp-macrame-page .lp-section-head h2{
+    font-size:25px;
+  }
+
+  #lp-macrame-page .lp-details-card{
+    padding:14px 10px;
+  }
+
+  #lp-macrame-page .lp-table th,
+  #lp-macrame-page .lp-table td{
+    padding:10px 7px;
+    font-size:11.5px;
+  }
+
+  #lp-macrame-page .lp-price-card{
+    padding:17px 14px;
+  }
+
+  #lp-macrame-page .lp-new-price{
+    font-size:36px;
+  }
+
+  #lp-macrame-page .lp-shipping{
+    font-size:11.5px;
+  }
+}
+</style>
+
+<div id="lp-macrame-page">
+
+  <!-- Hero -->
+  <section class="lp-hero">
+    <div class="lp-container">
+      <div class="lp-hero-grid">
+
+        <div class="lp-hero-media">
+          <div class="lp-image-card" data-lp-lightbox>
+            <img
+              src="https://files.easy-orders.net/1791462135812700762.webp"
+              alt="طقم مفرش مكرمية 5 قطع"
+              loading="eager"
+            >
+          </div>
+        </div>
+
+        <div class="lp-hero-content">
+
+          <div class="lp-eyebrow">
+            ✨ طقم مفرش مكرمية 5 قطع
+          </div>
+
+          <h1>
+            تفاصيل بسيطة… تفرق في شكل البيت
+            <span>✨</span>
+          </h1>
+
+          <p class="lp-hero-description">
+            طقم مكون من 5 قطع بمقاسات مختلفة، يساعدك تنسق السفرة والترابيزات والكومود
+            بطريقة متناسقة من غير ما تحتاج تختار كل قطعة لوحدها.
+          </p>
+
+          <div class="lp-hero-points">
+
+            <div class="lp-hero-point">
+              <div class="lp-hero-point-icon">✓</div>
+              <div>5 قطع متناسقة</div>
+            </div>
+
+            <div class="lp-hero-point">
+              <div class="lp-hero-point-icon">✓</div>
+              <div>مقاسات مختلفة</div>
+            </div>
+
+            <div class="lp-hero-point">
+              <div class="lp-hero-point-icon">✓</div>
+              <div>لأكتر من مساحة في البيت</div>
+            </div>
+
+            <div class="lp-hero-point">
+              <div class="lp-hero-point-icon">✓</div>
+              <div>الشحن 59 جنيه</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="lp-section lp-intro lp-section-soft">
+    <div class="lp-container">
+
+      <div class="lp-section-head">
+
+        <div class="lp-kicker">
+          تنسيق أسهل
+        </div>
+
+        <h2>
+          5 قطع تديك حرية أكتر في التنسيق
+        </h2>
+
+        <p>
+          اختلاف المقاسات يخليك تستخدم كل قطعة في المكان اللي يناسبها
+        </p>
+
+      </div>
+
+      <div class="lp-intro-grid">
+
+        <div class="lp-image-card" data-lp-lightbox>
+          <img
+            src="https://files.easy-orders.net/1791452896586527505.webp"
+            alt="طقم مفرش مكرمية بأحجام مختلفة"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="lp-intro-content">
+
+          <h3>
+            قطعة لكل مساحة
+          </h3>
+
+          <p>
+            بدل ما تلتزم بمقاس واحد، الطقم بيوفرلك أكتر من مقاس عشان تقدر تنسق
+            السفرة، الترابيزة أو الكومود حسب المساحة وشكل المكان.
+          </p>
+
+          <div class="lp-size-list">
+
+            <div class="lp-size-item">
+              <strong>رانر السفرة</strong>
+              <span>120 × 50 سم</span>
+            </div>
+
+            <div class="lp-size-item">
+              <strong>المفرش الكبير</strong>
+              <span>90 × 90 سم</span>
+            </div>
+
+            <div class="lp-size-item">
+              <strong>الرانر الأصغر</strong>
+              <span>90 × 35 سم</span>
+            </div>
+
+            <div class="lp-size-item">
+              <strong>2 مفرش كومود</strong>
+              <span>30 × 30 سم</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Piece 30x30 -->
+  <section class="lp-piece">
+    <div class="lp-container">
+
+      <div class="lp-piece-grid">
+
+        <div class="lp-piece-media">
+          <div class="lp-image-card" data-lp-lightbox>
+
+            <img
+              src="https://files.easy-orders.net/1791452896494242810.webp"
+              alt="مفرش كومود 30 × 30 سم"
+              loading="lazy"
+            >
+
+          </div>
+        </div>
+
+        <div class="lp-piece-content">
+
+          <div class="lp-piece-label">
+            قطعتين
+          </div>
+
+          <h3>
+            تفاصيل صغيرة لمساتها واضحة
+          </h3>
+
+          <p>
+            قطعتين بمقاس 30 × 30 سم، مناسبين للكومود أو الترابيزات الجانبية،
+            وبيساعدوا تكمل نفس شكل الطقم في أكتر من ركن في البيت.
+          </p>
+
+          <div class="lp-piece-note">
+            ✓ المقاس: 30 × 30 سم
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Piece 90x35 -->
+  <section class="lp-piece lp-section-soft">
+    <div class="lp-container">
+
+      <div class="lp-piece-grid reverse">
+
+        <div class="lp-piece-media">
+          <div class="lp-image-card" data-lp-lightbox>
+
+            <img
+              src="https://files.easy-orders.net/1791452896269319300.webp"
+              alt="رانر 90 × 35 سم"
+              loading="lazy"
+            >
+
+          </div>
+        </div>
+
+        <div class="lp-piece-content">
+
+          <div class="lp-piece-label">
+            رانر
+          </div>
+
+          <h3>
+            مساحة أصغر، نفس اللمسة
+          </h3>
+
+          <p>
+            مقاس 90 × 35 سم مناسب للمساحات اللي محتاجة رانر أصغر،
+            ويدي شكل مرتب من غير ما يغطّي سطح الترابيزة بالكامل.
+          </p>
+
+          <div class="lp-piece-note">
+            ✓ المقاس: 90 × 35 سم
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Piece 120x50 -->
+  <section class="lp-piece">
+    <div class="lp-container">
+
+      <div class="lp-piece-grid">
+
+        <div class="lp-piece-media">
+          <div class="lp-image-card" data-lp-lightbox>
+
+            <img
+              src="https://files.easy-orders.net/1791452896529256384.webp"
+              alt="رانر 120 × 50 سم على ترابيزة السفرة"
+              loading="lazy"
+            >
+
+          </div>
+        </div>
+
+        <div class="lp-piece-content">
+
+          <div class="lp-piece-label">
+            ترابيزة السفرة
+          </div>
+
+          <h3>
+            لترابيزة السفرة حضور مختلف
+          </h3>
+
+          <p>
+            رانر 120 × 50 سم للمساحات الأكبر، مناسب لترابيزة السفرة
+            وبيعمل نقطة تركيز واضحة في منتصف المكان.
+          </p>
+
+          <div class="lp-piece-note">
+            ✓ المقاس: 120 × 50 سم
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Piece 90x90 -->
+  <section class="lp-piece lp-section-soft">
+    <div class="lp-container">
+
+      <div class="lp-piece-grid reverse">
+
+        <div class="lp-piece-media">
+          <div class="lp-image-card" data-lp-lightbox>
+
+            <img
+              src="https://files.easy-orders.net/1791452895925305900.webp"
+              alt="مفرش 90 × 90 سم"
+              loading="lazy"
+            >
+
+          </div>
+        </div>
+
+        <div class="lp-piece-content">
+
+          <div class="lp-piece-label">
+            مفرش كبير
+          </div>
+
+          <h3>
+            مساحة أكبر للتنسيق
+          </h3>
+
+          <p>
+            مفرش 90 × 90 سم مناسب للقطع اللي محتاجة مساحة أكبر،
+            وبيخليك تنسق فوقه الديكور أو الإكسسوارات اللي عندك.
+          </p>
+
+          <div class="lp-piece-note">
+            ✓ المقاس: 90 × 90 سم
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Details -->
+  <section class="lp-details">
+    <div class="lp-container">
+
+      <div class="lp-section-head">
+
+        <div class="lp-kicker">
+          تفاصيل الطقم
+        </div>
+
+        <h2>
+          المقاسات قدامك كلها
+        </h2>
+
+        <p>
+          5 قطع بمقاسات مختلفة عشان تختار مكان كل قطعة بسهولة
+        </p>
+
+      </div>
+
+      <div class="lp-details-grid">
+
+        <div class="lp-details-card">
+
+          <h3>
+            المقاسات
+          </h3>
+
+          <div class="lp-table-wrap">
+
+            <table class="lp-table">
+
+              <thead>
+                <tr>
+                  <th>القطعة</th>
+                  <th>المقاس</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>عدد القطع</td>
+                  <td>5 قطع</td>
+                </tr>
+
+                <tr>
+                  <td>رانر</td>
+                  <td>120 × 50 سم</td>
+                </tr>
+
+                <tr>
+                  <td>مفرش</td>
+                  <td>90 × 90 سم</td>
+                </tr>
+
+                <tr>
+                  <td>رانر</td>
+                  <td>90 × 35 سم</td>
+                </tr>
+
+                <tr>
+                  <td>2 مفرش كومود</td>
+                  <td>30 × 30 سم</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <div class="lp-details-card lp-price-card">
+
+          <div class="lp-price-label">
+            اختار الشكل اللي يناسب بيتك
+          </div>
+
+          <div class="lp-old-price">
+            1600 جنيه
+          </div>
+
+          <div class="lp-new-price">
+            1100
+            <span class="lp-currency">جنيه</span>
+          </div>
+
+          <div class="lp-shipping">
+            الشحن لأي مكان في مصر · 59 جنيه
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="lp-final">
+    <div class="lp-container">
+
+      <div class="lp-final-card">
+
+        <h2>
+          خلي الطقم يكمل تفاصيل بيتك ✨
+        </h2>
+
+        <p>
+          5 قطع، 4 مقاسات مختلفة، واستخدامات تناسب أكتر من مكان.
+          اختار الطقم وخلي التنسيق أسهل وأهدى في بيتك.
+        </p>
+
+        <div class="lp-final-price">
+
+          <span class="lp-final-old">
+            1600 جنيه
+          </span>
+
+          <span class="lp-final-new">
+            1100 جنيه
+          </span>
+
+        </div>
+
+        <button type="button" class="lp-order-trigger">
+          اطلب الطقم دلوقتي
+        </button>
+
+        <div class="lp-final-shipping">
+          الشحن 59 جنيه لأي مكان في مصر
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- Lightbox -->
+<div id="lp-macrame-lightbox" aria-hidden="true">
+
+  <div class="lp-lightbox-inner">
+
+    <button
+      type="button"
+      class="lp-lightbox-close"
+      aria-label="إغلاق"
+    >
+      ×
+    </button>
+
+    <img
+      src=""
+      alt="صورة المنتج"
+    >
+
+  </div>
+
+</div>
+
+<script>
+(function(){
+
+  /* =========================
+     Lightbox
+  ========================= */
+
+  const lightbox =
+    document.getElementById(
+      'lp-macrame-lightbox'
+    );
+
+  const lightboxImage =
+    lightbox
+      ? lightbox.querySelector('img')
+      : null;
+
+  function openLightbox(src, alt){
+
+    if(
+      !lightbox ||
+      !lightboxImage ||
+      !src
+    ){
+      return;
+    }
+
+    lightboxImage.src = src;
+    lightboxImage.alt = alt || 'صورة المنتج';
+
+    lightbox.classList.add('is-open');
+
+    lightbox.setAttribute(
+      'aria-hidden',
+      'false'
+    );
+
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(){
+
+    if(
+      !lightbox ||
+      !lightboxImage
+    ){
+      return;
+    }
+
+    lightbox.classList.remove('is-open');
+
+    lightbox.setAttribute(
+      'aria-hidden',
+      'true'
+    );
+
+    setTimeout(function(){
+      lightboxImage.src = '';
+    },200);
+
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener(
+    'click',
+    function(event){
+
+      const imageCard =
+        event.target.closest(
+          '#lp-macrame-page [data-lp-lightbox]'
+        );
+
+      if(imageCard){
+
+        const image =
+          imageCard.querySelector('img');
+
+        if(image){
+
+          openLightbox(
+            image.currentSrc || image.src,
+            image.alt
+          );
+
+        }
+
+        return;
+      }
+
+      if(
+        event.target.closest(
+          '#lp-macrame-lightbox .lp-lightbox-close'
+        )
+      ){
+
+        closeLightbox();
+        return;
+      }
+
+      if(event.target === lightbox){
+
+        closeLightbox();
+
+      }
+
+    }
+  );
+
+  document.addEventListener(
+    'keydown',
+    function(event){
+
+      if(event.key === 'Escape'){
+
+        closeLightbox();
+
+      }
+
+    }
+  );
+
+
+  /* =========================
+     Easy Orders Checkout
+  ========================= */
+
+  function getCheckout(){
+
+    return document.querySelector(
+      '.product_form_checkout.checkout_container'
+    );
+
+  }
+
+  function getQuantityArea(){
+
+    const checkout =
+      getCheckout();
+
+    if(!checkout){
+
+      return null;
+
+    }
+
+    return checkout.querySelector(
+      '.in-product-quantity-counter'
+    );
+
+  }
+
+  function getQuantityValue(){
+
+    const quantityArea =
+      getQuantityArea();
+
+    if(!quantityArea){
+
+      return null;
+
+    }
+
+    return quantityArea.querySelector(
+      'p.m-0.self-center.w-6.text-center'
+    );
+
+  }
+
+  function getQuantityButtons(){
+
+    const quantityArea =
+      getQuantityArea();
+
+    if(!quantityArea){
+
+      return [];
+
+    }
+
+    return quantityArea.querySelectorAll(
+      'button[type="button"]'
+    );
+
+  }
+
+  function setQuantityToOne(){
+
+    const quantityValue =
+      getQuantityValue();
+
+    const buttons =
+      getQuantityButtons();
+
+    if(
+      !quantityValue ||
+      buttons.length < 2
+    ){
+
+      return;
+
+    }
+
+    const minusButton =
+      buttons[1];
+
+    let attempts = 0;
+
+    while(
+      quantityValue.textContent.trim() !== '1' &&
+      !minusButton.disabled &&
+      attempts < 50
+    ){
+
+      minusButton.click();
+      attempts++;
+
+    }
+
+  }
+
+  function highlightCheckout(){
+
+    const checkout =
+      getCheckout();
+
+    if(!checkout){
+
+      return;
+
+    }
+
+    checkout.classList.remove(
+      'lp-checkout-highlight'
+    );
+
+    void checkout.offsetWidth;
+
+    checkout.classList.add(
+      'lp-checkout-highlight'
+    );
+
+    setTimeout(
+      function(){
+
+        checkout.classList.remove(
+          'lp-checkout-highlight'
+        );
+
+      },
+      1800
+    );
+
+  }
+
+  function focusNameField(){
+
+    const checkout =
+      getCheckout();
+
+    if(!checkout){
+
+      return;
+
+    }
+
+    const nameField =
+      checkout.querySelector(
+        'input[name="full_name"]'
+      );
+
+    if(!nameField){
+
+      return;
+
+    }
+
+    setTimeout(
+      function(){
+
+        try{
+
+          nameField.focus({
+            preventScroll:true
+          });
+
+        }catch(error){
+
+          nameField.focus();
+
+        }
+
+      },
+      850
+    );
+
+  }
+
+  function goToCheckout(){
+
+    const checkout =
+      getCheckout();
+
+    if(!checkout){
+
+      setTimeout(
+        function(){
+
+          goToCheckout();
+
+        },
+        500
+      );
+
+      return;
+
+    }
+
+    setQuantityToOne();
+
+    checkout.scrollIntoView({
+      behavior:'smooth',
+      block:'start'
+    });
+
+    setTimeout(
+      function(){
+
+        highlightCheckout();
+        focusNameField();
+
+      },
+      450
+    );
+
+  }
+
+  document.addEventListener(
+    'click',
+    function(event){
+
+      const button =
+        event.target.closest(
+          '#lp-macrame-page .lp-order-trigger'
+        );
+
+      if(!button){
+
+        return;
+
+      }
+
+      event.preventDefault();
+
+      goToCheckout();
+
+    }
+  );
+
+})();
+</script>
+</body>
+</html>

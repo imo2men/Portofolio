@@ -1,0 +1,2443 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monkey</title>
+</head>
+<body>
+<section class="smart-monkey-hero" dir="rtl">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&display=swap');
+
+    .smart-monkey-hero,
+    .smart-monkey-hero * {
+      box-sizing: border-box;
+      font-family: "Tajawal", Arial, sans-serif !important;
+    }
+
+    .smart-monkey-hero {
+      position: relative;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      overflow: hidden;
+      padding: 24px 45px 40px;
+      background:
+        radial-gradient(
+          circle at 8% 85%,
+          rgba(91, 181, 105, 0.12) 0 140px,
+          transparent 141px
+        ),
+        radial-gradient(
+          circle at 94% 10%,
+          rgba(255, 202, 48, 0.18) 0 180px,
+          transparent 181px
+        ),
+        linear-gradient(
+          135deg,
+          #fffdf8 0%,
+          #fff7ec 52%,
+          #f4fbf4 100%
+        );
+    }
+
+    .smart-monkey-hero::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: rgba(239, 74, 71, 0.06);
+      top: 35%;
+      left: -100px;
+    }
+
+    .smart-monkey-hero::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 30% 70% 60% 40%;
+      background: rgba(91, 181, 105, 0.07);
+      bottom: -70px;
+      right: 34%;
+      transform: rotate(18deg);
+    }
+
+    /* المعادلات الخلفية */
+    .smart-monkey-math {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .smart-monkey-math span {
+      position: absolute;
+      direction: ltr;
+      unicode-bidi: isolate;
+      color: #5aa96a;
+      opacity: 0.11;
+      font-size: 30px !important;
+      font-weight: 800 !important;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .smart-monkey-math .m1 {
+      top: 8%;
+      left: 4%;
+      transform: rotate(-8deg);
+    }
+
+    .smart-monkey-math .m2 {
+      top: 21%;
+      left: 30%;
+      transform: rotate(5deg);
+    }
+
+    .smart-monkey-math .m3 {
+      bottom: 12%;
+      left: 6%;
+      transform: rotate(7deg);
+    }
+
+    .smart-monkey-math .m4 {
+      top: 47%;
+      right: 5%;
+      transform: rotate(-6deg);
+    }
+
+    .smart-monkey-math .m5 {
+      bottom: 8%;
+      right: 25%;
+      transform: rotate(5deg);
+    }
+
+    .smart-monkey-math .m6 {
+      top: 12%;
+      right: 36%;
+      transform: rotate(-4deg);
+    }
+
+    .smart-monkey-math .m7 {
+      top: 68%;
+      right: 3%;
+      transform: rotate(6deg);
+    }
+
+    /* التوزيع الأساسي */
+    .smart-monkey-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1750px;
+      margin: 0 auto;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(240px, 0.55fr)
+        minmax(0, 0.95fr);
+
+      grid-template-areas:
+        "child contents copy";
+
+      gap: 35px;
+
+      align-items: center;
+    }
+
+    /* صورة البنت أقصى الشمال */
+    .smart-monkey-main-image {
+      grid-area: child;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+
+      min-width: 0;
+      position: relative;
+    }
+
+    .smart-monkey-main-image::before {
+      content: "";
+      position: absolute;
+
+      width: 78%;
+      height: 78%;
+
+      background: rgba(255, 202, 48, 0.16);
+
+      border-radius: 45% 55% 55% 45%;
+
+      z-index: -1;
+
+      bottom: 2%;
+      right: 3%;
+    }
+
+    .smart-monkey-main-image img {
+      display: block;
+
+      width: 100%;
+      max-width: 720px;
+
+      height: auto;
+
+      object-fit: contain;
+
+      filter:
+        drop-shadow(
+          0 22px 32px rgba(0, 0, 0, 0.13)
+        );
+    }
+
+    /* المحتويات في النص */
+    .smart-monkey-contents {
+      grid-area: contents;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-width: 0;
+    }
+
+    .smart-monkey-contents img {
+      display: block;
+
+      width: 100%;
+      max-width: 430px;
+
+      height: auto;
+
+      object-fit: contain;
+
+      filter:
+        drop-shadow(
+          0 12px 18px rgba(0, 0, 0, 0.08)
+        );
+    }
+
+    /* النص أقصى اليمين */
+    .smart-monkey-copy {
+      grid-area: copy;
+
+      display: flex;
+      flex-direction: column;
+
+      align-items: flex-start;
+      justify-content: center;
+
+      text-align: right;
+
+      min-width: 0;
+
+      padding-right: 5px;
+    }
+
+    .smart-monkey-label {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      background: #5aa96a;
+
+      color: #ffffff;
+
+      border-radius: 999px;
+
+      padding: 8px 20px;
+
+      margin-bottom: 14px;
+
+      font-size: clamp(
+        17px,
+        1.6vw,
+        24px
+      ) !important;
+
+      font-weight: 800 !important;
+
+      box-shadow:
+        0 8px 20px
+        rgba(90, 169, 106, 0.18);
+    }
+
+    .smart-monkey-title {
+      margin: 0 0 10px;
+
+      color: #5d2f24;
+
+      font-size: clamp(
+        38px,
+        4vw,
+        62px
+      ) !important;
+
+      line-height: 1.18;
+
+      font-weight: 900 !important;
+    }
+
+    .smart-monkey-title span {
+      color: #ef4a47;
+    }
+
+    .smart-monkey-subtitle {
+      margin: 0 0 18px;
+
+      color: #333333;
+
+      font-size: clamp(
+        20px,
+        2vw,
+        29px
+      ) !important;
+
+      line-height: 1.5;
+
+      font-weight: 700 !important;
+    }
+
+    .smart-monkey-highlight {
+      display: inline-block;
+
+      white-space: nowrap;
+
+      padding: 9px 16px;
+
+      background: #ffffff;
+
+      border-right: 5px solid #ffd12f;
+
+      border-radius: 12px;
+
+      color: #5d2f24;
+
+      font-size: clamp(
+        16px,
+        1.5vw,
+        21px
+      ) !important;
+
+      font-weight: 700 !important;
+
+      box-shadow:
+        0 8px 20px
+        rgba(93, 47, 36, 0.07);
+    }
+
+    /* شاشات كبيرة */
+    @media (min-width: 1400px) {
+
+      .smart-monkey-hero {
+        padding-left: 75px;
+        padding-right: 75px;
+      }
+
+      .smart-monkey-inner {
+        grid-template-columns:
+          minmax(0, 1.1fr)
+          minmax(280px, 0.6fr)
+          minmax(0, 0.95fr);
+
+        gap: 55px;
+      }
+
+      .smart-monkey-main-image img {
+        max-width: 780px;
+      }
+
+      .smart-monkey-contents img {
+        max-width: 460px;
+      }
+    }
+
+    /* تابلت */
+    @media (max-width: 1100px) {
+
+      .smart-monkey-hero {
+        padding: 22px 25px 35px;
+      }
+
+      .smart-monkey-inner {
+        grid-template-columns:
+          minmax(0, 1fr)
+          minmax(190px, 0.55fr)
+          minmax(0, 0.95fr);
+
+        gap: 25px;
+      }
+
+      .smart-monkey-main-image img {
+        max-width: 600px;
+      }
+
+      .smart-monkey-contents img {
+        max-width: 320px;
+      }
+
+      .smart-monkey-title {
+        font-size: 44px !important;
+      }
+
+      .smart-monkey-subtitle {
+        font-size: 21px !important;
+      }
+
+      .smart-monkey-highlight {
+        font-size: 16px !important;
+      }
+    }
+
+    /* الموبايل */
+    @media (max-width: 720px) {
+
+      .smart-monkey-hero {
+        padding: 22px 14px 35px;
+      }
+
+      .smart-monkey-inner {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 8px;
+      }
+
+      .smart-monkey-copy {
+        order: 1;
+
+        width: 100%;
+
+        align-items: center;
+
+        text-align: center;
+
+        padding: 0;
+      }
+
+      .smart-monkey-main-image {
+        order: 2;
+
+        width: 100%;
+      }
+
+      .smart-monkey-main-image img {
+        width: 94%;
+        max-width: 520px;
+      }
+
+      .smart-monkey-contents {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        margin-top: 5px;
+      }
+
+      .smart-monkey-contents img {
+        width: 78%;
+
+        max-width: 340px;
+      }
+
+      .smart-monkey-label {
+        font-size: 18px !important;
+      }
+
+      .smart-monkey-title {
+        font-size: 34px !important;
+
+        line-height: 1.25;
+      }
+
+      .smart-monkey-subtitle {
+        font-size: 19px !important;
+      }
+
+      .smart-monkey-highlight {
+        font-size: 16px !important;
+
+        white-space: nowrap;
+      }
+
+      .smart-monkey-math span {
+        font-size: 22px !important;
+
+        opacity: 0.08;
+      }
+    }
+
+    /* موبايل صغير */
+    @media (max-width: 420px) {
+
+      .smart-monkey-hero {
+        padding: 18px 10px 28px;
+      }
+
+      .smart-monkey-title {
+        font-size: 30px !important;
+      }
+
+      .smart-monkey-subtitle {
+        font-size: 18px !important;
+      }
+
+      .smart-monkey-main-image img {
+        width: 100%;
+      }
+
+      .smart-monkey-contents img {
+        width: 84%;
+      }
+
+      .smart-monkey-highlight {
+        font-size: 15px !important;
+        padding: 8px 12px;
+      }
+    }
+  </style>
+
+  <div class="smart-monkey-math" aria-hidden="true">
+    <span class="m1">7 × 8 = 56</span>
+    <span class="m2">9 × 6 = ?</span>
+    <span class="m3">12 × 7 = 84</span>
+    <span class="m4">8 × 11 = ?</span>
+    <span class="m5">6 × 12 = 72</span>
+    <span class="m6">11 × 9 = ?</span>
+    <span class="m7">7 × 5 = 35</span>
+  </div>
+
+  <div class="smart-monkey-inner">
+
+    <!-- صورة البنت -->
+    <div class="smart-monkey-main-image">
+
+      <img
+        src="https://files.easy-orders.net/1789477177010397867.webp"
+        alt="طفلة تستخدم لعبة Smart Monkey لتعلم جدول الضرب"
+        loading="eager"
+      >
+
+    </div>
+
+    <!-- المحتويات -->
+    <div class="smart-monkey-contents">
+
+      <img
+        src="https://files.easy-orders.net/1789475268581923601.png"
+        alt="محتويات لعبة Smart Monkey"
+        loading="eager"
+      >
+
+    </div>
+
+    <!-- النص -->
+    <div class="smart-monkey-copy">
+
+      <div class="smart-monkey-label">
+        لعبة تعليمية ممتعة
+      </div>
+
+      <h1 class="smart-monkey-title">
+        طفلك هيحفظ جدول الضرب <span>ب لعبة</span>
+      </h1>
+
+      <p class="smart-monkey-subtitle">
+        من غير معاناة الحفظ والتلقين
+      </p>
+
+      <div class="smart-monkey-highlight">
+        مع لعبة Smart Monkey لتعليم جدول الضرب
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- Non-HTML block preserved as JSON:
+{
+  "id": "59012d29-6a47-4e00-931a-08b4db991d0a",
+  "product_id": "390d8fac-f8ab-4065-9c94-2ca7b26adab0",
+  "position": 1,
+  "advanced_text": "",
+  "type": "buy_button",
+  "custom_css": "button {\n  --border: #FFF8E7;\n  -webkit-tap-highlight-color: transparent;\n  -webkit-appearance: button;\n  background-image: none;\n  color: #fff;\n  cursor: pointer;\n  margin: 0;\n  -webkit-mask-image: -webkit-radial-gradient(#2F8F5B, #fff);\n  padding: 0;\n  box-shadow: inset 0 0 0 2px #F4C542;\n  box-sizing: border-box;\n  display: block;\n  padding: 1.2rem 3rem;\n  position: relative;\n  text-transform: uppercase;\n  transition: color 0.1s linear;\n  animation: autoBorder 10s infinite;\n  border-radius: var(--Prirmitaves-Radius-lg, 8px);\n  background: #2F8F5B;\n}\n\nbutton:disabled {\n  cursor: default;\n}\n\nbutton:-moz-focusring {\n  outline: auto;\n}\n\nbutton svg {\n  display: block;\n  vertical-align: middle;\n}\n\nbutton[hidden] {\n  display: none;\n}\n\nbutton:hover {\n  color: #fff;\n  transition: color 0.1s linear 1s;\n  animation: none;\n}\n\nbutton:after,\nbutton:before {\n  content: \"\";\n  height: 0;\n  position: absolute;\n  width: 0;\n}\n\nbutton:before {\n  border-right: var(--border);\n  border-top: var(--border);\n  left: 0;\n  top: 0;\n}\n\nbutton:hover:before {\n  --border: 4px solid #F4C542;\n  -webkit-animation: border-top-and-right 1s forwards;\n  animation: border-top-and-right 1s forwards;\n}\n\nbutton:after {\n  border-bottom: var(--border);\n  border-left: var(--border);\n  bottom: 0;\n  right: 0;\n  z-index: -1;\n}\n\nbutton:hover:after {\n  --border: 4px solid #F4C542;\n  -webkit-animation: border-bottom-and-left 1s 1s forwards;\n  animation: border-bottom-and-left 1s 1s forwards;\n}\n\n@keyframes autoBorder {\n  0%, 50% {\n    --border: 4px solid #F4C542;\n  }\n\n  0%, 25% {\n    --before-height: 0;\n    --before-width: 0;\n  }\n\n  12.5% {\n    --before-height: 0;\n    --before-width: 100%;\n  }\n\n  25% {\n    --before-height: 100%;\n    --before-width: 100%;\n  }\n\n  25%, 50% {\n    --after-height: 0;\n    --after-width: 0;\n  }\n\n  37.5% {\n    --after-height: 0;\n    --after-width: 100%;\n  }\n\n  50% {\n    --after-height: 100%;\n    --after-width: 100%;\n  }\n\n  50.01%, 100% {\n    --border: none;\n    --before-height: 0;\n    --before-width: 0;\n    --after-height: 0;\n    --after-width: 0;\n  }\n}\n\nbutton:before {\n  height: var(--before-height, 0);\n  width: var(--before-width, 0);\n}\n\nbutton:after {\n  height: var(--after-height, 0);\n  width: var(--after-width, 0);\n}\n\n@-webkit-keyframes border-top-and-right {\n  0% {\n    height: 0;\n    width: 0;\n  }\n\n  50% {\n    height: 0;\n    width: 100%;\n  }\n\n  to {\n    height: 100%;\n    width: 100%;\n  }\n}\n\n@keyframes border-top-and-right {\n  0% {\n    height: 0;\n    width: 0;\n  }\n\n  50% {\n    height: 0;\n    width: 100%;\n  }\n\n  to {\n    height: 100%;\n    width: 100%;\n  }\n}\n\n@-webkit-keyframes border-bottom-and-left {\n  0% {\n    height: 0;\n    width: 0;\n  }\n\n  50% {\n    height: 0;\n    width: 100%;\n  }\n\n  to {\n    height: 100%;\n    width: 100%;\n  }\n}\n\n@keyframes border-bottom-and-left {\n  0% {\n    height: 0;\n    width: 0;\n  }\n\n  50% {\n    height: 0;\n    width: 100%;\n  }\n\n  to {\n    height: 100%;\n    width: 100%;\n  }\n}",
+  "title_color": "#000000",
+  "description_color": "#000000",
+  "buy_button": {
+    "id": "474e5da6-ba8f-4fd0-b588-a16e88ed4569",
+    "text": "اطلبها دلوقتي",
+    "bg_color": "#000000",
+    "product_feature_id": "59012d29-6a47-4e00-931a-08b4db991d0a"
+  },
+  "faqs": [],
+  "social_reviews": []
+}
+-->
+<section class="monkey-problem-section" dir="rtl">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500;600;700;800;900&display=swap');
+
+    .monkey-problem-section {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 70px 40px 75px;
+      background:
+        radial-gradient(circle at 8% 18%, rgba(244, 197, 66, 0.16), transparent 23%),
+        radial-gradient(circle at 92% 78%, rgba(47, 143, 91, 0.12), transparent 26%),
+        radial-gradient(circle at 50% 100%, rgba(190, 19, 0, 0.05), transparent 25%),
+        #fffdf5;
+      font-family: 'Tajawal', sans-serif;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .monkey-problem-section * {
+      box-sizing: border-box;
+    }
+
+    .monkey-problem-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .monkey-math {
+      position: absolute;
+      font-size: 52px;
+      font-weight: 800;
+      color: #2F8F5B;
+      opacity: 0.065;
+      white-space: nowrap;
+      direction: ltr;
+      unicode-bidi: isolate;
+    }
+
+    .monkey-math.one {
+      top: 7%;
+      left: 4%;
+      transform: rotate(-9deg);
+    }
+
+    .monkey-math.two {
+      top: 48%;
+      right: 3%;
+      transform: rotate(8deg);
+      color: #be1300;
+    }
+
+    .monkey-math.three {
+      bottom: 4%;
+      left: 30%;
+      transform: rotate(-5deg);
+      color: #F4C542;
+    }
+
+    .monkey-problem-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1450px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .monkey-problem-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: #edf8f1;
+      color: #2F8F5B;
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      box-shadow: 0 6px 18px rgba(47, 143, 91, 0.08);
+    }
+
+    .monkey-problem-title {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.25;
+      font-weight: 900;
+      color: #273127;
+    }
+
+    .monkey-problem-title .red {
+      color: #be1300;
+    }
+
+    .monkey-problem-subtitle {
+      max-width: 900px;
+      margin: 18px auto 0;
+      font-size: 19px;
+      line-height: 1.9;
+      font-weight: 600;
+      color: #667067;
+    }
+
+    .monkey-problem-cards {
+      width: 100%;
+      margin-top: 42px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .monkey-problem-card {
+      background: rgba(255, 255, 255, 0.96);
+      border: 2px solid #efe8d4;
+      border-radius: 24px;
+      padding: 30px 26px 28px;
+      box-shadow: 0 14px 35px rgba(71, 61, 31, 0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .monkey-problem-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(71, 61, 31, 0.11);
+    }
+
+    .monkey-problem-icon {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 16px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      background: #fff3bc;
+    }
+
+    .monkey-problem-card:nth-child(2) .monkey-problem-icon {
+      background: #ffe6df;
+    }
+
+    .monkey-problem-card:nth-child(3) .monkey-problem-icon {
+      background: #e5f4ea;
+    }
+
+    .monkey-problem-card-title {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 900;
+      color: #273127;
+    }
+
+    .monkey-problem-card-text {
+      margin: 10px 0 0;
+      font-size: 16px;
+      line-height: 1.8;
+      font-weight: 600;
+      color: #6b746d;
+    }
+
+    .monkey-problem-bottom {
+      margin: 38px auto 0;
+      width: fit-content;
+      max-width: 100%;
+      padding: 13px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #edf8f1, #fff5cf);
+      color: #273127;
+      font-size: 18px;
+      line-height: 1.6;
+      font-weight: 800;
+      box-shadow: 0 8px 22px rgba(47, 143, 91, 0.07);
+    }
+
+    .monkey-problem-bottom .highlight {
+      color: #2F8F5B;
+    }
+
+    @media (max-width: 1100px) {
+      .monkey-problem-section {
+        padding: 60px 25px 65px;
+      }
+
+      .monkey-problem-content {
+        max-width: 1200px;
+      }
+
+      .monkey-problem-cards {
+        gap: 18px;
+      }
+
+      .monkey-problem-card {
+        padding: 26px 20px;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .monkey-problem-section {
+        padding: 58px 20px 62px;
+      }
+
+      .monkey-problem-cards {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .monkey-problem-card {
+        padding: 24px 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .monkey-problem-section {
+        padding: 52px 14px 55px;
+      }
+
+      .monkey-problem-badge {
+        font-size: 14px;
+        padding: 8px 15px;
+      }
+
+      .monkey-problem-title {
+        font-size: 30px;
+      }
+
+      .monkey-problem-subtitle {
+        font-size: 16px;
+        line-height: 1.8;
+        margin-top: 14px;
+      }
+
+      .monkey-problem-cards {
+        margin-top: 30px;
+        gap: 15px;
+      }
+
+      .monkey-problem-card {
+        border-radius: 20px;
+        padding: 22px 17px 21px;
+        min-height: auto;
+      }
+
+      .monkey-problem-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+        border-radius: 18px;
+        margin-bottom: 13px;
+      }
+
+      .monkey-problem-card-title {
+        font-size: 20px;
+      }
+
+      .monkey-problem-card-text {
+        font-size: 15px;
+        line-height: 1.75;
+      }
+
+      .monkey-problem-bottom {
+        margin-top: 28px;
+        padding: 11px 18px;
+        font-size: 16px;
+        border-radius: 18px;
+      }
+
+      .monkey-math {
+        font-size: 38px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .monkey-problem-title {
+        font-size: 27px;
+      }
+
+      .monkey-problem-subtitle {
+        font-size: 15px;
+      }
+
+      .monkey-problem-bottom {
+        font-size: 15px;
+      }
+    }
+  </style>
+
+  <div class="monkey-problem-bg">
+    <div class="monkey-math one">7 × 8 = 56</div>
+    <div class="monkey-math two">6 × 9 = ?</div>
+    <div class="monkey-math three">4 × 7 = 28</div>
+  </div>
+
+  <div class="monkey-problem-content">
+
+    <div class="monkey-problem-badge">
+      المشكلة اللي بتقابل أغلب الأطفال
+    </div>
+
+    <h2 class="monkey-problem-title">
+      جدول الضرب مش لازم يكون
+      <span class="red">حفظ وتلقين</span>
+    </h2>
+
+    <p class="monkey-problem-subtitle">
+      بدل ما الطفل يقعد يحفظ الأرقام ويكررها كتير
+      خليه يتعلم جدول الضرب بطريقة فيها لعب وتفاعل
+    </p>
+
+    <div class="monkey-problem-cards">
+
+      <div class="monkey-problem-card">
+        <div class="monkey-problem-icon">📚</div>
+        <h3 class="monkey-problem-card-title">حفظ وتلقين</h3>
+        <p class="monkey-problem-card-text">
+          نفس الأرقام تتكرر من غير فهم أو تفاعل
+        </p>
+      </div>
+
+      <div class="monkey-problem-card">
+        <div class="monkey-problem-icon">😩</div>
+        <h3 class="monkey-problem-card-title">تكرار ممل</h3>
+        <p class="monkey-problem-card-text">
+          المذاكرة بتتحول لمهمة الطفل مش بيحبها
+        </p>
+      </div>
+
+      <div class="monkey-problem-card">
+        <div class="monkey-problem-icon">🧠</div>
+        <h3 class="monkey-problem-card-title">نسيان سريع</h3>
+        <p class="monkey-problem-card-text">
+          اللي اتحفظ من غير ممارسة ممكن يتنسي بسهولة
+        </p>
+      </div>
+
+    </div>
+
+    <div class="monkey-problem-bottom">
+      🎯 المشكلة مش في الطفل
+      <span class="highlight">المشكلة في طريقة التعلم</span>
+    </div>
+
+  </div>
+
+</section>
+<section class="monkey-solution-contents-section" dir="rtl">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500;600;700;800;900&display=swap');
+
+    .monkey-solution-contents-section {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 75px 40px 80px;
+      background:
+        radial-gradient(circle at 8% 18%, rgba(47, 143, 91, 0.11), transparent 24%),
+        radial-gradient(circle at 92% 78%, rgba(244, 197, 66, 0.16), transparent 25%),
+        radial-gradient(circle at 50% 100%, rgba(190, 19, 0, 0.05), transparent 25%),
+        #fffdf5;
+      font-family: 'Tajawal', sans-serif;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .monkey-solution-contents-section * {
+      box-sizing: border-box;
+    }
+
+    .monkey-solution-contents-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .monkey-solution-contents-math {
+      position: absolute;
+      font-size: 52px;
+      font-weight: 900;
+      white-space: nowrap;
+      direction: ltr;
+      unicode-bidi: isolate;
+      opacity: 0.055;
+      color: #2F8F5B;
+    }
+
+    .monkey-solution-contents-math.one {
+      top: 7%;
+      left: 4%;
+      transform: rotate(-8deg);
+    }
+
+    .monkey-solution-contents-math.two {
+      top: 45%;
+      right: 3%;
+      transform: rotate(7deg);
+      color: #BE1300;
+    }
+
+    .monkey-solution-contents-math.three {
+      bottom: 5%;
+      left: 25%;
+      transform: rotate(-5deg);
+      color: #F4C542;
+    }
+
+    .monkey-solution-contents-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1450px;
+      margin: 0 auto;
+    }
+
+    .monkey-solution-contents-head {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .monkey-solution-contents-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: #edf8f1;
+      color: #2F8F5B;
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      box-shadow: 0 6px 18px rgba(47, 143, 91, 0.08);
+    }
+
+    .monkey-solution-contents-title {
+      margin: 0;
+      font-size: clamp(31px, 4vw, 48px);
+      line-height: 1.3;
+      font-weight: 900;
+      color: #273127;
+    }
+
+    .monkey-solution-contents-title .green {
+      color: #2F8F5B;
+    }
+
+    .monkey-solution-contents-subtitle {
+      max-width: 900px;
+      margin: 17px auto 0;
+      font-size: 19px;
+      line-height: 1.9;
+      font-weight: 600;
+      color: #667067;
+    }
+
+    .monkey-solution-contents-main {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      align-items: center;
+      gap: 55px;
+      width: 100%;
+    }
+
+    .monkey-solution-steps {
+      display: grid;
+      gap: 17px;
+    }
+
+    .monkey-solution-step {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      align-items: center;
+      gap: 17px;
+      padding: 20px 21px;
+      background: rgba(255, 255, 255, 0.97);
+      border: 2px solid #efe8d4;
+      border-radius: 22px;
+      box-shadow: 0 10px 28px rgba(71, 61, 31, 0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .monkey-solution-step:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 32px rgba(71, 61, 31, 0.10);
+    }
+
+    .monkey-solution-step-number {
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e5f4ea;
+      color: #2F8F5B;
+      font-size: 23px;
+      font-weight: 900;
+    }
+
+    .monkey-solution-step:nth-child(2) .monkey-solution-step-number {
+      background: #fff3bc;
+      color: #B88200;
+    }
+
+    .monkey-solution-step:nth-child(3) .monkey-solution-step-number {
+      background: #ffe5df;
+      color: #BE1300;
+    }
+
+    .monkey-solution-step-title {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 900;
+      color: #273127;
+    }
+
+    .monkey-solution-step-text {
+      margin: 6px 0 0;
+      font-size: 15.5px;
+      line-height: 1.8;
+      font-weight: 600;
+      color: #6b746d;
+    }
+
+    .monkey-solution-step-highlight {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 9px 13px;
+      border-radius: 12px;
+      background: #fff8db;
+      color: #8b6800;
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 800;
+    }
+
+    .monkey-product-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .monkey-product-image-box {
+      width: min(100%, 650px);
+      padding: 18px;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #ffffff, #fff9e5);
+      border: 2px solid #efe8d4;
+      box-shadow: 0 20px 48px rgba(71, 61, 31, 0.09);
+    }
+
+    .monkey-product-image-box img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
+      object-fit: contain;
+    }
+
+    .monkey-tablet-badge {
+      margin: 18px auto 0;
+      width: fit-content;
+      max-width: 100%;
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #edf8f1, #fff5cf);
+      color: #273127;
+      font-size: 17px;
+      font-weight: 900;
+      text-align: center;
+      box-shadow: 0 8px 22px rgba(47, 143, 91, 0.07);
+    }
+
+    .monkey-tablet-badge strong {
+      color: #2F8F5B;
+    }
+
+    .monkey-components {
+      margin-top: 48px;
+    }
+
+    .monkey-components-title {
+      margin: 0;
+      text-align: center;
+      color: #273127;
+      font-size: 28px;
+      line-height: 1.3;
+      font-weight: 900;
+    }
+
+    .monkey-components-subtitle {
+      margin: 10px auto 0;
+      max-width: 700px;
+      text-align: center;
+      color: #6b746d;
+      font-size: 16px;
+      line-height: 1.8;
+      font-weight: 600;
+    }
+
+    .monkey-components-grid {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .monkey-component {
+      background: #ffffff;
+      border: 2px solid #efe8d4;
+      border-radius: 21px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 10px 28px rgba(71, 61, 31, 0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .monkey-component:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 32px rgba(71, 61, 31, 0.10);
+    }
+
+    .monkey-component-icon {
+      width: 62px;
+      height: 62px;
+      margin: 0 auto 13px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 31px;
+      background: #fff3bc;
+    }
+
+    .monkey-component:nth-child(2) .monkey-component-icon {
+      background: #e5f4ea;
+    }
+
+    .monkey-component:nth-child(3) .monkey-component-icon {
+      background: #ffe5df;
+    }
+
+    .monkey-component-title {
+      margin: 0;
+      font-size: 19px;
+      font-weight: 900;
+      color: #273127;
+    }
+
+    .monkey-component-text {
+      margin: 7px 0 0;
+      font-size: 15px;
+      line-height: 1.75;
+      font-weight: 600;
+      color: #6b746d;
+    }
+
+    .monkey-solution-contents-final {
+      margin: 32px auto 0;
+      width: fit-content;
+      max-width: 100%;
+      padding: 13px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #edf8f1, #fff5cf);
+      color: #273127;
+      font-size: 18px;
+      font-weight: 900;
+      text-align: center;
+      box-shadow: 0 8px 22px rgba(47, 143, 91, 0.07);
+    }
+
+    .monkey-solution-contents-final strong {
+      color: #2F8F5B;
+    }
+
+    @media (max-width: 1000px) {
+      .monkey-solution-contents-section {
+        padding: 65px 25px 70px;
+      }
+
+      .monkey-solution-contents-main {
+        gap: 35px;
+      }
+
+      .monkey-components-grid {
+        gap: 14px;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .monkey-solution-contents-section {
+        padding: 58px 20px 65px;
+      }
+
+      .monkey-solution-contents-head {
+        margin-bottom: 32px;
+      }
+
+      .monkey-solution-contents-main {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .monkey-product-visual {
+        order: 2;
+      }
+
+      .monkey-solution-steps {
+        order: 1;
+        max-width: 700px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .monkey-product-image-box {
+        width: min(100%, 700px);
+      }
+
+      .monkey-components-grid {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .monkey-solution-contents-section {
+        padding: 52px 14px 58px;
+      }
+
+      .monkey-solution-contents-badge {
+        font-size: 14px;
+        padding: 8px 15px;
+      }
+
+      .monkey-solution-contents-title {
+        font-size: 30px;
+      }
+
+      .monkey-solution-contents-subtitle {
+        font-size: 16px;
+        line-height: 1.8;
+        margin-top: 14px;
+      }
+
+      .monkey-solution-step {
+        grid-template-columns: 52px 1fr;
+        gap: 12px;
+        padding: 17px 15px;
+        border-radius: 19px;
+      }
+
+      .monkey-solution-step-number {
+        width: 50px;
+        height: 50px;
+        border-radius: 15px;
+        font-size: 20px;
+      }
+
+      .monkey-solution-step-title {
+        font-size: 18px;
+      }
+
+      .monkey-solution-step-text {
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .monkey-solution-step-highlight {
+        font-size: 13px;
+        padding: 8px 11px;
+      }
+
+      .monkey-product-image-box {
+        padding: 11px;
+        border-radius: 23px;
+      }
+
+      .monkey-product-image-box img {
+        border-radius: 17px;
+      }
+
+      .monkey-tablet-badge {
+        margin-top: 14px;
+        font-size: 15px;
+        padding: 10px 15px;
+        border-radius: 17px;
+      }
+
+      .monkey-components {
+        margin-top: 36px;
+      }
+
+      .monkey-components-title {
+        font-size: 24px;
+      }
+
+      .monkey-components-subtitle {
+        font-size: 14px;
+      }
+
+      .monkey-component {
+        border-radius: 19px;
+        padding: 19px 15px;
+      }
+
+      .monkey-component-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 16px;
+        font-size: 27px;
+      }
+
+      .monkey-component-title {
+        font-size: 18px;
+      }
+
+      .monkey-component-text {
+        font-size: 14px;
+      }
+
+      .monkey-solution-contents-final {
+        margin-top: 26px;
+        padding: 11px 17px;
+        font-size: 15px;
+        border-radius: 18px;
+      }
+
+      .monkey-solution-contents-math {
+        font-size: 38px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .monkey-solution-contents-title {
+        font-size: 27px;
+      }
+
+      .monkey-solution-contents-subtitle {
+        font-size: 15px;
+      }
+    }
+  </style>
+
+  <div class="monkey-solution-contents-bg">
+    <div class="monkey-solution-contents-math one">7 × 8 = 56</div>
+    <div class="monkey-solution-contents-math two">9 × 11 = ?</div>
+    <div class="monkey-solution-contents-math three">6 × 7 = 42</div>
+  </div>
+
+  <div class="monkey-solution-contents-content">
+
+    <div class="monkey-solution-contents-head">
+
+      <div class="monkey-solution-contents-badge">
+        اتعلمها خطوة بخطوة
+      </div>
+
+      <h2 class="monkey-solution-contents-title">
+        خليه يتعلم جدول الضرب
+        <span class="green">وهو بيلعب</span>
+      </h2>
+
+      <p class="monkey-solution-contents-subtitle">
+        Smart Monkey بتخلي الطفل يختار عملية الضرب ويشوف الناتج قدامه
+        وبعدها يكتب الإجابة بنفسه ويقدر يعيد التدريب مرة ورا مرة
+      </p>
+
+    </div>
+
+    <div class="monkey-solution-contents-main">
+
+      <div class="monkey-solution-steps">
+
+        <div class="monkey-solution-step">
+
+          <div class="monkey-solution-step-number">
+            1
+          </div>
+
+          <div>
+            <h3 class="monkey-solution-step-title">
+              اختار الرقمين
+            </h3>
+
+            <p class="monkey-solution-step-text">
+              حرّك السهمين ناحية الرقمين اللي عايز تضربهم في بعض
+              عشان تحدد عملية الضرب بنفسك
+            </p>
+          </div>
+
+        </div>
+
+        <div class="monkey-solution-step">
+
+          <div class="monkey-solution-step-number">
+            2
+          </div>
+
+          <div>
+            <h3 class="monkey-solution-step-title">
+              اعرف الناتج
+            </h3>
+
+            <p class="monkey-solution-step-text">
+              الناتج بيظهر في النص عشان الطفل يكتشف الإجابة بنفسه
+              ويتعلم من خلال التجربة
+            </p>
+
+            <div class="monkey-solution-step-highlight">
+              ولما عايز تضرب الرقم في نفسه خلي السهم التاني على المربع الفاضي
+            </div>
+          </div>
+
+        </div>
+
+        <div class="monkey-solution-step">
+
+          <div class="monkey-solution-step-number">
+            3
+          </div>
+
+          <div>
+            <h3 class="monkey-solution-step-title">
+              اكتب وامسح وجرب تاني
+            </h3>
+
+            <p class="monkey-solution-step-text">
+              اكتب الناتج في المجلد بالقلم
+              ولو غلط امسحه وجرب مرة تانية
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="monkey-product-visual">
+
+        <div>
+
+          <div class="monkey-product-image-box">
+            <img
+              src="https://files.easy-orders.net/1789475268581923601.png"
+              alt="محتويات لعبة Smart Monkey لتعليم جدول الضرب"
+            >
+          </div>
+
+          <div class="monkey-tablet-badge">
+            يتعلم جدول الضرب لحد
+            <strong>×11</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="monkey-components">
+
+      <h3 class="monkey-components-title">
+        وإيه اللي موجود في الباكدج؟
+      </h3>
+
+      <p class="monkey-components-subtitle">
+        كل الأدوات اللي يحتاجها الطفل عشان يبدأ التدريب فورًا
+      </p>
+
+      <div class="monkey-components-grid">
+
+        <div class="monkey-component">
+
+          <div class="monkey-component-icon">
+            🐵
+          </div>
+
+          <h4 class="monkey-component-title">
+            لعبة Smart Monkey
+          </h4>
+
+          <p class="monkey-component-text">
+            لتحديد الرقمين ومعرفة الناتج
+          </p>
+
+        </div>
+
+        <div class="monkey-component">
+
+          <div class="monkey-component-icon">
+            📁
+          </div>
+
+          <h4 class="monkey-component-title">
+            المجلد
+          </h4>
+
+          <p class="monkey-component-text">
+            يكتب فيه الطفل الناتج ويتدرب بنفسه
+          </p>
+
+        </div>
+
+        <div class="monkey-component">
+
+          <div class="monkey-component-icon">
+            🖊️
+          </div>
+
+          <h4 class="monkey-component-title">
+            القلم القابل للمسح
+          </h4>
+
+          <p class="monkey-component-text">
+            يكتب ويمسح ويعيد التدريب من جديد
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="monkey-solution-contents-final">
+      <strong>اختار</strong>
+      ·
+      <strong>احسب</strong>
+      ·
+      <strong>اكتب</strong>
+      ·
+      <strong>امسح</strong>
+      ·
+      <strong>جرّب تاني</strong>
+    </div>
+
+  </div>
+
+</section>
+<section class="monkey-comparison-section" dir="rtl">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500;600;700;800;900&display=swap');
+
+    .monkey-comparison-section {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 75px 40px 80px;
+      background:
+        radial-gradient(circle at 8% 18%, rgba(47, 143, 91, 0.11), transparent 23%),
+        radial-gradient(circle at 92% 80%, rgba(244, 197, 66, 0.16), transparent 25%),
+        radial-gradient(circle at 50% 100%, rgba(190, 19, 0, 0.04), transparent 25%),
+        #fffdf5;
+      font-family: 'Tajawal', sans-serif;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .monkey-comparison-section * {
+      box-sizing: border-box;
+    }
+
+    .monkey-comparison-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .monkey-comparison-math {
+      position: absolute;
+      font-size: 52px;
+      font-weight: 900;
+      white-space: nowrap;
+      direction: ltr;
+      unicode-bidi: isolate;
+      opacity: 0.055;
+      color: #2F8F5B;
+    }
+
+    .monkey-comparison-math.one {
+      top: 7%;
+      left: 4%;
+      transform: rotate(-8deg);
+    }
+
+    .monkey-comparison-math.two {
+      bottom: 7%;
+      right: 4%;
+      transform: rotate(7deg);
+      color: #BE1300;
+    }
+
+    .monkey-comparison-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+
+    .monkey-comparison-head {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .monkey-comparison-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: #edf8f1;
+      color: #2F8F5B;
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      box-shadow: 0 6px 18px rgba(47, 143, 91, 0.08);
+    }
+
+    .monkey-comparison-title {
+      margin: 0;
+      font-size: clamp(31px, 4vw, 48px);
+      line-height: 1.3;
+      font-weight: 900;
+      color: #273127;
+    }
+
+    .monkey-comparison-title .green {
+      color: #2F8F5B;
+    }
+
+    .monkey-comparison-subtitle {
+      max-width: 850px;
+      margin: 17px auto 0;
+      font-size: 19px;
+      line-height: 1.9;
+      font-weight: 600;
+      color: #667067;
+    }
+
+    .monkey-comparison-table-wrap {
+      width: 100%;
+      background: #ffffff;
+      border: 2px solid #efe8d4;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(71, 61, 31, 0.08);
+    }
+
+    .monkey-comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .monkey-comparison-table th,
+    .monkey-comparison-table td {
+      width: 50%;
+      padding: 22px 28px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .monkey-comparison-table thead th {
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .monkey-comparison-old-head {
+      background: #fff0ed;
+      color: #BE1300;
+      border-left: 1px solid #f1ddd8;
+    }
+
+    .monkey-comparison-new-head {
+      background: #eaf6ee;
+      color: #2F8F5B;
+    }
+
+    .monkey-comparison-table tbody tr {
+      border-top: 1px solid #efe8d4;
+    }
+
+    .monkey-comparison-table tbody td {
+      font-size: 17px;
+      line-height: 1.7;
+      font-weight: 700;
+      color: #536057;
+    }
+
+    .monkey-comparison-table tbody td:first-child {
+      background: #fffdfd;
+      border-left: 1px solid #efe8d4;
+    }
+
+    .monkey-comparison-table tbody td:last-child {
+      background: #fffefa;
+    }
+
+    .monkey-comparison-old-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      color: #747b76;
+    }
+
+    .monkey-comparison-new-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      color: #2F8F5B;
+    }
+
+    .monkey-comparison-old-icon {
+      color: #BE1300;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .monkey-comparison-new-icon {
+      color: #2F8F5B;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .monkey-comparison-final {
+      margin: 36px auto 0;
+      width: fit-content;
+      max-width: 100%;
+      padding: 15px 25px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #edf8f1, #fff5cf);
+      color: #273127;
+      font-size: 19px;
+      line-height: 1.6;
+      font-weight: 900;
+      text-align: center;
+      box-shadow: 0 8px 22px rgba(47, 143, 91, 0.07);
+    }
+
+    .monkey-comparison-final strong {
+      color: #2F8F5B;
+    }
+
+    @media (max-width: 800px) {
+      .monkey-comparison-section {
+        padding: 58px 20px 65px;
+      }
+
+      .monkey-comparison-head {
+        margin-bottom: 32px;
+      }
+
+      .monkey-comparison-table-wrap {
+        border-radius: 22px;
+      }
+
+      .monkey-comparison-table th,
+      .monkey-comparison-table td {
+        padding: 18px 14px;
+      }
+
+      .monkey-comparison-table thead th {
+        font-size: 19px;
+      }
+
+      .monkey-comparison-table tbody td {
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      .monkey-comparison-old-icon,
+      .monkey-comparison-new-icon {
+        font-size: 17px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .monkey-comparison-section {
+        padding: 52px 14px 58px;
+      }
+
+      .monkey-comparison-badge {
+        font-size: 14px;
+        padding: 8px 15px;
+      }
+
+      .monkey-comparison-title {
+        font-size: 30px;
+      }
+
+      .monkey-comparison-subtitle {
+        font-size: 16px;
+        line-height: 1.8;
+        margin-top: 14px;
+      }
+
+      .monkey-comparison-table-wrap {
+        border-radius: 19px;
+      }
+
+      .monkey-comparison-table th,
+      .monkey-comparison-table td {
+        padding: 14px 9px;
+      }
+
+      .monkey-comparison-table thead th {
+        font-size: 16px;
+      }
+
+      .monkey-comparison-table tbody td {
+        font-size: 13.5px;
+      }
+
+      .monkey-comparison-old-cell,
+      .monkey-comparison-new-cell {
+        gap: 5px;
+      }
+
+      .monkey-comparison-final {
+        margin-top: 26px;
+        padding: 11px 17px;
+        font-size: 16px;
+        border-radius: 18px;
+      }
+
+      .monkey-comparison-math {
+        font-size: 38px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .monkey-comparison-title {
+        font-size: 27px;
+      }
+
+      .monkey-comparison-subtitle {
+        font-size: 15px;
+      }
+
+      .monkey-comparison-table thead th {
+        font-size: 15px;
+      }
+
+      .monkey-comparison-table tbody td {
+        font-size: 12.5px;
+      }
+
+      .monkey-comparison-final {
+        font-size: 15px;
+      }
+    }
+  </style>
+
+  <div class="monkey-comparison-bg">
+    <div class="monkey-comparison-math one">7 × 8 = 56</div>
+    <div class="monkey-comparison-math two">9 × 11 = ?</div>
+  </div>
+
+  <div class="monkey-comparison-content">
+
+    <div class="monkey-comparison-head">
+
+      <div class="monkey-comparison-badge">
+        الفرق بيبان في طريقة التعلم
+      </div>
+
+      <h2 class="monkey-comparison-title">
+        جدول الضرب بالطريقة التقليدية
+        <span class="green">ولا بطريقة Smart Monkey؟</span>
+      </h2>
+
+      <p class="monkey-comparison-subtitle">
+        نفس الهدف لكن تجربة التعلم مختلفة
+        الطفل بدل ما يعتمد على الحفظ بس يبدأ يحسب ويجرب ويكتب بنفسه
+      </p>
+
+    </div>
+
+    <div class="monkey-comparison-table-wrap">
+
+      <table class="monkey-comparison-table">
+
+        <thead>
+          <tr>
+            <th class="monkey-comparison-old-head">
+              الطريقة التقليدية
+            </th>
+
+            <th class="monkey-comparison-new-head">
+              Smart Monkey
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>
+              <div class="monkey-comparison-old-cell">
+                <span class="monkey-comparison-old-icon">✕</span>
+                حفظ وتلقين
+              </div>
+            </td>
+
+            <td>
+              <div class="monkey-comparison-new-cell">
+                <span class="monkey-comparison-new-icon">✓</span>
+                تعلم بالممارسة
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="monkey-comparison-old-cell">
+                <span class="monkey-comparison-old-icon">✕</span>
+                تكرار الأرقام
+              </div>
+            </td>
+
+            <td>
+              <div class="monkey-comparison-new-cell">
+                <span class="monkey-comparison-new-icon">✓</span>
+                الطفل يختار العملية بنفسه
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="monkey-comparison-old-cell">
+                <span class="monkey-comparison-old-icon">✕</span>
+                الطفل يحفظ الإجابة
+              </div>
+            </td>
+
+            <td>
+              <div class="monkey-comparison-new-cell">
+                <span class="monkey-comparison-new-icon">✓</span>
+                الطفل يكتشف الناتج بنفسه
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="monkey-comparison-old-cell">
+                <span class="monkey-comparison-old-icon">✕</span>
+                مذاكرة مملة
+              </div>
+            </td>
+
+            <td>
+              <div class="monkey-comparison-new-cell">
+                <span class="monkey-comparison-new-icon">✓</span>
+                تعلم في شكل لعبة
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="monkey-comparison-old-cell">
+                <span class="monkey-comparison-old-icon">✕</span>
+                يذاكر ثم يعيد الحفظ
+              </div>
+            </td>
+
+            <td>
+              <div class="monkey-comparison-new-cell">
+                <span class="monkey-comparison-new-icon">✓</span>
+                يكتب ويمسح ويعيد المحاولة
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="monkey-comparison-old-cell">
+                <span class="monkey-comparison-old-icon">✕</span>
+                الاعتماد على التلقين
+              </div>
+            </td>
+
+            <td>
+              <div class="monkey-comparison-new-cell">
+                <span class="monkey-comparison-new-icon">✓</span>
+                تدريب عملي لحد ×11
+              </div>
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <div class="monkey-comparison-final">
+      بدل ما يحفظ جدول الضرب وخلاص
+      <strong>خليه يفهمه ويتدرب عليه بنفسه</strong>
+    </div>
+
+  </div>
+
+</section>
+<section class="monkey-final-cta-section" dir="rtl">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500;600;700;800;900&display=swap');
+
+    .monkey-final-cta-section {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 80px 40px 85px;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(47, 143, 91, 0.14), transparent 24%),
+        radial-gradient(circle at 90% 78%, rgba(244, 197, 66, 0.18), transparent 26%),
+        radial-gradient(circle at 50% 100%, rgba(190, 19, 0, 0.05), transparent 24%),
+        #fffdf5;
+      font-family: 'Tajawal', sans-serif;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .monkey-final-cta-section * {
+      box-sizing: border-box;
+    }
+
+    .monkey-final-cta-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .monkey-final-math {
+      position: absolute;
+      font-size: 58px;
+      font-weight: 900;
+      white-space: nowrap;
+      direction: ltr;
+      unicode-bidi: isolate;
+      opacity: 0.05;
+      color: #2F8F5B;
+    }
+
+    .monkey-final-math.one {
+      top: 8%;
+      left: 4%;
+      transform: rotate(-8deg);
+    }
+
+    .monkey-final-math.two {
+      bottom: 8%;
+      right: 4%;
+      transform: rotate(7deg);
+      color: #BE1300;
+    }
+
+    .monkey-final-cta-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .monkey-final-cta-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: #e7f4eb;
+      color: #2F8F5B;
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      box-shadow: 0 7px 20px rgba(47, 143, 91, 0.08);
+    }
+
+    .monkey-final-cta-title {
+      margin: 0;
+      font-size: clamp(32px, 4.4vw, 52px);
+      line-height: 1.3;
+      font-weight: 900;
+      color: #273127;
+    }
+
+    .monkey-final-cta-title .green {
+      color: #2F8F5B;
+    }
+
+    .monkey-final-cta-subtitle {
+      max-width: 820px;
+      margin: 18px auto 0;
+      font-size: 20px;
+      line-height: 1.9;
+      font-weight: 600;
+      color: #667067;
+    }
+
+    .monkey-final-cta-points {
+      margin: 38px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      max-width: 900px;
+    }
+
+    .monkey-final-cta-point {
+      background: rgba(255, 255, 255, 0.94);
+      border: 2px solid #efe8d4;
+      border-radius: 22px;
+      padding: 22px 18px;
+      box-shadow: 0 10px 28px rgba(71, 61, 31, 0.06);
+    }
+
+    .monkey-final-cta-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 13px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      background: #fff3bc;
+    }
+
+    .monkey-final-cta-point:nth-child(2) .monkey-final-cta-icon {
+      background: #e5f4ea;
+    }
+
+    .monkey-final-cta-point:nth-child(3) .monkey-final-cta-icon {
+      background: #ffe5df;
+    }
+
+    .monkey-final-cta-point-title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 900;
+      color: #273127;
+    }
+
+    .monkey-final-cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 250px;
+      margin-top: 38px;
+      padding: 17px 34px;
+      border-radius: 14px;
+      border: none;
+      background: #2F8F5B;
+      color: #ffffff;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 21px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(47, 143, 91, 0.22);
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .monkey-final-cta-button:hover {
+      transform: translateY(-4px);
+      background: #24734A;
+      box-shadow: 0 16px 34px rgba(47, 143, 91, 0.28);
+    }
+
+    .monkey-final-cta-button:active {
+      transform: translateY(-1px);
+    }
+
+    .monkey-final-cta-note {
+      margin: 18px auto 0;
+      font-size: 16px;
+      font-weight: 700;
+      color: #747b76;
+    }
+
+    @media (max-width: 850px) {
+      .monkey-final-cta-section {
+        padding: 65px 25px 70px;
+      }
+
+      .monkey-final-cta-points {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+
+      .monkey-final-cta-point {
+        padding: 20px 18px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .monkey-final-cta-section {
+        padding: 52px 14px 58px;
+      }
+
+      .monkey-final-cta-badge {
+        font-size: 14px;
+        padding: 8px 15px;
+      }
+
+      .monkey-final-cta-title {
+        font-size: 30px;
+      }
+
+      .monkey-final-cta-subtitle {
+        font-size: 16px;
+        line-height: 1.8;
+        margin-top: 14px;
+      }
+
+      .monkey-final-cta-points {
+        margin-top: 28px;
+        gap: 14px;
+      }
+
+      .monkey-final-cta-point {
+        border-radius: 19px;
+        padding: 18px 15px;
+      }
+
+      .monkey-final-cta-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 16px;
+        font-size: 27px;
+      }
+
+      .monkey-final-cta-point-title {
+        font-size: 17px;
+      }
+
+      .monkey-final-cta-button {
+        width: 100%;
+        min-width: 0;
+        margin-top: 28px;
+        padding: 15px 24px;
+        font-size: 19px;
+      }
+
+      .monkey-final-cta-note {
+        font-size: 15px;
+      }
+
+      .monkey-final-math {
+        font-size: 38px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .monkey-final-cta-title {
+        font-size: 27px;
+      }
+
+      .monkey-final-cta-subtitle {
+        font-size: 15px;
+      }
+
+      .monkey-final-cta-button {
+        font-size: 18px;
+      }
+    }
+  </style>
+
+  <div class="monkey-final-cta-bg">
+    <div class="monkey-final-math one">8 × 7 = 56</div>
+    <div class="monkey-final-math two">9 × 11 = ?</div>
+  </div>
+
+  <div class="monkey-final-cta-content">
+
+    <div class="monkey-final-cta-badge">
+      وقت التعلم ممكن يبقى ممتع
+    </div>
+
+    <h2 class="monkey-final-cta-title">
+      خليه يتعلم جدول الضرب
+      <span class="green">وهو بيلعب</span>
+    </h2>
+
+    <p class="monkey-final-cta-subtitle">
+      مع Smart Monkey الطفل يختار العملية ويعرف الناتج ويكتب بنفسه
+      ويقدر يعيد التدريب كل مرة بطريقة بسيطة وتفاعلية
+    </p>
+
+    <div class="monkey-final-cta-points">
+
+      <div class="monkey-final-cta-point">
+        <div class="monkey-final-cta-icon">🐵</div>
+        <h3 class="monkey-final-cta-point-title">
+          يتدرب على جدول الضرب لحد ×11
+        </h3>
+      </div>
+
+      <div class="monkey-final-cta-point">
+        <div class="monkey-final-cta-icon">✍️</div>
+        <h3 class="monkey-final-cta-point-title">
+          يكتب ويمسح ويعيد المحاولة
+        </h3>
+      </div>
+
+      <div class="monkey-final-cta-point">
+        <div class="monkey-final-cta-icon">🎯</div>
+        <h3 class="monkey-final-cta-point-title">
+          يتعلم من خلال اللعب والتجربة
+        </h3>
+      </div>
+
+    </div>
+
+    <button
+      type="button"
+      class="monkey-final-cta-button"
+      onclick="(function(){var form=document.querySelector('.product_form_checkout');if(form){form.scrollIntoView({behavior:'smooth',block:'center'});}})()"
+    >
+      اطلب Smart Monkey دلوقتي
+    </button>
+
+    <div class="monkey-final-cta-note">
+      خليه يتعلم جدول الضرب بطريقة أسهل وأمتع
+    </div>
+
+  </div>
+
+</section>
+</body>
+</html>
